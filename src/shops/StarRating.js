@@ -48,9 +48,16 @@ export const StarRating = ({ shop }) => {
   }, [rating]);
 
   return (
-    <div className="yelp-rating">
-      <img id="yelp-splash" src={yelpImg} alt="yelp logo" />
-      <img id="stars" src={ratingImg} alt="star rating" />
-    </div>
+    <>
+      <div className="yelp-rating">
+        <a href={shop.url} rel="noreferrer" target="_blank">
+          <div>
+            <img id="yelp-splash" src={yelpImg} alt="yelp logo" />
+            <img id="stars" src={ratingImg} alt="star rating" />
+          </div>
+        </a>
+        <p>Based on {shop.review_count} ratings</p>
+      </div>
+    </>
   );
 };
