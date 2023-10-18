@@ -1,0 +1,36 @@
+.shop-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.shop-item {
+    width: 330px;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid black;
+}
+
+.shop-card-img {
+    width: 300px;
+}
+
+.yelp-rating {
+width: 200px;
+height: 30px;
+margin-top: 5px;
+margin-bottom: 5px;
+display: flex;
+justify-content: flex-start;
+align-items: center;
+}
+
+#yelp-splash {
+    width: 25px;
+    padding: 2px;
+}
+
+#stars {
+    height: 20px;
+    padding: 2px;
+}
