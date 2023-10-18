@@ -5,11 +5,37 @@
     justify-content: space-evenly;
 }
 
-.shop-item {
+.shop-card {
     width: 330px;
     padding: 10px;
     margin: 20px;
-    border: 1px solid black;
+    background-color: rgb(153, 153, 136);
+    border: thin solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.shop-card-banner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: thin solid black;
+    border-radius: 8px;
+    padding: 2px;
+    text-align: center;
+    background-color: rgb(36, 27, 0);
+}
+
+.address-container {
+    padding: 2px;
+    margin-top: 4px;
+}
+
+.address {
+    color: black;
 }
 
 .shop-card-img {
@@ -25,12 +51,16 @@ flex-direction: column;
 justify-content: flex-start;
 }
 
-#yelp-splash {
-    width: 25px;
-    padding: 2px;
+#ratings-amount {
+    font-size: 16px;
+    color: lightgray;
+}
+#yelp-logo {
+    height: 18px;
+    padding-right: 4px;
 }
 
 #stars {
-    height: 20px;
-    padding: 2px;
+    height: 16px;
+    padding-left: 4px;
 }

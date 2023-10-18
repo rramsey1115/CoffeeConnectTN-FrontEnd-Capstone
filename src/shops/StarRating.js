@@ -52,11 +52,11 @@ export const StarRating = ({ shop }) => {
       <div className="yelp-rating">
         <a href={shop.url} rel="noreferrer" target="_blank">
           <div>
-            <img id="yelp-splash" src={yelpImg} alt="yelp logo" />
+            <img id="yelp-logo" src={yelpImg} alt="yelp logo" />
             <img id="stars" src={ratingImg} alt="star rating" />
           </div>
         </a>
-        <p>Based on {shop.review_count} ratings</p>
+        <p id="ratings-amount">Based on {shop.review_count} ratings</p>
       </div>
     </>
   );
