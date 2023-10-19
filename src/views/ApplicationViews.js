@@ -4,6 +4,8 @@ import { NavBar } from "../nav/NavBar";
 import { Welcome } from "../welcome/Welcome";
 import { ShopsList } from "../shops/ShopsList";
 import { ShopDetails } from "../shops/ShopDetails";
+import { FavoritesList } from "../favorites/FavoritesList";
+import { UserProfile } from "../profile/UserProfile";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -31,6 +33,8 @@ export const ApplicationViews = () => {
             <Route index element={<ShopsList currentUser={currentUser} />} />
             <Route path=":shopId" element={<ShopDetails />} />
           </Route>
+          <Route path="favorites" element={<FavoritesList currentUser={currentUser}/>} />
+          <Route path="profile" element={<UserProfile currentUser={currentUser}/>} />
       </Route>
     </Routes>
   );
