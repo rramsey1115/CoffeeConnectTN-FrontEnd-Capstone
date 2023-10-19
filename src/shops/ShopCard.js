@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./ShopCard.css";
 import { StarRating } from "./StarRating";
 
@@ -5,11 +6,11 @@ export const ShopCard = ({ shop }) => {
   return (
     <div className="shop-card">
       <div className="shop-card-banner">
-        <h2>{shop.name}</h2>
+        <Link to={`/discover/${shop.id}`}><h2>{shop.name}</h2></Link>
         <StarRating shop={shop} />
       </div>
       <div className="shop-card-body">
-        <img className="shop-card-img" src={shop.image_url} alt="coffee shop" />
+      <Link to={`/discover/${shop.id}`}><img className="shop-card-img" src={shop.image_url} alt="coffee shop" /></Link>
         <div className="address-container">
           <h4 className="address">Address:</h4>
           <p className="address">{shop.location?.display_address[0]}</p>
