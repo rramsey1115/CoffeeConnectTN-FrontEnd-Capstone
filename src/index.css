@@ -1,3 +1,9 @@
+:root {
+  --dark: rgb(50, 49, 49);
+  --brown: #2b1d15;
+  --tan: #ab9474;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,5 +11,5 @@
 }
 
 body {
-  background-color: rgb(36, 27, 0);
+  background: var(--dark);
 }
