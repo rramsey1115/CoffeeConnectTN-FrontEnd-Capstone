@@ -31,7 +31,7 @@ export const ApplicationViews = () => {
         <Route
           path="discover">
             <Route index element={<ShopsList currentUser={currentUser} />} />
-            <Route path=":shopId" element={<ShopDetails />} />
+            <Route path=":shopId" element={<ShopDetails currentUser={currentUser} />} />
           </Route>
           <Route path="favorites" element={<FavoritesList currentUser={currentUser}/>} />
           <Route path="profile" element={<UserProfile currentUser={currentUser}/>} />

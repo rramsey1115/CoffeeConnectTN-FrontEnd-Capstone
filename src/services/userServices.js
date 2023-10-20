@@ -26,6 +26,7 @@ export const createUser = (customer) => {
   }).then((res) => res.json());
 };
 
-export const getCurrentUserById = (id) => {
+export const getUserById = (id) => {
   return fetch(`http://localhost:8088/users?id=${id}`).then(res => res.json())
 }
+

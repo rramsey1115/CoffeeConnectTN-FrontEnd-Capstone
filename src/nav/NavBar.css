@@ -4,11 +4,11 @@
     background-color: black;
     margin: 5px auto;
     padding-top: 10px;
-    width: 65%;
+    width: 70%;
     padding: 0.5rem;
     border: 1px solid var(--tan);
-    border-left: 8vw solid transparent;
-    border-right: 8vw solid transparent;
+    border-left: 10vw solid transparent;
+    border-right: 10vw solid transparent;
     justify-content: space-evenly;
   }
 
@@ -21,10 +21,8 @@
 
   .navbar-link {
     text-decoration: none;
-    font-family: "Quicksand", sans-serif;
     letter-spacing: 1px;
   }
-
 
   .navbar-link:hover {
     color: var(--tan);

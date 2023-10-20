@@ -1,0 +1,97 @@
+.post-header {
+    width: 90%;
+    margin-bottom: 8px;
+    border-bottom: 1px solid var(--tan);
+    border-right: 10vw solid transparent;
+    border-left: 10vw solid transparent;
+    text-align: center;
+}
+h1 {
+    margin-top: 8px;
+    margin-bottom: 0;
+    padding: 4px;
+}
+.post-list {
+    width: 100%;
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-item {
+    width: 100%;
+    margin-top: 10px;
+    min-height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-left {
+    width: 15%;
+    min-width: 60px;
+    text-align: center;
+}
+
+.post-center {
+    width: 60%;
+    min-width: 200px;
+    text-align: center;
+    align-items: center;
+}
+
+.post-right {
+    width: 5%;
+    min-width: 48px;
+}
+
+#user-picture {
+    width: 80%;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#user-picture:hover {
+    filter: brightness(.5);
+    transition: .2s;
+}
+
+.post-text {
+    margin-top: 4px;
+    padding-left: 2px;
+}
+
+.delete-icon {
+    width: 100%;
+    display: flex;
+}
+
+#delete-icon {
+    height: 28px;
+    width: 28px;
+    padding: 10px;
+    margin: 0px auto;
+    cursor: pointer;
+}
+
+#delete-icon:hover {
+    fill: red;
+    transition: .2s;
+}
+
+.edit-icon {
+    width: 100%;
+    display: flex;
+}
+
+#edit-icon {
+    height: 28px;
+    width: 28px;
+    padding: 10px;
+    margin: 0px auto;
+    cursor: pointer;
+}
+
+#edit-icon:hover {
+    filter: brightness(.5);
+    transition: .2s;
+}

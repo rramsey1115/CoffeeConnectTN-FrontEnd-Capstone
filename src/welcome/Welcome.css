@@ -8,7 +8,6 @@
   padding: 10px;
 }
 
-
 .welcome-video {
   width: 50%;
   min-width: 330px;
@@ -19,4 +18,14 @@
 
 .welcome-footer {
   margin: 40px auto;
+}
+
+.discover-button {
+    color: white;
+    font-size: 16px;
+    background-color: black;
+    border: 1px solid var(--tan);
+    border-radius: 10px;
+    margin: 2px 10px;
+    padding: 10px;
 }
