@@ -1,15 +1,22 @@
+
 :root {
   --dark: rgb(50, 49, 49);
   --brown: #2b1d15;
   --tan: #ab9474;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 * {
-  margin: 0;
-  padding: 0;
   color: whitesmoke;
 }
 
 body {
-  background: var(--dark);
+  background: black;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+a {
+  text-decoration: none;
 }

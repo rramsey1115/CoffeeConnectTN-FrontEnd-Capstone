@@ -7,13 +7,25 @@
 
 .shop-card {
     width: 330px;
-    padding: 10px;
     margin: 20px;
-    border: thin solid white;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+#shop-name {
+    margin: 0 auto;
+    padding: 5px;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#shop-name:hover {
+    color: var(--tan)
 }
 
 .shop-card-banner {
@@ -21,7 +33,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: thin solid white;
+    border: 1px solid var(--tan);
     border-radius: 8px;
     padding: 2px;
     text-align: center;
@@ -33,22 +45,36 @@
 }
 
 .shop-card-img {
-    width: 300px;
+    width: 320px;
+    filter: drop-shadow(20px white);
+}
+
+.shop-card-img:hover {
+    filter: brightness(.75);
+    transition: .2s;
 }
 
 .yelp-rating {
-width: 150px;
-margin-top: 5px;
-margin-bottom: 5px;
+width: fit-content;
+margin-top: 2px;
+margin-bottom: 2px;
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
+cursor: pointer;
+}
+
+.yelp-rating:hover {
+    filter: brightness(.75);
 }
 
 #ratings-amount {
     font-size: 16px;
     color: lightgray;
+    margin: 0;
+    padding: 2px;
 }
+
 #yelp-logo {
     height: 18px;
     padding-right: 4px;
@@ -57,4 +83,13 @@ justify-content: flex-start;
 #stars {
     height: 16px;
     padding-left: 4px;
+}
+
+.address {
+    padding: 0;
+    margin: 0;
+}
+
+.address-container {
+    padding: 10px;
 }

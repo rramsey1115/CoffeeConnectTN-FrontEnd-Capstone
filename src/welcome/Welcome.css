@@ -1,0 +1,22 @@
+.welcome {
+  width: 90%;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.welcome-header {
+  padding: 10px;
+}
+
+
+.welcome-video {
+  width: 50%;
+  min-width: 330px;
+  max-width: 800px;
+  border-radius: 20px;
+  margin: 10px auto;
+}
+
+.welcome-footer {
+  margin: 40px auto;
+}

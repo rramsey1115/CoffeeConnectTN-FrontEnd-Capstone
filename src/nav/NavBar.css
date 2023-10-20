@@ -1,14 +1,19 @@
 .navbar {
     display: flex;
     flex-wrap: nowrap;
-    background-color: var(--dark);
-    margin: 0;
-    width: 100%;
+    background-color: black;
+    margin: 5px auto;
+    padding-top: 10px;
+    width: 65%;
     padding: 0.5rem;
+    border: 1px solid var(--tan);
+    border-left: 8vw solid transparent;
+    border-right: 8vw solid transparent;
+    justify-content: space-evenly;
   }
 
   .navbar-item {
-    flex-basis: 20%;
+    width: fit-content;
     list-style-type: none;
     text-align: center;
     color: var(--offWhite);
@@ -20,10 +25,8 @@
     letter-spacing: 1px;
   }
 
-  .navbar-logout {
-    margin-left: auto;
-  }
 
   .navbar-link:hover {
-    color: var(--primary);
+    color: var(--tan);
+    transform: scale(3);
   }

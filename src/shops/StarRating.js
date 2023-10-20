@@ -49,15 +49,15 @@ export const StarRating = ({ shop }) => {
 
   return (
     <>
-      <div className="yelp-rating">
-        <a href={shop.url} rel="noreferrer" target="_blank">
+      <a href={shop.url} rel="noreferrer" target="_blank">
+        <div className="yelp-rating">
           <div>
             <img id="yelp-logo" src={yelpImg} alt="yelp logo" />
             <img id="stars" src={ratingImg} alt="star rating" />
           </div>
-        </a>
-        <p id="ratings-amount">Based on {shop.review_count} ratings</p>
-      </div>
+          <p id="ratings-amount">Based on {shop.review_count} ratings</p>
+        </div>
+      </a>
     </>
   );
 };
