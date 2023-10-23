@@ -44,13 +44,12 @@ export const ApplicationViews = () => {
           <Route
             path=":userId"
             element={<UserProfile currentUser={currentUser} />}
-          >
-            <Route
-              path=":userId:editProfile"
-              element={<EditProfileForm currentUser={currentUser} />}
-            />
-          </Route>
+          />
         </Route>
+        <Route
+          path="editProfile"
+          element={<EditProfileForm currentUser={currentUser} />}
+        />
       </Route>
     </Routes>
   );

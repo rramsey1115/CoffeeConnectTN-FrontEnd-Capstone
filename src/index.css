@@ -17,6 +17,27 @@ body {
   display: block;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  padding: 2px;
+  margin: 0;
+  font-weight: normal;
+}
+
+h4 {
+  padding: 2px;
+  margin: 0;
+}
+
+h3 {
+  padding: 2px;
+  margin: 0;
+}
+
 a {
   text-decoration: none;
 }

@@ -1,7 +1,7 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
-import "./Login.css"
-import { createUser, getUserByEmail } from "../services/userServices"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./Login.css";
+import { createUser, getUserByEmail } from "../services/userServices";
 
 export const Register = (props) => {
   const [customer, setCustomer] = useState({
@@ -11,9 +11,9 @@ export const Register = (props) => {
     picture: "",
     about: "",
     admin: false,
-  })
+  });
 
-  let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const registerNewUser = () => {
     createUser(customer).then((createdUser) => {
@@ -24,31 +24,31 @@ export const Register = (props) => {
             id: createdUser.id,
             staff: createdUser.admin,
           })
-        )
+        );
 
-        navigate("/")
+        navigate("/");
       }
-    })
-  }
+    });
+  };
 
   const handleRegister = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     getUserByEmail(customer.email).then((response) => {
       if (response.length > 0) {
         // Duplicate email. No good.
-        window.alert("Account with that email address already exists")
+        window.alert("Account with that email address already exists");
       } else {
         // Good email, create user.
-        registerNewUser()
+        registerNewUser();
       }
-    })
-  }
+    });
+  };
 
   const updateCustomer = (evt) => {
-    const copy = { ...customer }
-    copy[evt.target.id] = evt.target.value
-    setCustomer(copy)
-  }
+    const copy = { ...customer };
+    copy[evt.target.id] = evt.target.value;
+    setCustomer(copy);
+  };
 
   return (
     <main style={{ textAlign: "center" }}>
@@ -134,12 +134,31 @@ export const Register = (props) => {
         </fieldset> */}
         <fieldset>
           <div className="form-group">
-            <button className="login-btn btn-info" type="submit">
-              Register
-            </button>
+            {customer.name &&
+            customer.email &&
+            customer.password &&
+            customer.picture &&
+            customer.about ? (
+              <button
+                className="button login-btn btn-info"
+                id="register-button"
+                type="submit"
+              >
+                Register
+              </button>
+            ) : (
+              <button
+                className="button login-btn btn-info"
+                id="register-button"
+                type="submit"
+                disabled
+              >
+                Register
+              </button>
+            )}
           </div>
         </fieldset>
       </form>
     </main>
-  )
-}
+  );
+};

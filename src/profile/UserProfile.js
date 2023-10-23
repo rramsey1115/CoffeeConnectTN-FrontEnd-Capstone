@@ -23,6 +23,12 @@ export const UserProfile = ({ currentUser }) => {
           <h1 id="profile-title">{user?.name}</h1>
           {user?.id === currentUser.id ? <p id="email">{user?.email}</p> : ""}
           <p id="about">{user?.about}</p>
+          {/* <div className="preferences">
+            <h4 id="preferences-title">Preferences</h4>
+            <p>preference - Stretch Goal</p>
+            <p>preference - Stretch Goal</p>
+            <p>preference - Stretch Goal</p>
+          </div> */}
           {currentUser?.admin ? (
             <button className="button" id="delete-profile-button">
               Delete Profile
@@ -31,7 +37,7 @@ export const UserProfile = ({ currentUser }) => {
             <button
               className="button"
               id="edit-profile-button"
-              onClick={(e) => navigate("editProfile")}
+              onClick={(e) => navigate("/editProfile")}
             >
               Edit Profile
             </button>
