@@ -6,6 +6,7 @@ import { ShopsList } from "../shops/ShopsList";
 import { ShopDetails } from "../shops/ShopDetails";
 import { FavoritesList } from "../favorites/FavoritesList";
 import { UserProfile } from "../profile/UserProfile";
+import { EditProfileForm } from "../profile/EditProfileForm";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -22,7 +23,7 @@ export const ApplicationViews = () => {
         path="/"
         element={
           <>
-            <NavBar currentUser={currentUser}/>
+            <NavBar currentUser={currentUser} />
             <Outlet />
           </>
         }
@@ -43,7 +44,12 @@ export const ApplicationViews = () => {
           <Route
             path=":userId"
             element={<UserProfile currentUser={currentUser} />}
-          />
+          >
+            <Route
+              path=":userId:editProfile"
+              element={<EditProfileForm currentUser={currentUser} />}
+            />
+          </Route>
         </Route>
       </Route>
     </Routes>
