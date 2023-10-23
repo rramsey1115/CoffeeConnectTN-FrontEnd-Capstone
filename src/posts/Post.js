@@ -4,6 +4,7 @@ import { FaRegWindowClose } from "react-icons/fa";
 import { FiEdit } from "react-icons/fi";
 import { RiCheckboxLine } from "react-icons/ri";
 import { deletePostByPostId, editPost } from "../services/postServices";
+import { Link } from "react-router-dom";
 
 export const Post = ({ post, currentUser, getAndSetShopPosts }) => {
   const [userImg, setUserImg] = useState("");
@@ -34,7 +35,9 @@ export const Post = ({ post, currentUser, getAndSetShopPosts }) => {
   return (
     <div className="post-item">
       <div className="post-left">
-        <img id="user-picture" src={userImg} alt="user headshot" />
+          <Link to={`/profile/${post.userId}`}>
+            <img id="user-picture" src={userImg} alt="user headshot" />
+          </Link>
       </div>
       <div className="post-center">
         {edit ? (
@@ -57,7 +60,10 @@ export const Post = ({ post, currentUser, getAndSetShopPosts }) => {
         {currentUser.id === post?.userId ? (
           <div className="edit-icon">
             {edit ? (
-              <RiCheckboxLine id="save-icon" onClick={(e) => saveEditedPost()} />
+              <RiCheckboxLine
+                id="save-icon"
+                onClick={(e) => saveEditedPost()}
+              />
             ) : (
               <FiEdit
                 id="edit-icon"
