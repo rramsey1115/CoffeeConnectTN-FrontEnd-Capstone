@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getUserById } from "../services/userServices";
+import { UpdateProfile, getUserById } from "../services/userServices";
+import { useNavigate } from "react-router-dom";
 
 export const EditProfileForm = ({ currentUser }) => {
   const [user, setUser] = useState({});
@@ -11,32 +12,33 @@ export const EditProfileForm = ({ currentUser }) => {
     about: user?.about,
   });
 
+  const navigate = useNavigate();
   useEffect(() => {
     getUserById(currentUser?.id).then((data) => setUser(data[0]));
   }, [currentUser]);
 
-  const handleEditProfile = (e) => {
-    e.preventDefault().then(
-      console.log("Save Button Clicked. userChoices =", userChoices)
-    );
+  const handleEditProfile = async () => {
+    await UpdateProfile(user.id, userChoices);
+      navigate(`/profile/${currentUser.id}`);
   };
 
   useEffect(() => {
     updateChoices(user);
   }, [user]);
 
-  console.log("user =", user);
-  console.log("userChoices =", userChoices);
-
   return (
     <section className="edit-profile-form-container">
-      <form className="edit-profile-form" onSubmit={handleEditProfile}>
+      <form className="edit-profile-form">
         <h1 id="edit-profile-title">Edit Profile</h1>
         <fieldset>
-          <label for="name">Name</label>
+          <label>Name</label>
           <div className="form-group">
             <input
-              onChange={updateChoices}
+              onChange={(event) => {
+                const copy = { ...userChoices };
+                copy.name = event.target.value;
+                updateChoices(copy);
+              }}
               type="text"
               id="name"
               className="form-control"
@@ -47,10 +49,14 @@ export const EditProfileForm = ({ currentUser }) => {
           </div>
         </fieldset>
         <fieldset>
-          <label for="email">Email</label>
+          <label>Email</label>
           <div className="form-group">
             <input
-              onChange={updateChoices}
+              onChange={(event) => {
+                const copy = { ...userChoices };
+                copy.email = event.target.value;
+                updateChoices(copy);
+              }}
               type="email"
               id="email"
               className="form-control"
@@ -60,10 +66,14 @@ export const EditProfileForm = ({ currentUser }) => {
           </div>
         </fieldset>
         <fieldset>
-          <label for="password">Password</label>
+          <label>Password</label>
           <div className="form-group">
             <input
-              onChange={updateChoices}
+              onChange={(event) => {
+                const copy = { ...userChoices };
+                copy.password = event.target.value;
+                updateChoices(copy);
+              }}
               type="text"
               id="password"
               className="form-control"
@@ -73,10 +83,14 @@ export const EditProfileForm = ({ currentUser }) => {
           </div>
         </fieldset>
         <fieldset>
-          <label for="picture">Link to Profile Picture</label>
+          <label>Link to Profile Picture</label>
           <div className="form-group">
             <input
-              onChange={updateChoices}
+              onChange={(event) => {
+                const copy = { ...userChoices };
+                copy.picture = event.target.value;
+                updateChoices(copy);
+              }}
               type="text"
               id="picture"
               className="form-control"
@@ -86,10 +100,14 @@ export const EditProfileForm = ({ currentUser }) => {
           </div>
         </fieldset>
         <fieldset>
-          <label for="about">About</label>
+          <label>About</label>
           <div className="form-group">
             <textarea
-              onChange={updateChoices}
+              onChange={(event) => {
+                const copy = { ...userChoices };
+                copy.about = event.target.value;
+                updateChoices(copy);
+              }}
               rows={6}
               type="text"
               id="about"
@@ -118,15 +136,30 @@ export const EditProfileForm = ({ currentUser }) => {
         <fieldset>
           <div className="form-group">
             {userChoices.name &&
-              userChoices.email &&
-              userChoices.password &&
-              userChoices.picture &&
-              userChoices.about ? <button className="button" id="save-edit-button" type="submit">
-              Register
-            </button> : <button className="button" id="save-edit-button" type="submit" disabled>
-              Register
-            </button>}
-            
+            userChoices.email &&
+            userChoices.password &&
+            userChoices.picture &&
+            userChoices.about ? (
+              <button
+                className="button"
+                id="save-edit-button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleEditProfile();
+                }}
+              >
+                Register
+              </button>
+            ) : (
+              <button
+                className="button"
+                id="save-edit-button"
+                type="submit"
+                disabled
+              >
+                Register
+              </button>
+            )}
           </div>
         </fieldset>
       </form>

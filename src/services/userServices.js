@@ -33,3 +33,14 @@ export const getUserById = (id) => {
 export const getUserWithPostsById = (id) => {
   return fetch(`http://localhost:8088/users?id=${id}&_embed=posts`).then(res => res.json())
 }
+
+export const UpdateProfile = (userId, userChoices) => {
+  // console.log(JSON.stringify(userChoices))
+    return fetch(`http://localhost:8088/users/${userId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userChoices),
+    });
+  };

@@ -32,7 +32,7 @@ export const Welcome = ({ currentUser }) => {
         </video>
       </div>
       <div className="welcome-footer">
-        <button onClick={(e) => navigate("/discover")} className="discover-button">
+        <button onClick={(e) => navigate("/discover")} className="discover-button button">
           Discover Nashville
         </button>
       </div>

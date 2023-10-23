@@ -74,10 +74,10 @@ margin: 18px 0;
 }
 
 .about-textarea {
-    width: 100%;
+    width: 99%;
     height: 100px;
     margin: 0px;
-    padding: 0px;
+    padding: 4px;
     border-radius: 8px;
     color: black;
     font-family: inherit;
@@ -85,6 +85,7 @@ margin: 18px 0;
 }
 
 .form-control {
+    width: 99%;
     font-family: inherit;
     color: black;
     font-size: inherit;
@@ -103,4 +104,17 @@ margin: 18px 0;
 
 #edit-profile-title {
     text-align:center;
+}
+
+.edit-profile-form {
+    width: 60vw;
+    min-width: 330px;
+    margin: 30px auto;
+    padding: 1px;
+    box-shadow: none;
+}
+
+fieldset {
+    padding: 0 0 0 6px;
+    margin: 8px auto 0 auto;
 }

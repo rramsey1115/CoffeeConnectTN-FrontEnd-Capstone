@@ -28,6 +28,7 @@ export const PostList = ({ shopObj, currentUser }) => {
             shopObj={shopObj}
             currentUser={currentUser}
             getAndSetShopPosts={getAndSetShopPosts}
+            toggleCreate={toggleCreate}
           />
         ) : (
           <button className="button" id="create-post-button" onClick={(e) => toggleCreate(true)}>

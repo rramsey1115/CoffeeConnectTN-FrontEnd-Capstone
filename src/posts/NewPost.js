@@ -1,7 +1,12 @@
 import { useState } from "react";
 import { CreateNewPost } from "../services/postServices";
 
-export const NewPost = ({ shopObj, currentUser, getAndSetPosts }) => {
+export const NewPost = ({
+  shopObj,
+  currentUser,
+  getAndSetPosts,
+  toggleCreate,
+}) => {
   const [newPostObj, setNewPostObj] = useState({
     userId: currentUser?.id,
     coffeeShopId: shopObj?.id,
@@ -20,16 +25,27 @@ export const NewPost = ({ shopObj, currentUser, getAndSetPosts }) => {
         value={newPostObj?.text}
         placeholder={`Share Your Experience at ${shopObj?.name}`}
         className="new-post-body"
-        required
         onChange={(event) => {
           const copy = { ...newPostObj };
           copy.text = event.target.value;
           setNewPostObj(copy);
         }}
       />
-      <button className="button" onClick={(e) => handleSubmit()}>
-        Submit
-      </button>
+      {newPostObj.text ? (
+        <button className="button" onClick={(e) => handleSubmit()}>
+          Submit
+        </button>
+      ) : (
+        <button
+          className="button"
+          id="close-textarea-button"
+          onClick={(e) => {
+            toggleCreate(false);
+          }}
+        >
+          Close
+        </button>
+      )}
     </form>
   );
 };
