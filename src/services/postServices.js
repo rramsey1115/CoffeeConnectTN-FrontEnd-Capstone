@@ -11,3 +11,20 @@ export const editPost = (post, userInput) => {
     body: JSON.stringify(userInput),
   });
 };
+
+export const getPostById = (postId) => {
+  return fetch(`http://localhost:8088/posts/${postId}`).then((res) =>
+    res.json()
+  );
+};
+
+export const CreateNewPost = (postObj) => {
+  return fetch("http://localhost:8088/posts", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(postObj),
+  })
+  .then((res) => res.json());
+};
