@@ -1,13 +1,21 @@
 import { useEffect, useState } from "react";
 import { getShopPostsById } from "../services/shopServices";
 import { Post } from "./Post";
-import "./Posts.css"
+import "./Posts.css";
 
 export const PostList = ({ shopObj, currentUser }) => {
   const [shopPosts, setShopPosts] = useState([]);
 
+  const getAndSetShopPosts = () => {
+    getShopPostsById(shopObj.id).then((data) => {
+      setShopPosts(data);
+    });
+  };
+
   useEffect(() => {
-    getShopPostsById(shopObj.id).then((res) => setShopPosts(res));
+    getShopPostsById(shopObj.id).then((data) => {
+      setShopPosts(data);
+    });
   }, [shopObj]);
 
   return (
@@ -16,8 +24,15 @@ export const PostList = ({ shopObj, currentUser }) => {
         <h1>Experiences at {shopObj?.name}</h1>
       </div>
       <div className="post-list">
-        {shopPosts?.map((post) => {
-          return <Post key={post?.id} post={post} currentUser={currentUser}/>;
+        {shopPosts.map((post) => {
+          return (
+            <Post
+              key={post?.id}
+              post={post}
+              currentUser={currentUser}
+              getAndSetShopPosts={getAndSetShopPosts}
+            />
+          );
         })}
       </div>
     </>

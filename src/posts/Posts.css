@@ -95,3 +95,24 @@ h1 {
     filter: brightness(.5);
     transition: .2s;
 }
+
+#save-icon {
+    height: 28px;
+    width: 28px;
+    padding: 10px;
+    margin: 0px auto;
+    cursor: pointer;
+}
+
+#save-icon:hover {
+    fill: green;
+    transition: .2s;
+}
+
+.new-post-input {
+    color: black;
+    width: 100%;
+    min-width: 200px;
+    border: 1px solid var(--tan);
+    border-radius: 5px;
+}
