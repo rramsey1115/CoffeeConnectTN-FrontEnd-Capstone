@@ -21,7 +21,7 @@ export const NewPost = ({
     <form className="new-post-form">
       <textarea
         type="text"
-        rows={6}
+        // rows={6}
         value={newPostObj?.text}
         placeholder={`Share Your Experience at ${shopObj?.name}`}
         className="new-post-body"

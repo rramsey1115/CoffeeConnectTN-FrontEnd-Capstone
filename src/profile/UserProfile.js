@@ -37,15 +37,24 @@ export const UserProfile = ({ currentUser }) => {
             <p>preference - Stretch Goal</p>
           </div> */}
           {currentUser?.admin ? (
-            <button
-              className="button"
-              id="delete-profile-button"
-              onClick={(e) => {
-                handleDelete(user.id);
-              }}
-            >
-              Delete Profile
-            </button>
+            <>
+              <button
+                className="button"
+                id="delete-profile-button"
+                onClick={(e) => {
+                  handleDelete(user.id);
+                }}
+              >
+                Delete Profile
+              </button><br/>
+              <button
+                className="button"
+                id="edit-profile-button"
+                onClick={(e) => navigate("/editProfile")}
+              >
+                Edit Profile
+              </button>
+            </>
           ) : user?.id === currentUser.id ? (
             <button
               className="button"

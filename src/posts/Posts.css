@@ -20,7 +20,7 @@ h1 {
 
 .post-item {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 20px;
     min-height: 100px;
     display: flex;
     justify-content: space-between;
@@ -151,6 +151,8 @@ h1 {
 
 .new-post-body {
     width: 90%;
+    height: 3em;
+    resize: vertical;
     padding: 2px;
     margin: 16px auto;
     border: 1px solid var(--tan);

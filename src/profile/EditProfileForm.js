@@ -148,7 +148,7 @@ export const EditProfileForm = ({ currentUser }) => {
                   handleEditProfile();
                 }}
               >
-                Register
+                Save
               </button>
             ) : (
               <button
@@ -157,7 +157,7 @@ export const EditProfileForm = ({ currentUser }) => {
                 type="submit"
                 disabled
               >
-                Register
+                Save
               </button>
             )}
           </div>
