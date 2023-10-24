@@ -9,7 +9,7 @@ export const NewPost = ({
 }) => {
   const [newPostObj, setNewPostObj] = useState({
     userId: currentUser?.id,
-    coffeeShopId: shopObj?.id,
+    businessId: shopObj?.id,
     text: "",
   });
 

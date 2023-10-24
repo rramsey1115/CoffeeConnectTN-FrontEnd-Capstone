@@ -3,5 +3,5 @@ export const getShopById = (id) => {
 }
 
 export const getShopPostsById = (id) => {
-    return fetch(`http://localhost:8088/posts?coffeeShopId=${id}`).then(res => res.json());
+    return fetch(`http://localhost:8088/posts?businessId=${id}`).then(res => res.json());
 }

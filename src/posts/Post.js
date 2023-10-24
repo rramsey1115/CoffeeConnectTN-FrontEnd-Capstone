@@ -11,7 +11,7 @@ export const Post = ({ post, currentUser, getAndSetShopPosts }) => {
   const [edit, toggleEdit] = useState(false);
   const [userInput, updatePost] = useState({
     id: post?.id,
-    coffeeShopId: post?.coffeeShopId,
+    businessId: post?.businessId,
     userId: currentUser?.id,
     text: post?.text,
   });
