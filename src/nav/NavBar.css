@@ -1,0 +1,30 @@
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: black;
+    margin: 5px auto;
+    padding-top: 10px;
+    width: 70%;
+    padding: 0.5rem;
+    border: 1px solid var(--tan);
+    border-left: 10vw solid transparent;
+    border-right: 10vw solid transparent;
+    justify-content: space-evenly;
+  }
+
+  .navbar-item {
+    width: fit-content;
+    list-style-type: none;
+    text-align: center;
+    color: var(--offWhite);
+  }
+
+  .navbar-link {
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+
+  .navbar-link:hover {
+    color: var(--tan);
+    transform: scale(3);
+  }
