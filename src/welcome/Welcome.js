@@ -17,13 +17,13 @@ export const Welcome = ({ currentUser }) => {
     <div className="welcome">
       <div className="welcome-header">
         {currentUser.admin ? (
-          <h1>
+          <h1 className="welcome-title">
             Coffee Connect
             <br />
             Administrator Mode
           </h1>
         ) : (
-          <h1 id="welcome-title">Welcome to Coffee Connect</h1>
+          <h1 className="welcome-title">Welcome to Coffee Connect</h1>
         )}
       </div>
       <div className="welcome-body">
