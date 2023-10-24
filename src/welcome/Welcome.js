@@ -23,7 +23,7 @@ export const Welcome = ({ currentUser }) => {
             Administrator Mode
           </h1>
         ) : (
-          <h1>Welcome to Coffee Connect</h1>
+          <h1 id="welcome-title">Welcome to Coffee Connect</h1>
         )}
       </div>
       <div className="welcome-body">

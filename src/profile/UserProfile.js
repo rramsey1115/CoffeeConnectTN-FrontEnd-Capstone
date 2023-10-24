@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
-import { getUserWithPostsById } from "../services/userServices";
+import {
+  deleteUserByUserId,
+  getUserWithPostsById,
+} from "../services/userServices";
 import "./UserProfile.css";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -12,6 +15,10 @@ export const UserProfile = ({ currentUser }) => {
   useEffect(() => {
     getUserWithPostsById(userId * 1).then((data) => setUser(data[0]));
   }, [userId, currentUser]);
+
+  const handleDelete = (userId) => {
+    deleteUserByUserId(userId).then(navigate("/discover"));
+  };
 
   return (
     <>
@@ -30,7 +37,13 @@ export const UserProfile = ({ currentUser }) => {
             <p>preference - Stretch Goal</p>
           </div> */}
           {currentUser?.admin ? (
-            <button className="button" id="delete-profile-button">
+            <button
+              className="button"
+              id="delete-profile-button"
+              onClick={(e) => {
+                handleDelete(user.id);
+              }}
+            >
               Delete Profile
             </button>
           ) : user?.id === currentUser.id ? (

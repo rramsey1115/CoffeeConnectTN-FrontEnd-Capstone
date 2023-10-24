@@ -35,7 +35,6 @@ export const getUserWithPostsById = (id) => {
 }
 
 export const UpdateProfile = (userId, userChoices) => {
-  // console.log(JSON.stringify(userChoices))
     return fetch(`http://localhost:8088/users/${userId}`, {
       method: "PUT",
       headers: {
@@ -43,4 +42,8 @@ export const UpdateProfile = (userId, userChoices) => {
       },
       body: JSON.stringify(userChoices),
     });
+  };
+
+  export const deleteUserByUserId = (userId) => {
+    return fetch(`http://localhost:8088/users/${userId}`, { method: "DELETE" });
   };

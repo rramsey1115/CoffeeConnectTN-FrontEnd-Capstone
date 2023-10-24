@@ -30,3 +30,7 @@
     padding: 10px;
     cursor: pointer;
 }
+
+#welcome-title {
+  font-weight: 300;
+}
