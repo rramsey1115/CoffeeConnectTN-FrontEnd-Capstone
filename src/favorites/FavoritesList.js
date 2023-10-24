@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { getFavoritesByUserId } from "../services/favServices";
 import { getUserById } from "../services/userServices";
-import { ShopCard } from "../shops/ShopCard";
+import { FavoriteCard } from "./FavoriteCard";
 
 export const FavoritesList = ({ currentUser }) => {
   const [favorites, setFavorites] = useState([]);
@@ -17,9 +17,8 @@ export const FavoritesList = ({ currentUser }) => {
   }, [currentUser]);
 
   useEffect(() => {
-    getFavoritesByUserId(currentUser.id).then((data) => console.log("favorites",data));
+    getFavoritesByUserId(currentUser.id).then((data) => setFavorites(data));
   }, [currentUser]);
-
 
   return (
     <section className="favorites-container">
@@ -27,7 +26,9 @@ export const FavoritesList = ({ currentUser }) => {
         <h1>{user?.name}'s Favorite Coffee Shops</h1>
       </div>
       <div className="favorites-list">
-        {favorites.map((shop) => { return <ShopCard key={shop.id} shop={shop}/>})}
+        {favorites.map((favObj) => {
+          return <FavoriteCard key={favObj.id} favObj={favObj} />;
+        })}
       </div>
     </section>
   );
