@@ -5,6 +5,7 @@ import {
 } from "../services/userServices";
 import "./UserProfile.css";
 import { useNavigate, useParams } from "react-router-dom";
+import { FavoritesList } from "../favorites/FavoritesList";
 
 export const UserProfile = ({ currentUser }) => {
   const userId = useParams().userId;
@@ -73,7 +74,7 @@ export const UserProfile = ({ currentUser }) => {
           <h1 id="favorites-title">Favorite Coffee Shops</h1>
         </div>
         <div className="profile-favorites-list">
-          <p>Stretch Goal - list favorited shop cards here</p>
+          <FavoritesList currentUser={currentUser} />
         </div>
       </section>
     </>

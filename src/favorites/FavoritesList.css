@@ -5,6 +5,11 @@
     justify-content: space-evenly;
 }
 
+.favorites-header {
+    text-align: center;
+    padding-top: 20px;
+}
+
 .favorite-card {
     width: 330px;
     margin: 20px;
