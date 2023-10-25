@@ -1,14 +1,40 @@
 import { Link } from "react-router-dom";
 import "./ShopCard.css";
 import { StarRating } from "./StarRating";
+import { useEffect, useState } from "react";
+import { getFavoritesByUserId } from "../services/favServices";
+import { BsFillBookmarkFill } from "react-icons/bs";
 
-export const ShopCard = ({ shop }) => {
+export const ShopCard = ({ shop, currentUser }) => {
+  const [favorites, setFavorites] = useState([]);
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    getFavoritesByUserId(currentUser?.id).then((data) => setFavorites(data));
+  }, [currentUser]);
+
+  useEffect(() => {
+    favorites.map((fav) =>
+      shop.id === fav.businessId ? setIsFavorite(true) : null
+    );
+  }, [favorites, shop]);
+
   return (
     <div className="shop-card">
       <div className="shop-card-banner">
-        <Link to={`/discover/${shop.id}`}>
-          <h2 id="shop-name">{shop.name}</h2>
-        </Link>
+        {isFavorite ? (
+          <div className="name-favorite">
+            <Link to={`/discover/${shop?.businessId}`} className="name-link">
+              <h2 id="fav-name">{shop?.name}</h2>
+            </Link>
+            <BsFillBookmarkFill id="icon" />
+          </div>
+        ) : (
+          <Link to={`/discover/${shop.id}`}>
+            <h2 id="shop-name">{shop.name}</h2>
+          </Link>
+        )}
+
         <StarRating shop={shop} />
       </div>
       <div className="shop-card-body">

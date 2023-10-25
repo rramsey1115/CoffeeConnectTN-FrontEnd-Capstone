@@ -5,7 +5,11 @@ import { PostList } from "../posts/PostList";
 import { StarRating } from "./StarRating";
 import { BsFillBookmarkFill, BsBookmarkPlus } from "react-icons/bs";
 import "./ShopDetails.css";
-import { addToFavorites, deleteFromFavorites, getFavoritesByUserId } from "../services/favServices";
+import {
+  addToFavorites,
+  deleteFromFavorites,
+  getFavoritesByUserId,
+} from "../services/favServices";
 
 export const ShopDetails = ({ currentUser }) => {
   const id = useParams().shopId;
@@ -14,7 +18,7 @@ export const ShopDetails = ({ currentUser }) => {
   const [favoriteId, setFavoriteId] = useState(null);
   const [createdFavoriteObj, setCreatedFavoriteObj] = useState({
     userId: currentUser?.id,
-    businessId: id
+    businessId: id,
   });
 
   const getAndSetFavoritedShops = () => {
@@ -25,7 +29,7 @@ export const ShopDetails = ({ currentUser }) => {
 
   const getAndSetCurrentShop = () => {
     getShopById(id).then((response) => setCurrentShop(response[0]));
-  }
+  };
 
   const removeFavorite = (favoriteId) => {
     deleteFromFavorites(favoriteId).then(setFavoriteId(null));
@@ -35,12 +39,11 @@ export const ShopDetails = ({ currentUser }) => {
     addToFavorites(createdFavoriteObj).then(getAndSetFavoritedShops);
   };
 
-
-  useEffect(()=> {
+  useEffect(() => {
     setCreatedFavoriteObj({
       userId: currentUser?.id,
-      businessId: id
-    })
+      businessId: id,
+    });
   }, [currentUser, id]);
 
   useEffect(() => {
@@ -68,7 +71,24 @@ export const ShopDetails = ({ currentUser }) => {
           />
         </div>
         <div className="details-about-right">
-          <h1 id="shop-details-name">{currentShop?.name}</h1>
+          <div className="details-name-favorite">
+            <h1 id="shop-details-name">{currentShop?.name}</h1>
+            {favoriteId ? (
+              <>
+                <BsFillBookmarkFill
+                  id="favorite-icon-true"
+                  onClick={(e) => removeFavorite(favoriteId)}
+                />
+              </>
+            ) : (
+              <>
+                <BsBookmarkPlus
+                  id="favorite-icon-false"
+                  onClick={(e) => addFavorite(createdFavoriteObj)}
+                />
+              </>
+            )}
+          </div>
           <StarRating shop={currentShop} />
           <div className="shop-address">
             <p className="address-item">
@@ -86,20 +106,7 @@ export const ShopDetails = ({ currentUser }) => {
             );
           })}
           <div className="shop-phone"></div>
-          <div className="shop-transations"></div>
-        </div>
-        <div className="details-about-favorite">
-          {favoriteId ? (
-            <BsFillBookmarkFill
-              id="favorite-icon-true"
-              onClick={(e) => removeFavorite(favoriteId)}
-            />
-          ) : (
-            <BsBookmarkPlus
-              id="favorite-icon-false"
-              onClick={(e) => addFavorite(createdFavoriteObj)}
-            />
-          )}
+          <div className="shop-transactions"></div>
         </div>
       </div>
       <div className="details-posts">

@@ -2,24 +2,28 @@ import { useEffect, useState } from "react";
 import { getCoffeeShops } from "../services/yelpServices";
 import { ShopCard } from "./ShopCard";
 
-export const ShopsList = () => {
-  const [shops, setShops] = useState([]);
+export const ShopsList = ({ currentUser }) => {
+  const [allShops, setAllShops] = useState([]);
+
+  const getAndSetCoffeeShops = () => {
+    getCoffeeShops().then((coffeeArr) => {
+      setAllShops(coffeeArr);
+    });
+  };
 
   useEffect(() => {
-    getCoffeeShops().then(coffeeArr => {
-      setShops(coffeeArr);
-    });
+    getAndSetCoffeeShops();
   }, []);
 
   return (
     <section className="shop-list">
-      {shops.map((shop) => {
+      {allShops.map((shop) => {
         return (
-        <div key={shop.id} className="shop-item">
-            <ShopCard shop={shop} />
-        </div>
+          <div key={shop?.id} className="shop-item">
+            <ShopCard shop={shop} currentUser={currentUser} />
+          </div>
         );
-         })}
+      })}
     </section>
   );
 };

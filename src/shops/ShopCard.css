@@ -46,6 +46,8 @@ a {
 
 .shop-card-img {
     width: 320px;
+    height: 300px;
+    object-fit: cover;
     filter: drop-shadow(20px white);
 }
 
@@ -93,4 +95,38 @@ cursor: pointer;
 
 .address-container {
     padding: 10px;
+}
+
+#fav-name {
+    margin: 0;
+    padding: 2px;
+    text-decoration: none;
+}
+
+#fav-name:hover {
+    color: var(--tan)
+}
+
+a {
+    text-decoration: none;
+}
+
+.name-link {
+    width: 90%;
+}
+
+.name-favorite {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+    padding-left: 35px;
+}
+
+#icon {
+    width: 30px;
+    height: 30px;
+    fill: goldenrod;
+    padding-top: 4px;
+    float: right;
 }

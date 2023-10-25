@@ -4,16 +4,17 @@
   flex-wrap: wrap;
   width: 80vw;
   margin: 40px auto;
-  min-width:380px;
+  min-width:360px;
 }
 
 .details-about-left {
   width: 40%;
-  min-width: 120px;
+  min-width: 300px;
 }
 
-.detail-about-right {
-    width: 70%;
+.details-about-right {
+    width: 40%;
+    min-width: 300px;
 }
 
 #shop-image {
@@ -59,6 +60,11 @@
     align-items: center;
 }
 
+.details-name-favorite {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
 .details-about-favorite {
     width: 10%;
 }

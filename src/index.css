@@ -4,7 +4,6 @@
   --tan: #ab9474;
   /* font-family: "Quicksand", sans-serif; */
   font-family: "Poppins", sans-serif;
-  transition: all;
 }
 
 * {
@@ -45,11 +44,15 @@ a {
 
 ::-webkit-scrollbar {
 background-color: transparent;
-width: 4px;
+width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  width: 8px;
+  background-color: rgb(30, 30, 30);
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--tan);
-  width: 4px;
   border-radius: 4px;
 }
