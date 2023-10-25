@@ -1,0 +1,82 @@
+.shop-list-header {
+  width: 70%;
+  min-width: 330px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+#location-name {
+  font-size: 32px;
+  margin: 0;
+  padding: 0 20px 0 0;
+}
+
+.dropdown {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  z-index: 1;
+  margin: 0px auto;
+}
+
+.dropdown-content.inactive {
+  visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+  position: absolute;
+  min-width: 100px;
+  background-color: black;
+  z-index: 1;
+  transform: translateY(-20px);
+  transition: 0.5s ease;
+}
+
+.dropdown-content.active {
+  visibility: visible;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.5s ease;
+  border-top: 1px solid var(--tan);
+  border-bottom: 1px solid var(--tan);
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  z-index: 1;
+}
+
+.dropdown-item {
+  padding: 8px 16px;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  color: var(--tan);
+}
+
+#filter-icon-container {
+  width: 30px;
+  min-width: 30px;
+  min-height: 30px;
+  height: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+#filter-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#filter-icon:hover {
+  filter: brightness(0.5);
+  transition: 0.2s;
+}

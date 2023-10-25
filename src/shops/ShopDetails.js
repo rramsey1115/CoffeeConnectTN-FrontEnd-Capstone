@@ -48,7 +48,7 @@ export const ShopDetails = ({ currentUser }) => {
 
   useEffect(() => {
     getAndSetFavoritedShops();
-  }, [currentUser, currentShop]);
+  }, [currentUser]);
 
   useEffect(() => {
     favoritedShops.map((fav) =>
