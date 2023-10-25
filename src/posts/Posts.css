@@ -109,12 +109,39 @@ h1 {
     transition: .2s;
 }
 
-.new-post-input {
+.edit-post-input {
     color: black;
     width: 100%;
+    height: 5em;
     min-width: 200px;
     border: 1px solid var(--tan);
     border-radius: 5px;
+    font-family: inherit;
+    font-size: inherit;
+    color: black;
+}
+
+.edit-post-input:focus {
+    height: fit-content;
+}
+
+.new-post-input {
+    transition: all .5s;
+    color: black;
+    width: 100%;
+    height: 1.5em;
+    min-width: 200px;
+    border: 1px solid var(--tan);
+    font-family: inherit;
+    font-size: inherit;
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.new-post-input:focus {
+    height: 4em;
 }
 
 .button {

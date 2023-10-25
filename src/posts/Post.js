@@ -35,9 +35,9 @@ export const Post = ({ post, currentUser, getAndSetShopPosts }) => {
   return (
     <div className="post-item">
       <div className="post-left">
-          <Link to={`/profile/${post.userId}`}>
-            <img id="user-picture" src={userImg} alt="user headshot" />
-          </Link>
+        <Link to={`/profile/${post.userId}`}>
+          <img id="user-picture" src={userImg} alt="user headshot" />
+        </Link>
       </div>
       <div className="post-center">
         {edit ? (
@@ -45,7 +45,7 @@ export const Post = ({ post, currentUser, getAndSetShopPosts }) => {
             type="text"
             rows={6}
             value={userInput?.text}
-            className="new-post-input"
+            className="edit-post-input"
             onChange={(event) => {
               const copy = { ...userInput };
               copy.text = event.target.value;

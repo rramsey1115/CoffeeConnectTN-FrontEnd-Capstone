@@ -13,6 +13,7 @@ export const EditProfileForm = ({ currentUser }) => {
   });
 
   const navigate = useNavigate();
+  
   useEffect(() => {
     getUserById(currentUser?.id).then((data) => setUser(data[0]));
   }, [currentUser]);

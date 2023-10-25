@@ -1,6 +1,7 @@
 .details-about {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 80vw;
   margin: 40px auto;
   min-width:380px;
@@ -56,4 +57,33 @@
     margin: 0px auto;
     justify-content: center;
     align-items: center;
+}
+
+.details-about-favorite {
+    width: 10%;
+}
+
+#favorite-icon-false {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    margin: 0;
+    float: right;
+    cursor: pointer;
+}
+
+#favorite-icon-false:hover {
+    fill: var(--tan);
+    transition: .2s;
+}
+
+#favorite-icon-true {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    margin: 0;
+    float: right;
+    cursor: pointer;
+    fill: goldenrod;
+    color: goldenrod;
 }

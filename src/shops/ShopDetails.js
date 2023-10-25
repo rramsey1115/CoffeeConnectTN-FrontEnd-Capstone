@@ -3,14 +3,58 @@ import { useParams } from "react-router-dom";
 import { getShopById } from "../services/shopServices";
 import { PostList } from "../posts/PostList";
 import { StarRating } from "./StarRating";
+import { BsFillBookmarkFill, BsBookmarkPlus } from "react-icons/bs";
 import "./ShopDetails.css";
+import { addToFavorites, deleteFromFavorites, getFavoritesByUserId } from "../services/favServices";
 
 export const ShopDetails = ({ currentUser }) => {
   const id = useParams().shopId;
   const [currentShop, setCurrentShop] = useState({});
+  const [favoritedShops, setFavoritedShops] = useState([]);
+  const [favoriteId, setFavoriteId] = useState(null);
+  const [createdFavoriteObj, setCreatedFavoriteObj] = useState({
+    userId: currentUser?.id,
+    businessId: id
+  });
+
+  const getAndSetFavoritedShops = () => {
+    getFavoritesByUserId(currentUser.id).then((data) =>
+      setFavoritedShops(data)
+    );
+  };
+
+  const getAndSetCurrentShop = () => {
+    getShopById(id).then((response) => setCurrentShop(response[0]));
+  }
+
+  const removeFavorite = (favoriteId) => {
+    deleteFromFavorites(favoriteId).then(setFavoriteId(null));
+  };
+
+  const addFavorite = (createdFavoriteObj) => {
+    addToFavorites(createdFavoriteObj).then(getAndSetFavoritedShops);
+  };
+
+
+  useEffect(()=> {
+    setCreatedFavoriteObj({
+      userId: currentUser?.id,
+      businessId: id
+    })
+  }, [currentUser, id]);
 
   useEffect(() => {
-    getShopById(id).then((response) => setCurrentShop(response[0]));
+    getAndSetFavoritedShops();
+  }, [currentUser, currentShop]);
+
+  useEffect(() => {
+    favoritedShops.map((fav) =>
+      fav.businessId === currentShop.id ? setFavoriteId(fav.id) : null
+    );
+  }, [favoritedShops, currentShop]);
+
+  useEffect(() => {
+    getAndSetCurrentShop();
   }, [id]);
 
   return (
@@ -43,6 +87,19 @@ export const ShopDetails = ({ currentUser }) => {
           })}
           <div className="shop-phone"></div>
           <div className="shop-transations"></div>
+        </div>
+        <div className="details-about-favorite">
+          {favoriteId ? (
+            <BsFillBookmarkFill
+              id="favorite-icon-true"
+              onClick={(e) => removeFavorite(favoriteId)}
+            />
+          ) : (
+            <BsBookmarkPlus
+              id="favorite-icon-false"
+              onClick={(e) => addFavorite(createdFavoriteObj)}
+            />
+          )}
         </div>
       </div>
       <div className="details-posts">

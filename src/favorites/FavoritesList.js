@@ -8,10 +8,12 @@ import { useParams } from "react-router-dom";
 export const FavoritesList = ({ currentUser }) => {
   const [favorites, setFavorites] = useState([]);
   const [user, setUser] = useState({});
-  const {userId} = useParams()
+  const { userId } = useParams();
 
   const getAndSetUser = () => {
-    userId ? getUserById(userId).then((data) => setUser(data[0])) : getUserById(currentUser?.id).then(data1 => setUser(data1[0]));
+    userId
+      ? getUserById(userId).then((data) => setUser(data[0]))
+      : getUserById(currentUser?.id).then((data1) => setUser(data1[0]));
   };
 
   useEffect(() => {
@@ -20,14 +22,12 @@ export const FavoritesList = ({ currentUser }) => {
 
   const getAndSetFavorites = () => {
     getFavoritesByUserId(user?.id).then((data) => setFavorites(data));
-  }
+  };
 
   useEffect(() => {
     getAndSetFavorites();
   }, [user]);
 
-  console.log("user", user);
-  console.log("userId", userId)
   return favorites.length > 0 ? (
     <section className="favorites-container">
       <div className="favorites-header">
