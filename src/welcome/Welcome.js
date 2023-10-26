@@ -32,8 +32,17 @@ export const Welcome = ({ currentUser }) => {
         </video>
       </div>
       <div className="welcome-footer">
-        <button onClick={(e) => navigate("/discover")} className="discover-button button">
+        <button onClick={(e) => navigate("/discover")} id="discover-button" className="button">
           Discover Nashville
+        </button>
+        <button onClick={(e) => navigate("/discover")} id="discover-button" className="button">
+          Discover Knoxville
+        </button>
+        <button onClick={(e) => navigate("/discover")} id="discover-button" className="button">
+          Discover Chattanooga
+        </button>
+        <button onClick={(e) => navigate("/discover")} id="discover-button" className="button">
+          Discover Memphis
         </button>
       </div>
     </div>

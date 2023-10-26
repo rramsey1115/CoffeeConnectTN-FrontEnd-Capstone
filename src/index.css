@@ -56,13 +56,18 @@ a {
   text-decoration: none;
 }
 
+button:hover {
+  color: var(--tan);
+  transition: .3s;
+}
+
 ::-webkit-scrollbar {
 background-color: transparent;
-width: 8px;
+width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  width: 8px;
+  width: 6px;
   background-color: rgb(30, 30, 30);
 }
 
