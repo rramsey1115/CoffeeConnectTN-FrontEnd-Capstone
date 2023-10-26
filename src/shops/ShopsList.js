@@ -1,12 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useInsertionEffect, useState } from "react";
 import { getCoffeeShops } from "../services/yelpServices";
 import { ShopCard } from "./ShopCard";
-import { TbFilterStar } from "react-icons/tb";
+// import { TbFilterStar } from "react-icons/tb";
+import { TfiStar } from "react-icons/tfi";
+import { VscFilter } from "react-icons/vsc";
 import "./ShopFilter.css";
 
 export const ShopsList = ({ currentUser }) => {
-  const [shops, setAllShops] = useState([])
+  const [shops, setAllShops] = useState([]);
   const [filterCondition, setFilterCondition] = useState(false);
+  const [filteredShops, setFilteredShops] = useState([]);
 
   const getAndSetCoffeeShops = () => {
     getCoffeeShops().then((coffeeArr) => {
@@ -19,23 +22,30 @@ export const ShopsList = ({ currentUser }) => {
   };
 
   const filterShops = (num) => {
-    const newArray = shops.filter((shop) => shop.rating >= num && shop.rating < num + 1);
-    setAllShops(newArray);
-  }
+    const newArray = shops.filter(
+      (shop) => shop.rating >= num && shop.rating < num + 1
+    );
+    setFilteredShops(newArray);
+  };
 
   useEffect(() => {
     getAndSetCoffeeShops();
   }, []);
+
+  useEffect(() => {
+    setFilteredShops(shops);
+  }, [shops]);
 
   return (
     <>
       <section className="shop-list-header">
         <div className="title">
           <h1 id="location-name">Nashville</h1>
+          <div id="filter-icon-container" onClick={handleFilterClick}>
+            <VscFilter id="filter-icon" />
+          </div>
         </div>
-        <div id="filter-icon-container">
-          <TbFilterStar id="filter-icon" onClick={handleFilterClick} />
-        </div>
+
         <div className="dropdown">
           <div
             id="filter-dropdown"
@@ -45,7 +55,6 @@ export const ShopsList = ({ currentUser }) => {
           >
             <p
               className="dropdown-item show-all"
-              value=""
               onClick={(e) => {
                 getAndSetCoffeeShops();
               }}
@@ -54,31 +63,33 @@ export const ShopsList = ({ currentUser }) => {
             </p>
             <p
               className="dropdown-item"
-              onClick={(e) => filterShops(e.target.innerText * 1)}
+              onClick={(e) => {
+                filterShops(e.target.innerText * 1);
+              }}
             >
               1
             </p>
             <p
               className="dropdown-item"
-              onClick={(e) => filterShops(e.target.innerText*1)}
+              onClick={(e) => filterShops(e.target.innerText * 1)}
             >
               2
             </p>
             <p
               className="dropdown-item"
-              onClick={(e) => filterShops(e.target.innerText*1)}
+              onClick={(e) => filterShops(e.target.innerText * 1)}
             >
               3
             </p>
             <p
               className="dropdown-item"
-              onClick={(e) => filterShops(e.target.innerText*1)}
+              onClick={(e) => filterShops(e.target.innerText * 1)}
             >
               4
             </p>
             <p
               className="dropdown-item"
-              onClick={(e) => filterShops(e.target.innerText*1)}
+              onClick={(e) => filterShops(e.target.innerText * 1)}
             >
               5
             </p>
@@ -87,13 +98,17 @@ export const ShopsList = ({ currentUser }) => {
       </section>
 
       <section className="shop-list">
-        {shops.map((shop) => {
-          return (
-            <div key={shop?.id} className="shop-item">
-              <ShopCard shop={shop} currentUser={currentUser} />
-            </div>
-          );
-        })}
+        {filteredShops.length === 0 ? (
+          <h1>No Shops Meet Search Criteria</h1>
+        ) : (
+          filteredShops.map((shop) => {
+            return (
+              <div key={shop?.id} className="shop-item">
+                <ShopCard shop={shop} currentUser={currentUser} />
+              </div>
+            );
+          })
+        )}
       </section>
     </>
   );

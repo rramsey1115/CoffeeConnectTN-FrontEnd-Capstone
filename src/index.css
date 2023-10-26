@@ -20,6 +20,7 @@ body {
 p {
   margin: 0;
   padding: 0;
+  font-weight: thin;
 }
 
 h5 {
@@ -31,11 +32,24 @@ h5 {
 h4 {
   padding: 2px;
   margin: 0;
+  font-weight: normal;
 }
 
 h3 {
   padding: 2px;
   margin: 0;
+
+  font-weight: normal;
+}
+
+h2 {
+  padding: 2px;
+  margin: 0;
+  font-weight: normal;
+}
+
+h1 {
+  font-weight: normal;
 }
 
 a {
