@@ -31,7 +31,7 @@ export const FavoritesList = ({ currentUser }) => {
   return favorites.length > 0 ? (
     <section className="favorites-container">
       <div className="favorites-header">
-        <h1>Your Favorite Coffee Shops</h1>
+        <h1>Your Favorites</h1>
       </div>
       <div className="favorites-list">
         {favorites.map((favObj) => {

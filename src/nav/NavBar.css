@@ -3,9 +3,8 @@
     flex-wrap: nowrap;
     background-color: black;
     margin: 5px auto;
-    padding-top: 10px;
     width: 70%;
-    padding: 0.5rem;
+    padding: 0.3rem;
     border: 1px solid var(--tan);
     border-left: 10vw solid transparent;
     border-right: 10vw solid transparent;

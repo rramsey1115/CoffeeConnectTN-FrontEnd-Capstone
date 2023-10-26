@@ -4,7 +4,10 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
-
+h1 {
+    font-size: 32px;
+    margin-top: 0;
+}
 .favorites-header {
     text-align: center;
     padding-top: 20px;
