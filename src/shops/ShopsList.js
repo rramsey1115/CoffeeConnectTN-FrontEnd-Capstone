@@ -5,7 +5,7 @@ import { TbFilterStar } from "react-icons/tb";
 import "./ShopFilter.css";
 
 export const ShopsList = ({ currentUser }) => {
-  const [shops, setAllShops] = useState([]);
+  const [shops, setAllShops] = useState([])
   const [filterCondition, setFilterCondition] = useState(false);
 
   const getAndSetCoffeeShops = () => {
@@ -16,8 +16,12 @@ export const ShopsList = ({ currentUser }) => {
 
   const handleFilterClick = () => {
     setFilterCondition(!filterCondition);
-    console.log("filter idcon clicked", filterCondition);
   };
+
+  const filterShops = (num) => {
+    const newArray = shops.filter((shop) => shop.rating >= num && shop.rating < num + 1);
+    setAllShops(newArray);
+  }
 
   useEffect(() => {
     getAndSetCoffeeShops();
@@ -32,34 +36,56 @@ export const ShopsList = ({ currentUser }) => {
         <div id="filter-icon-container">
           <TbFilterStar id="filter-icon" onClick={handleFilterClick} />
         </div>
-      </section>
-      <div className="dropdown">
-        <div
-          id="filter-dropdown"
-          className={`dropdown-content ${
-            filterCondition ? "active" : "inactive"
-          }`}
-        >
-          <p className="dropdown-item" value="">
-            Show All
-          </p>
-          <p className="dropdown-item" value="1">
-            1
-          </p>
-          <p className="dropdown-item" value="2">
-            2
-          </p>
-          <p className="dropdown-item" value="3">
-            3
-          </p>
-          <p className="dropdown-item" value="4">
-            4
-          </p>
-          <p className="dropdown-item" value="5">
-            5
-          </p>
+        <div className="dropdown">
+          <div
+            id="filter-dropdown"
+            className={`dropdown-content ${
+              filterCondition ? "active" : "inactive"
+            }`}
+          >
+            <p
+              className="dropdown-item show-all"
+              value=""
+              onClick={(e) => {
+                getAndSetCoffeeShops();
+              }}
+            >
+              All
+            </p>
+            <p
+              className="dropdown-item"
+              onClick={(e) => filterShops(e.target.innerText * 1)}
+            >
+              1
+            </p>
+            <p
+              className="dropdown-item"
+              onClick={(e) => filterShops(e.target.innerText*1)}
+            >
+              2
+            </p>
+            <p
+              className="dropdown-item"
+              onClick={(e) => filterShops(e.target.innerText*1)}
+            >
+              3
+            </p>
+            <p
+              className="dropdown-item"
+              onClick={(e) => filterShops(e.target.innerText*1)}
+            >
+              4
+            </p>
+            <p
+              className="dropdown-item"
+              onClick={(e) => filterShops(e.target.innerText*1)}
+            >
+              5
+            </p>
+          </div>
         </div>
-      </div>
+      </section>
+
       <section className="shop-list">
         {shops.map((shop) => {
           return (
