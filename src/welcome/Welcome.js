@@ -46,5 +46,6 @@ export const Welcome = ({ currentUser }) => {
         </button>
       </div>
     </div>
+    
   );
 };

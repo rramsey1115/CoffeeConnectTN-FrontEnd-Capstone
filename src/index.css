@@ -4,7 +4,6 @@
   --tan: #ab9474;
   /* font-family: "Quicksand", sans-serif; */
   font-family: "Poppins", sans-serif;
-  width: 100vw;
 }
 
 * {
@@ -55,6 +54,11 @@ h1 {
 
 a {
   text-decoration: none;
+  transition: color .3s ease;
+}
+
+button {
+  transition: color .3s ease;
 }
 
 button:hover {

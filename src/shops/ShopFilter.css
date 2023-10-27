@@ -67,10 +67,12 @@
   cursor: pointer;
   display: block;
   text-decoration: none;
+  transition: .3s ease-in-out;
 }
 
 .dropdown-item:hover {
   color: var(--tan);
+  transition: .3s ease-in-out;
 }
 
 #filter-icon-container {

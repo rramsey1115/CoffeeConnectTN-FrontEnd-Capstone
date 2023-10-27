@@ -15,11 +15,12 @@
 }
 
 .form-login {
-  width: 80%;
-  max-width: 700px;
+  width: 60%;
+  max-width: 600px;
   min-width: 340px;
   margin: 2.5rem auto;
   padding: 0;
+  transition: 1s;
 }
 
 .form-login > h1 {
@@ -35,7 +36,7 @@
 }
 
 .form-login > h2 {
-  margin: 20px auto;
+  margin: 20px auto 10px auto;
   text-align: center;
   font-size: 1.25rem;
 }
@@ -86,8 +87,23 @@ fieldset {
   color: black;
 }
 
+.form-control:focus {
+  outline-color: var(--tan);
+  box-shadow: 0 0 10px 3px rgb(93, 93, 93);
+}
+
 #email {
-  padding: 0 0 0 .25rem;
+  padding: 0 0 0 0.25rem !important;
+}
+
+#about {
+  resize: none;
+  transition: .5s ease-in-out;
+}
+
+#about:focus {
+  height: 100px;
+  transition: 0.5s ease-in-out;
 }
 
 .form-group {
