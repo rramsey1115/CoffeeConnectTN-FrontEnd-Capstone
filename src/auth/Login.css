@@ -1,79 +1,97 @@
 .container-login {
-    text-align: center;
-  }
-  
-  .container-login > section > a {
-    text-decoration: underline;
-    color: var(--secondary);
-  }
-  
-  .form-login {
-    width: 60%;
-    margin: 2rem auto;
-  }
-  
-  .form-login > h1 {
-    font-size: 2.5rem;
-    text-align: center;
-  }
-  
-  .form-login > h2 {
-    text-align: center;
-    font-size: 1.5rem;
-  }
-  
-  .form-login > fieldset > input {
-    width: 25em;
-  }
-  
-  .login-btn {
-    align-self: center;
-    width: 200px;
-    height: 30px;
-    color: black;
-    font-weight: bold;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .login-btn:hover {
-    box-shadow: 2px 2px 10px black;
-    outline: 2px solid transparent;
-    outline-offset: 2px;
-  }
-  
-  /************* FORM STYLES *************/
-  
-  form {
-    margin: 3rem 5rem;
-    border: 1px solid var(--outline);
-    border-radius: 10px;
-    padding: 1rem 0rem 0rem 1rem;
-    box-shadow: 1px 2px 5px lightgray;
-  }
-  
-  fieldset {
-    min-width: 0;
-    padding-bottom: .75rem;
-    padding-top: .5rem;
-    margin: 0;
-    border: 0;
-  }
-  
-  .form-control {
-    height: calc(1.5em + 0.75rem + 2px);
-    padding: 0.1rem 0.25rem;
-    font-size: 1rem;
-    border: 1px solid var(--outline);
-    border-radius: 0.35rem;
-    color: black;
-  }
-  
-  .form-group {
-    margin-right: 1rem;
-    display: flex;
-    flex-direction: column;
-  }
-  
- 
-  
+  text-align: center;
+}
+
+.container-login > section > a {
+  font-size: larger;
+  text-decoration: underline;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.container-login > section > a:hover {
+  color: var(--tan);
+  transition: 0.2s;
+}
+
+.form-login {
+  width: 80%;
+  max-width: 700px;
+  min-width: 340px;
+  margin: 2.5rem auto;
+  padding: 0;
+}
+
+.form-login > h1 {
+  font-size: 2.5rem;
+  margin: 0px auto;
+  padding: 0;
+  text-align: center;
+  width: fit-content;
+  min-width: 250px;
+  border-bottom: 1px solid var(--tan);
+  border-left: 45px solid transparent;
+  border-right: 45px solid transparent;
+}
+
+.form-login > h2 {
+  margin: 20px auto;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+.form-login > fieldset > input {
+  width: 25em;
+  padding-left: 0;
+}
+
+.form-login > fieldset {
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+}
+
+.login-btn {
+  align-self: center;
+}
+
+.button-form-group {
+  margin-top: 10px;
+}
+
+/************* FORM STYLES *************/
+
+form {
+  margin: 3rem 5rem;
+  border: 1px solid var(--outline);
+  border-radius: 10px;
+  padding: 0rem 0rem 0rem 0rem;
+  /* box-shadow: 1px 2px 5px lightgray; */
+}
+
+fieldset {
+  min-width: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+  margin: 0;
+  border: 0;
+}
+
+.form-control {
+  height: calc(1.25em + 0.75rem + 1px);
+  padding: 0 0 0 0.25rem;
+  font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 0.45rem;
+  color: black;
+}
+
+#email {
+  padding: 0 0 0 .25rem;
+}
+
+.form-group {
+  margin: 4px auto 10px auto;
+  display: flex;
+  flex-direction: column;
+}
