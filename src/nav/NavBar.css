@@ -47,10 +47,13 @@
   fill: white;
   transition: 0.2s;
   cursor: pointer;
+  
 }
 
 .fa:hover {
   fill: var(--tan);
+  border: 1px solid var(--tan);
+  border-radius: 6px;
 }
 
 @media screen and (max-width: 500px) {
