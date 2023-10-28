@@ -106,4 +106,9 @@
     margin: auto 0 auto 10px;
     font-size: 16px;
   }
+
+  #navbar-logo {
+    height: 36px;
+    margin: auto 0 auto 0px;
+  }
 }

@@ -3,6 +3,8 @@ import "./NavBar.css";
 import { useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useState } from "react";
+// import BlackTanLogo from "../graphics/BlackTan_Logo.png"
+import BlackWhiteLogo from "../graphics/BlackWhite_Logo.png"
 
 export const NavBar = ({ currentUser }) => {
   const navigate = useNavigate();
@@ -49,7 +51,7 @@ export const NavBar = ({ currentUser }) => {
         )}
       </ul>
       <div id="mobile">
-        <h2 id="mobile-title">Coffee Connect</h2>
+        <img id="navbar-logo" className="navbar-logo" src={BlackWhiteLogo} alt="coffee connect text logo"/>
         {menuClicked ? (
           <FaTimes
             className="fa fa-bars"
