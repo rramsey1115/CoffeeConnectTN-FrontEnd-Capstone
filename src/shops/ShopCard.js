@@ -19,7 +19,7 @@ export const ShopCard = ({ shop, currentUser }) => {
     );
   }, [favorites, shop]);
 
-  return (
+  return  (
     <div className="shop-card">
       <div className="shop-card-banner">
         {isFavorite ? (

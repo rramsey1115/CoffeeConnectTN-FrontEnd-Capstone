@@ -1,13 +1,23 @@
+.favorites-container {
+    animation: fadeIn .3s;
+    -webkit-animation: fadeIn .3s;
+    -moz-animation: fadeIn .3s;
+    -o-animation: fadeIn .3s;
+    -ms-animation: fadeIn .3s;
+}
+
 .favorites-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
 h1 {
     font-size: 32px;
     margin-top: 0;
 }
+
 .favorites-header {
     text-align: center;
     padding-top: 20px;
@@ -26,6 +36,17 @@ h1 {
     margin: 0;
     padding: 2px;
     text-decoration: none;
+}
+
+#your-favorites-title {
+    width: 20vw;
+    min-width: 300px;
+    align-self: center;
+    text-align: center;
+    margin: 4px auto;
+    border-bottom: 1px solid var(--tan);
+    border-left: 8vw solid transparent;
+    border-right: 8vw solid transparent;
 }
 
 #fav-name:hover {

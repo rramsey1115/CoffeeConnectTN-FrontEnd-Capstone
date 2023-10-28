@@ -1,3 +1,11 @@
+.details {
+    animation: fadeIn .3s;
+    -webkit-animation: fadeIn .3s;
+    -moz-animation: fadeIn .3s;
+    -o-animation: fadeIn .3s;
+    -ms-animation: fadeIn .3s;
+}
+
 .details-about {
   display: flex;
   justify-content: center;
@@ -66,6 +74,7 @@
     align-items: flex-start;
     justify-content: space-between;
 }
+
 .details-about-favorite {
     width: 10%;
 }

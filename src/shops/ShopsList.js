@@ -1,8 +1,8 @@
-import { useEffect, useInsertionEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { getCoffeeShops } from "../services/yelpServices";
 import { ShopCard } from "./ShopCard";
 // import { TbFilterStar } from "react-icons/tb";
-import { TfiStar } from "react-icons/tfi";
+// import { TfiStar } from "react-icons/tfi";
 import { VscFilter } from "react-icons/vsc";
 import "./ShopFilter.css";
 
@@ -10,6 +10,7 @@ export const ShopsList = ({ currentUser }) => {
   const [shops, setAllShops] = useState([]);
   const [filterCondition, setFilterCondition] = useState(false);
   const [filteredShops, setFilteredShops] = useState([]);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const getAndSetCoffeeShops = () => {
     getCoffeeShops().then((coffeeArr) => {
@@ -34,9 +35,14 @@ export const ShopsList = ({ currentUser }) => {
 
   useEffect(() => {
     setFilteredShops(shops);
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 500);
   }, [shops]);
 
-  return (
+  return isLoaded === false ? (
+    <div className="loading-container">  </div>
+  ) : (
     <>
       <section className="shop-list-header">
         <div className="title">

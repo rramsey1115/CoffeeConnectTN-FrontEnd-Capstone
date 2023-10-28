@@ -22,7 +22,7 @@ export const UserProfile = ({ currentUser }) => {
   };
 
   return (
-    <>
+    <div className="profile-container">
       <section className="profile-about">
         <div className="profile-left">
           <img src={user?.picture} alt="user" id="profile-picture" />
@@ -70,13 +70,10 @@ export const UserProfile = ({ currentUser }) => {
         </div>
       </section>
       <section className="profile-favorites">
-        <div className="profile-favorites-header">
-          <h1 id="favorites-title">Favorite Coffee Shops</h1>
-        </div>
         <div className="profile-favorites-list">
           <FavoritesList currentUser={currentUser} />
         </div>
       </section>
-    </>
+    </div>
   );
 };

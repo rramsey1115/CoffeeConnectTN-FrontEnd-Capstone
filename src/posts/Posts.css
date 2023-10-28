@@ -48,11 +48,12 @@ h1 {
     width: 80%;
     border-radius: 50%;
     cursor: pointer;
+    transition: .3s;
 }
 
 #user-picture:hover {
-    filter: brightness(.5);
-    transition: .2s;
+    filter: brightness(.3);
+    transition: .3s;
 }
 
 .post-text {
@@ -119,10 +120,20 @@ h1 {
     font-family: inherit;
     font-size: inherit;
     color: black;
+    animation: fadeIn .5s;
+    -webkit-animation: fadeIn .5s;
+    -moz-animation: fadeIn .5s;
+    -o-animation: fadeIn .5s;
+    -ms-animation: fadeIn .5s;
 }
 
 .edit-post-input:focus {
     height: fit-content;
+    animation: fadeIn .5s;
+    -webkit-animation: fadeIn .5s;
+    -moz-animation: fadeIn .5s;
+    -o-animation: fadeIn .5s;
+    -ms-animation: fadeIn .5s;
 }
 
 .new-post-input {
@@ -138,6 +149,11 @@ h1 {
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 10px;
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 4s;
+    -o-animation: fadeIn 4s;
+    -ms-animation: fadeIn 4s;
 }
 
 .new-post-input:focus {

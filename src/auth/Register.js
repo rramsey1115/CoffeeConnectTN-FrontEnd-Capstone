@@ -11,6 +11,8 @@ export const Register = (props) => {
     picture: "",
     about: "",
     admin: false,
+    coffeePreferenceId: 0,
+    atmospherePreferenceId: 0,
   });
 
   let navigate = useNavigate();
@@ -47,6 +49,18 @@ export const Register = (props) => {
   const updateCustomer = (evt) => {
     const copy = { ...customer };
     copy[evt.target.id] = evt.target.value;
+    setCustomer(copy);
+  };
+
+  const updateOrderPreferences = (e) => {
+    const copy = { ...customer };
+    copy.coffeePreferenceId = e.target.value*1;
+    setCustomer(copy);
+  };
+
+  const updateAtmospherePreference = (e) => {
+    const copy = { ...customer };
+    copy.atmospherePreferenceId = e.target.value*1;
     setCustomer(copy);
   };
 
@@ -116,22 +130,160 @@ export const Register = (props) => {
             />
           </div>
         </fieldset>
-        {/* <fieldset>
-          <div className="form-group">
-            <label>
+        <fieldset>
+          <h3>Coffee Order Preference</h3>
+          <div className="form-group radio-group">
+            <div className="radio-group-item">
+              <label htmlFor="order1">
+                <input
+                  onChange={updateOrderPreferences}
+                  type="radio"
+                  id="order1"
+                  value="1"
+                  name="orderPreference"
+                ></input>
+                Traditional
+              </label>
+            </div>
+            <div className="radio-group-item">
               <input
-                onChange={(evt) => {
-                  const copy = { ...customer }
-                  copy.isStaff = evt.target.checked
-                  setCustomer(copy)
-                }}
-                type="checkbox"
-                id="isStaff"
+                onChange={updateOrderPreferences}
+                type="radio"
+                id="order2"
+                value="2"
+                name="orderPreference"
               />
-              I am an employee{" "}
-            </label>
+              <label htmlFor="order2">Sweet</label>
+            </div>
+            <div className="radio-group-item">
+              <input
+                onChange={updateOrderPreferences}
+                type="radio"
+                id="order3"
+                value="3"
+                name="orderPreference"
+              />
+              <label htmlFor="order3">Exploratory</label>
+            </div>
+            <div className="radio-group-item">
+              <input
+                onChange={updateOrderPreferences}
+                type="radio"
+                id="order4"
+                value="4"
+                name="orderPreference"
+              />
+              <label htmlFor="order4">International</label>
+            </div>
+            <div className="radio-group-item">
+              <input
+                onChange={updateOrderPreferences}
+                type="radio"
+                id="order5"
+                value="5"
+                name="orderPreference"
+              />
+              <label htmlFor="order5">Cold Drinks</label>
+            </div>
+            <div className="radio-group-item">
+              <input
+                onChange={updateOrderPreferences}
+                type="radio"
+                id="order6"
+                value="6"
+                name="orderPreference"
+              />
+              <label htmlFor="order6">Dietary-Restrictions</label>
+            </div>
+            <div className="radio-group-item">
+              <input
+                onChange={updateOrderPreferences}
+                type="radio"
+                id="order7"
+                value="7"
+                name="orderPreference"
+              />
+              <label htmlFor="order7">Powerful</label>
+            </div>
           </div>
-        </fieldset> */}
+        </fieldset>
+        <fieldset>
+          <h3>Cafe Atmosphere Preference</h3>
+          <div className="form-group radio-group">
+            <div className="radio-group-item">
+              <label htmlFor="at1">
+                <input
+                  onChange={updateAtmospherePreference}
+                  type="radio"
+                  id="at1"
+                  value="1"
+                  name="atmospherePreference"
+                ></input>
+                Lively
+              </label>
+            </div>
+            <div className="radio-group-item">
+              <input
+                onChange={updateAtmospherePreference}
+                type="radio"
+                id="at2"
+                value="2"
+                name="atmospherePreference"
+              />
+              <label htmlFor="at2">Cozy</label>
+            </div>
+            <div className="radio-group-item">
+              <input
+                onChange={updateAtmospherePreference}
+                type="radio"
+                id="at3"
+                value="3"
+                name="atmospherePreference"
+              />
+              <label htmlFor="at3">Hipster</label>
+            </div>
+            <div className="radio-group-item">
+              <input
+                onChange={updateAtmospherePreference}
+                type="radio"
+                id="at4"
+                value="4"
+                name="atmospherePreference"
+              />
+              <label htmlFor="at4">Quaint</label>
+            </div>
+            <div className="radio-group-item">
+              <input
+                onChange={updateAtmospherePreference}
+                type="radio"
+                id="at5"
+                value="5"
+                name="atmospherePreference"
+              />
+              <label htmlFor="at5">Low-Key</label>
+            </div>
+            <div className="radio-group-item">
+              <input
+                onChange={updateAtmospherePreference}
+                type="radio"
+                id="at6"
+                value="6"
+                name="atmospherePreference"
+              />
+              <label htmlFor="at6">Multi-Cultural</label>
+            </div>
+            <div className="radio-group-item">
+              <input
+                onChange={updateAtmospherePreference}
+                type="radio"
+                id="at7"
+                value="7"
+                name="atmospherePreference"
+              />
+              <label htmlFor="at7">Corporate Chain</label>
+            </div>
+          </div>
+        </fieldset>
         <fieldset>
           <div className="form-group">
             {customer.name &&

@@ -1,3 +1,11 @@
+.profile-container {
+  animation: fadeIn .5s;
+  -webkit-animation: fadeIn .5s;
+  -moz-animation: fadeIn .5s;
+  -o-animation: fadeIn .5s;
+  -ms-animation: fadeIn .5s;
+}
+
 .profile-about {
   display: flex;
   flex-direction: row;
@@ -46,14 +54,14 @@
   padding: 0;
 }
 
-.profile-favorites-header {
+/* .profile-favorites-header {
   width: 65%;
   min-width: 265px;
   margin: 0px auto;
   border-bottom: 1px solid var(--tan);
   border-left: 10vw solid transparent;
   border-right: 10vw solid transparent;
-}
+} */
 
 #favorites-title {
     margin: 20px auto 5px auto;

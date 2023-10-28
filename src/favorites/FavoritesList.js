@@ -9,6 +9,7 @@ export const FavoritesList = ({ currentUser }) => {
   const [favorites, setFavorites] = useState([]);
   const [user, setUser] = useState({});
   const { userId } = useParams();
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const getAndSetUser = () => {
     userId
@@ -16,22 +17,27 @@ export const FavoritesList = ({ currentUser }) => {
       : getUserById(currentUser?.id).then((data1) => setUser(data1[0]));
   };
 
+  
+  const getAndSetFavorites = () => {
+    getFavoritesByUserId(user?.id).then((data) => setFavorites(data));
+    
+  };
+  
   useEffect(() => {
     getAndSetUser();
   }, [currentUser]);
 
-  const getAndSetFavorites = () => {
-    getFavoritesByUserId(user?.id).then((data) => setFavorites(data));
-  };
-
   useEffect(() => {
     getAndSetFavorites();
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 100);
   }, [user]);
 
-  return favorites.length > 0 ? (
+  return (isLoaded ? (favorites.length > 0 ? (
     <section className="favorites-container">
       <div className="favorites-header">
-        <h1>Your Favorites</h1>
+        <h1 id="your-favorites-title">Favorites</h1>
       </div>
       <div className="favorites-list">
         {favorites.map((favObj) => {
@@ -45,5 +51,5 @@ export const FavoritesList = ({ currentUser }) => {
         <h1>{user?.name} has not favorited any shops yet</h1>
       </div>
     </section>
-  );
+  )) : (<div> </div>))
 };

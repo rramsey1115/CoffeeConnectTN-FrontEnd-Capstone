@@ -7,6 +7,11 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
+  animation: fadeIn .3s;
+  -webkit-animation: fadeIn .3s;
+  -moz-animation: fadeIn .3s;
+  -o-animation: fadeIn .3s;
+  -ms-animation: fadeIn .3s;
 }
 
 .title {
@@ -41,7 +46,7 @@
   background-color: black;
   z-index: 1;
   /* transform: translateX(-10px); */
-  transition: 0.6s ease;
+  transition: 0.8s ease;
 }
 
 .show-all {
@@ -54,7 +59,7 @@
   flex-direction: row;
   opacity: 1;
   /* transform: translateX(-10); */
-  transition: 0.66s ease;
+  transition: 0.8s ease;
   border-top: 1px solid var(--tan);
   border-bottom: 1px solid var(--tan);
   border-left: 30px solid transparent;
