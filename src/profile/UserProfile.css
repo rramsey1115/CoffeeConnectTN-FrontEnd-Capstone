@@ -1,9 +1,9 @@
 .profile-container {
-  animation: fadeIn .5s;
-  -webkit-animation: fadeIn .5s;
-  -moz-animation: fadeIn .5s;
-  -o-animation: fadeIn .5s;
-  -ms-animation: fadeIn .5s;
+  animation: fadeIn 0.5s;
+  -webkit-animation: fadeIn 0.5s;
+  -moz-animation: fadeIn 0.5s;
+  -o-animation: fadeIn 0.5s;
+  -ms-animation: fadeIn 0.5s;
 }
 
 .profile-about {
@@ -33,13 +33,9 @@
 }
 
 #profile-title {
-    margin: 0 auto;
-    padding-bottom: 0px;
-    padding: 0;
-}
-
-#about {
-  margin: 5px auto;
+  margin: 0 auto;
+  padding-bottom: 0px;
+  padding: 0;
 }
 
 #about-title {
@@ -64,65 +60,111 @@
 } */
 
 #favorites-title {
-    margin: 20px auto 5px auto;
+  margin: 20px auto 5px auto;
 }
 
 #email {
-    margin: 0;
-    padding-top: 0px;
-    padding-bottom: 6px;
+  margin: 0;
+  padding-top: 0px;
+  padding-bottom: 6px;
 }
 
 #delete-profile-button {
-margin: 18px 0;
+  width: 200px;
+  margin: 18px 0 0 0;
 }
 
 #edit-profile-button {
-margin: 18px 0;
+  width: 200px;
+  margin: 8px 0;
 }
 
-.about-textarea {
-    width: 99%;
-    height: 100px;
-    margin: 0px;
-    padding: 4px;
-    border-radius: 8px;
-    color: black;
-    font-family: inherit;
-    font-size: inherit;
-}
-
-.form-control {
-    width: 99%;
-    font-family: inherit;
-    color: black;
-    font-size: inherit;
+.edit-form-control {
+  width: 99%;
+  font-family: inherit;
+  color: black;
+  font-size: inherit;
 }
 
 #save-edit-button {
-    width: 40%;
-    align-self: center;
-    cursor:pointer;
+  width: 40%;
+  align-self: center;
+  cursor: pointer;
 }
 
 #save-edit-button:disabled {
-    border: 1px solid gray;
-    color: gray;
+  border: 1px solid gray;
+  color: gray;
 }
 
 #edit-profile-title {
-    text-align:center;
+  text-align: center;
 }
 
 .edit-profile-form {
-    width: 60vw;
-    min-width: 330px;
-    margin: 30px auto;
-    padding: 1px;
-    box-shadow: none;
+  width: 60vw;
+  min-width: 330px;
+  margin: 30px auto;
+  padding: 1px;
+  box-shadow: none;
 }
 
 fieldset {
-    padding: 0 0 0 6px;
-    margin: 8px auto 0 auto;
+  padding: 0 0 0 6px;
+  margin: 8px auto 0 auto;
+}
+
+.edit-about-textarea {
+  width: 99%;
+  height: 50px;
+  margin: 0px;
+  padding: 4px;
+  border-radius: 8px;
+  color: black;
+  font-family: inherit;
+  font-size: inherit;
+  transition: 0.5s ease;
+}
+
+.edit-about-textarea:focus {
+  height: 150px;
+  transition: 0.5s ease;
+}
+
+.edit-prefs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+}
+
+.edit-prefs > fieldset > h3 {
+  font-weight: bold;
+}
+
+.edit-prefs > fieldset > div {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  padding: 2px;
+}
+
+.edit-prefs > fieldset > div > input {
+  fill: green;
+  color: green;
+}
+
+.edit-prefs > fieldset > div > input:active {
+  fill: red;
+  color: red;
+  background-color: red;
+  color: red;
+}
+
+.prefs-list {
+  width: 45%;
+  min-width: 200px;
+  padding: 2px;
+  margin: 5px 0 10px 0;
 }

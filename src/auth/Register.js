@@ -123,7 +123,7 @@ export const Register = (props) => {
             <textarea
               onChange={updateCustomer}
               type="text"
-              id="about"
+              id="create-about"
               className="form-control"
               placeholder="Tell Us A Little About Yourself"
               required

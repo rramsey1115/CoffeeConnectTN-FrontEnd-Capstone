@@ -27,7 +27,7 @@ export const createUser = (customer) => {
 };
 
 export const getUserById = (id) => {
-  return fetch(`http://localhost:8088/users?id=${id}&_expand=coffeePreference&_expand=atmospherePreference`).then((res) =>
+  return fetch(`http://localhost:8088/users?id=${id}`).then((res) =>
     res.json()
   );
 };

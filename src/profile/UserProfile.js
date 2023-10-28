@@ -32,7 +32,7 @@ export const UserProfile = ({ currentUser }) => {
         </div>
         <div className="profile-right">
         <h2>About</h2>
-          <p id="about">{user?.about}</p>
+          <p id="about-paragraph">{user?.about}</p>
           <div className="preferences"><br/>
             <h2 id="preferences-title">Preferences</h2>
             <p>{user.coffeePreference?.name} Coffees</p>
