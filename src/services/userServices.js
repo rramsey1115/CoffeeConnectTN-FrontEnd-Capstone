@@ -27,13 +27,13 @@ export const createUser = (customer) => {
 };
 
 export const getUserById = (id) => {
-  return fetch(`http://localhost:8088/users?id=${id}`).then((res) =>
+  return fetch(`http://localhost:8088/users?id=${id}&_expand=coffeePreference&_expand=atmospherePreference`).then((res) =>
     res.json()
   );
 };
 
 export const getUserWithPostsById = (id) => {
-  return fetch(`http://localhost:8088/users?id=${id}&_embed=posts`).then(
+  return fetch(`http://localhost:8088/users?id=${id}&_embed=posts&_expand=coffeePreference&_expand=atmospherePreference`).then(
     (res) => res.json()
   );
 };

@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 import { useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -49,6 +49,7 @@ export const NavBar = ({ currentUser }) => {
         )}
       </ul>
       <div id="mobile">
+        <h2 id="mobile-title">Coffee Connect</h2>
         {menuClicked ? (
           <FaTimes
             className="fa fa-bars"
