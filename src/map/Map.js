@@ -28,7 +28,7 @@ export const Map = ({ shop }) => {
   if (isLoaded && shopLat && shopLong) {
     return (
       <GoogleMap
-        zoom={12}
+        zoom={13}
         googleMapsAPIKey={"AIzaSyBAZYUQCy2QTGBr10KsuiGd1AqOgmFicqc"}
         center={{ lat: shopLat, lng: shopLong }}
         mapContainerClassName="map-container"

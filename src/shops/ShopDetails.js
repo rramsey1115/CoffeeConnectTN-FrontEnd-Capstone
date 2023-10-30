@@ -106,9 +106,7 @@ export const ShopDetails = ({ currentUser }) => {
         </div>
       </div>
       <div className="about-map">
-        <div className="map-container">
-          <Map shop={currentShop} />
-        </div>
+        <Map shop={currentShop} />
         <div className="map-address">
           {currentShop?.location?.display_address[0]},{" "}
           {currentShop?.location?.display_address[1]}

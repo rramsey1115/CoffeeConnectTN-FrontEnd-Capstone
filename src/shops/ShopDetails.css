@@ -16,19 +16,24 @@
 }
 
 .details-about-left {
-  width: 40%;
-  min-width: 300px;
+  width: 45%;
+  min-width: 330px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .details-about-right {
-    width: 40%;
-    min-width: 300px;
+    width: 45%;
+    min-width: 330px;
 }
 
 #shop-image {
   width: 90%;
   border: 1px solid var(--tan);
   border-radius: 1em;
+  margin: 10px auto;
+  align-self: center;
 }
 
 #shop-details-name {
@@ -105,8 +110,8 @@
 }
 /*---------------------------------------------- MAP STYLING--------------------------------------- */
 .about-map {
-    width: 65vw;
-    min-width: 330px;
+    width: 70vw;
+    min-width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -116,8 +121,8 @@
 
 .map-container {
     width: 100%;
-    min-width: 300px;
-    height: 250px;
+    min-width: 330px;
+    height: 300px;
     align-items: center;
     margin: 0;
 }
