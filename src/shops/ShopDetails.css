@@ -16,8 +16,9 @@
 }
 
 .details-about-left {
-  width: 45%;
+  width: 40%;
   min-width: 330px;
+  padding: 0px 30px;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -26,10 +27,13 @@
 .details-about-right {
     width: 45%;
     min-width: 330px;
+    padding: 10px;
 }
 
 #shop-image {
   width: 90%;
+  height: 375px;
+  object-fit: cover;
   border: 1px solid var(--tan);
   border-radius: 1em;
   margin: 10px auto;
@@ -60,7 +64,12 @@
 
 .shop-categories {
     margin: 0;
-    padding: 0;
+    padding: 2px 0px;
+}
+
+.map-address {
+    padding: 13px 0px;
+    margin: 0;
 }
 
 .details-posts {
@@ -109,25 +118,19 @@
     color: goldenrod;
 }
 /*---------------------------------------------- MAP STYLING--------------------------------------- */
-.about-map {
-    width: 70vw;
-    min-width: 350px;
+.details-about-map {
+    width: 80vw;
+    min-width: 360px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    margin: 8px auto 12px auto;
-}
-
-.map-container {
-    width: 100%;
-    min-width: 330px;
-    height: 300px;
     align-items: center;
-    margin: 0;
+    margin: 8px auto 20px auto;
 }
 
-.map-address {
-    padding: 6px 2px;
-    margin: 0;
+.about-map {
+    width: inherit;
+    height: fit-content;
 }
+

@@ -1,0 +1,36 @@
+.map-container {
+    width: 98%;
+    margin: 1px auto;
+    min-width: 200px;
+    height: inherit;
+    min-height: 350px;
+    border:2px solid var(--tan);
+    border-radius: 14px;
+}
+
+.directions { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: none;
+    margin: 5px;
+}
+
+.directions-details {
+    display: flex;
+    padding: 6px 10px;
+}
+
+.directions-details > h3 {
+    padding: 2px 16px;
+}
+
+#directions-button {
+    width: 185px;
+    height: 40px;
+}
+
+.gm-style-mtc {
+    display: none;
+}
+

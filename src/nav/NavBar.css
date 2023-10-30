@@ -6,7 +6,7 @@
   width: 64vw;
   min-width: 310px;
   padding: 0.5rem;
-  border: 1px solid var(--tan);
+  border: 1.5px solid var(--tan);
   border-left: 12vw solid transparent;
   border-right: 12vw solid transparent;
   justify-content: space-between;
