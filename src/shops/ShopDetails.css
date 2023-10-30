@@ -11,7 +11,7 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 80vw;
-  margin: 40px auto;
+  margin: 40px auto 16px auto;
   min-width:360px;
 }
 
@@ -102,4 +102,27 @@
     cursor: pointer;
     fill: goldenrod;
     color: goldenrod;
+}
+/*---------------------------------------------- MAP STYLING--------------------------------------- */
+.about-map {
+    width: 65vw;
+    min-width: 330px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 8px auto 12px auto;
+}
+
+.map-container {
+    width: 100%;
+    min-width: 300px;
+    height: 250px;
+    align-items: center;
+    margin: 0;
+}
+
+.map-address {
+    padding: 6px 2px;
+    margin: 0;
 }

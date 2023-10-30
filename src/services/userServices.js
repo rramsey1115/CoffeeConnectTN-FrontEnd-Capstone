@@ -33,9 +33,9 @@ export const getUserById = (id) => {
 };
 
 export const getUserWithPostsById = (id) => {
-  return fetch(`http://localhost:8088/users?id=${id}&_embed=posts&_expand=coffeePreference&_expand=atmospherePreference`).then(
-    (res) => res.json()
-  );
+  return fetch(
+    `http://localhost:8088/users?id=${id}&_embed=posts&_expand=coffeePreference&_expand=atmospherePreference`
+  ).then((res) => res.json());
 };
 
 export const UpdateProfile = (userId, userChoices) => {

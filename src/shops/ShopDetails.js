@@ -10,6 +10,9 @@ import {
   deleteFromFavorites,
   getFavoritesByUserId,
 } from "../services/favServices";
+import { Map } from "../map/Map";
+
+import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 export const ShopDetails = ({ currentUser }) => {
   const id = useParams().shopId;
@@ -90,14 +93,7 @@ export const ShopDetails = ({ currentUser }) => {
             )}
           </div>
           <StarRating shop={currentShop} />
-          <div className="shop-address">
-            <p className="address-item">
-              {currentShop?.location?.display_address[0]}
-            </p>
-            <p className="address-item">
-              {currentShop?.location?.display_address[1]}
-            </p>
-          </div>
+
           {currentShop?.categories?.map((cat) => {
             return (
               <p className="shop-categories" key={cat.alias}>
@@ -107,6 +103,15 @@ export const ShopDetails = ({ currentUser }) => {
           })}
           <div className="shop-phone"></div>
           <div className="shop-transactions"></div>
+        </div>
+      </div>
+      <div className="about-map">
+        <div className="map-container">
+          <Map shop={currentShop} />
+        </div>
+        <div className="map-address">
+          {currentShop?.location?.display_address[0]},{" "}
+          {currentShop?.location?.display_address[1]}
         </div>
       </div>
       <div className="details-posts">
