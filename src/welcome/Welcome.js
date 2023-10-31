@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import { getUserById } from "../services/userServices";
 import "./Welcome.css";
 import welcomeVideo from "./welcomeVideo.mp4";
 import { useNavigate } from "react-router-dom";
 
 export const Welcome = ({ currentUser }) => {
-  const [searchCity, setSearchCity] = useState("nashville");
   const navigate = useNavigate();
-  
+
   const handleCitySelect = (cityName) => {
-    setSearchCity(cityName);
+    localStorage.setItem(
+      "coffee_searchCity",
+      JSON.stringify({
+        cityName: cityName,
+      })
+    );
+    setTimeout(navigate(`/discover/${cityName}`), 5000);
   };
 
   return (
@@ -17,12 +22,12 @@ export const Welcome = ({ currentUser }) => {
       <div className="welcome-header">
         {currentUser.admin ? (
           <h1 className="welcome-title">
-            Coffee Connect
+            Coffee Connect TN
             <br />
-            Administrator Mode
+            Administrator
           </h1>
         ) : (
-          <h1 className="welcome-title">Welcome to Coffee Connect</h1>
+          <h1 className="welcome-title">Welcome to Coffee Connect TN</h1>
         )}
       </div>
       <div className="welcome-body">
@@ -34,9 +39,9 @@ export const Welcome = ({ currentUser }) => {
         <button
           onClick={(e) => {
             handleCitySelect(e.target.value);
-            navigate(`/discover/${searchCity}`);
+            
           }}
-          value="nashville"
+          value="Nashville"
           id="discover-button"
           className="button"
         >
@@ -45,9 +50,9 @@ export const Welcome = ({ currentUser }) => {
         <button
           onClick={(e) => {
             handleCitySelect(e.target.value);
-            navigate(`/discover/${searchCity}`);
+            // navigate(`/discover/${e.target.value}`);
           }}
-          value="knoxville"
+          value="Knoxville"
           id="discover-button"
           className="button"
         >
@@ -56,9 +61,9 @@ export const Welcome = ({ currentUser }) => {
         <button
           onClick={(e) => {
             handleCitySelect(e.target.value);
-            navigate(`/discover/${searchCity}`);
+            // navigate(`/discover/${e.target.value}`);
           }}
-          value="chattanooga"
+          value="Chattanooga"
           id="discover-button"
           className="button"
         >
@@ -67,9 +72,9 @@ export const Welcome = ({ currentUser }) => {
         <button
           onClick={(e) => {
             handleCitySelect(e.target.value);
-            navigate(`/discover/${searchCity}`);
+            // navigate(`/discover/${e.target.value}`);
           }}
-          value="memphis"
+          value="Memphis"
           id="discover-button"
           className="button"
         >
@@ -78,9 +83,9 @@ export const Welcome = ({ currentUser }) => {
         <button
           onClick={(e) => {
             handleCitySelect(e.target.value);
-            navigate(`/discover/${searchCity}`);
+            // navigate(`/discover/${e.target.value}`);
           }}
-          value="cookeville"
+          value="Cookeville"
           id="discover-button"
           className="button"
         >

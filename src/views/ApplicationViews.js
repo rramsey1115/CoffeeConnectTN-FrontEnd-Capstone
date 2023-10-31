@@ -7,7 +7,6 @@ import { ShopDetails } from "../shops/ShopDetails";
 import { FavoritesList } from "../favorites/FavoritesList";
 import { UserProfile } from "../profile/UserProfile";
 import { EditProfileForm } from "../profile/EditProfileForm";
-import { getAllShops } from "../services/shopServices";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -39,7 +38,7 @@ export const ApplicationViews = () => {
             path=":cityName"
             element={
               <>
-                <NavBar currentUser={currentUser} />{" "}
+                <NavBar currentUser={currentUser} />
                 <ShopsList
                   currentUser={currentUser}
                   userLocation={userLocation}
@@ -47,6 +46,8 @@ export const ApplicationViews = () => {
               </>
             }
           />
+        </Route>
+        <Route path="details">
           <Route
             path=":shopId"
             element={

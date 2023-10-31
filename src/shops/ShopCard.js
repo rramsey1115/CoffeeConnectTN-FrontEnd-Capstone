@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { getFavoritesByUserId } from "../services/favServices";
 import { BsFillBookmarkFill } from "react-icons/bs";
 
-export const ShopCard = ({ shop, currentUser }) => {
+export const ShopCard = ({ shop, currentUser, searchCity }) => {
   const [favorites, setFavorites] = useState([]);
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -24,13 +24,13 @@ export const ShopCard = ({ shop, currentUser }) => {
       <div className="shop-card-banner">
         {isFavorite ? (
           <div className="name-favorite">
-            <Link to={`/discover/${shop?.businessId}`} className="name-link">
+            <Link to={`/details/${shop?.businessId}`} className="name-link">
               <h2 id="fav-name">{shop?.name}</h2>
             </Link>
             <BsFillBookmarkFill id="icon" />
           </div>
         ) : (
-          <Link to={`/discover/${shop.id}`}>
+          <Link to={`/details/${shop.id}`}>
             <h2 id="shop-name">{shop.name}</h2>
           </Link>
         )}
@@ -38,7 +38,7 @@ export const ShopCard = ({ shop, currentUser }) => {
         <StarRating shop={shop} />
       </div>
       <div className="shop-card-body">
-        <Link to={`/discover/${shop.id}`} textDecoration="none">
+        <Link to={`/details/${shop.id}`} textDecoration="none">
           <img
             className="shop-card-img"
             src={shop.image_url}

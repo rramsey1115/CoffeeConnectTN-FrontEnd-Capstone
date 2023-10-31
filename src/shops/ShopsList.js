@@ -1,52 +1,76 @@
 import { useEffect, useState } from "react";
-import { getCoffeeShops } from "../services/yelpServices";
 import { ShopCard } from "./ShopCard";
 // import { TbFilterStar } from "react-icons/tb";
 // import { TfiStar } from "react-icons/tfi";
 import { VscFilter } from "react-icons/vsc";
 import "./ShopFilter.css";
+import { getAllCoffeeShops } from "../services/shopServices";
+// import { useParams } from "react-router-dom";
 
 export const ShopsList = ({ currentUser }) => {
-  const [shops, setAllShops] = useState([]);
+  const [allShops, setAllShops] = useState([]);
   const [filterCondition, setFilterCondition] = useState(false);
   const [filteredShops, setFilteredShops] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [searchCity, setSearchCity] = useState("");
+  const [cityShops, setCityShops] = useState([]);
 
-  const getAndSetCoffeeShops = () => {
-    getCoffeeShops().then((coffeeArr) => {
+  const getAndSetSearchCity = () => {
+    const localCityObj = localStorage.getItem("coffee_searchCity");
+    const cityString = JSON.parse(localCityObj);
+    setSearchCity(cityString.cityName);
+  };
+
+  const resetCityShops = () => {
+    setCityShops(allShops.filter(shop => shop.location?.city === searchCity));
+  }
+
+  const getAndSetAllCoffeeShops = () => {
+    getAllCoffeeShops().then((coffeeArr) => {
       setAllShops(coffeeArr);
     });
   };
-
+  
   const handleFilterClick = () => {
     setFilterCondition(!filterCondition);
   };
 
   const filterShops = (num) => {
-    const newArray = shops.filter(
+    const newArray = cityShops.filter(
       (shop) => shop.rating >= num && shop.rating < num + 1
     );
     setFilteredShops(newArray);
   };
 
   useEffect(() => {
-    getAndSetCoffeeShops();
+    getAndSetAllCoffeeShops();
+  }, [searchCity]);
+
+  useEffect(() => {
+    getAndSetSearchCity();
   }, []);
 
   useEffect(() => {
-    setFilteredShops(shops);
+    setCityShops(allShops.filter(shop => shop.location?.city == searchCity));
     setTimeout(() => {
       setIsLoaded(true);
     }, 500);
-  }, [shops]);
+  }, [allShops, searchCity]);
+
+  useEffect(() => {
+    setFilteredShops(cityShops.filter(s => s.location?.city === searchCity));
+    setTimeout(() => {
+      setIsLoaded(true);
+    }, 500);
+  }, [allShops, cityShops, searchCity]);
 
   return isLoaded === false ? (
-    <div className="loading-container">  </div>
+    <div className="loading-container"> </div>
   ) : (
     <>
       <section className="shop-list-header">
         <div className="title">
-          <h1 id="location-name">Nashville</h1>
+          <h1 id="location-name">{searchCity}</h1>
           <div id="filter-icon-container" onClick={handleFilterClick}>
             <VscFilter id="filter-icon" />
           </div>
@@ -62,7 +86,7 @@ export const ShopsList = ({ currentUser }) => {
             <p
               className="dropdown-item show-all"
               onClick={(e) => {
-                getAndSetCoffeeShops();
+                resetCityShops();
               }}
             >
               All
@@ -104,13 +128,13 @@ export const ShopsList = ({ currentUser }) => {
       </section>
 
       <section className="shop-list">
-        {filteredShops.length === 0 ? (
+        {filteredShops?.length === 0 ? (
           <h1>No Shops Meet Search Criteria</h1>
         ) : (
-          filteredShops.map((shop) => {
+          filteredShops?.map((shop) => {
             return (
               <div key={shop?.id} className="shop-item">
-                <ShopCard shop={shop} currentUser={currentUser} />
+                <ShopCard shop={shop} currentUser={currentUser} searchCity={searchCity}/>
               </div>
             );
           })
