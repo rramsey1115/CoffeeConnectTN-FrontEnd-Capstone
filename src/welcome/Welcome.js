@@ -5,13 +5,13 @@ import welcomeVideo from "./welcomeVideo.mp4";
 import { useNavigate } from "react-router-dom";
 
 export const Welcome = ({ currentUser }) => {
+  const [searchCity, setSearchCity] = useState(1);
   // const [user, setUser] = useState({});
-
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   getUserById(currentUser.id).then((res) => setUser(res[0]));
-  // }, [currentUser]);
+  const handleCitySelect = (id) => {
+    setSearchCity(id);
+  }
 
   return (
     <div className="welcome">
