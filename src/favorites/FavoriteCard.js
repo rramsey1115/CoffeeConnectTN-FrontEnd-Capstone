@@ -2,8 +2,22 @@ import { Link } from "react-router-dom";
 import { StarRating } from "../shops/StarRating";
 import { BsFillBookmarkFill } from "react-icons/bs";
 import "./FavoritesList.css";
+import { getFavoritesByUserId } from "../services/favServices";
+import { useEffect, useState } from "react";
 
-export const FavoriteCard = ({ favObj }) => {
+export const FavoriteCard = ({ favObj, currentUser }) => {
+  const [currentUserFavorites, setCurrentUserFavorites] = useState([]);
+
+  const getAndSetCurrentUserFavorites = () => {
+    getFavoritesByUserId(currentUser.id).then((data) =>
+      setCurrentUserFavorites(data)
+    );
+  };
+
+  useEffect(() => {
+    getAndSetCurrentUserFavorites();
+  }, [currentUser]);
+
   return (
     <section className="favorite-card">
       <div className="fav-card-banner">
@@ -11,7 +25,13 @@ export const FavoriteCard = ({ favObj }) => {
           <Link to={`/discover/${favObj.business?.id}`} className="name-link">
             <h2 id="fav-name">{favObj.business?.name}</h2>
           </Link>
-          <BsFillBookmarkFill id="favorite-icon"/>
+          {currentUserFavorites.map((cuf) =>
+            cuf.businessId === favObj.businessId ? (
+              <BsFillBookmarkFill id="favorite-icon" />
+            ) : (
+              <div className="favorite-icon-placeholder">{" "}</div>
+            )
+          )}
         </div>
         <StarRating shop={favObj.business} />
       </div>

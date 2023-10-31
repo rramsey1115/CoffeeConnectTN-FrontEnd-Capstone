@@ -17,15 +17,13 @@ export const FavoritesList = ({ currentUser }) => {
       : getUserById(currentUser?.id).then((data1) => setUser(data1[0]));
   };
 
-  
   const getAndSetFavorites = () => {
     getFavoritesByUserId(user?.id).then((data) => setFavorites(data));
-    
   };
   
   useEffect(() => {
     getAndSetUser();
-  }, [currentUser]);
+  }, [userId]);
 
   useEffect(() => {
     getAndSetFavorites();
@@ -41,7 +39,7 @@ export const FavoritesList = ({ currentUser }) => {
       </div>
       <div className="favorites-list">
         {favorites.map((favObj) => {
-          return <FavoriteCard key={favObj.id} favObj={favObj} />;
+          return <FavoriteCard key={favObj.id} favObj={favObj} currentUser={currentUser} getAndSetFavorites={getAndSetFavorites}/>;
         })}
       </div>
     </section>

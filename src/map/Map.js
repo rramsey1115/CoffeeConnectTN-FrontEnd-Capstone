@@ -9,7 +9,7 @@ import {
   DirectionsRenderer,
 } from "@react-google-maps/api";
 
-export const Map = ({ shop, userLocation }) => {
+export const MapDisplay = ({ shop, userLocation }) => {
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
     googleMapsApiKey: "AIzaSyBAZYUQCy2QTGBr10KsuiGd1AqOgmFicqc",

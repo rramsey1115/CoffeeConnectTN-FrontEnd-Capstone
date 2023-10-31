@@ -10,7 +10,7 @@ import {
   deleteFromFavorites,
   getFavoritesByUserId,
 } from "../services/favServices";
-import { Map } from "../map/Map";
+import { Map, MapDisplay } from "../map/Map";
 
 export const ShopDetails = ({ currentUser, userLocation }) => {
   const id = useParams().shopId;
@@ -108,7 +108,7 @@ export const ShopDetails = ({ currentUser, userLocation }) => {
       </div>
       <div className="details-about-map">
         <div className="about-map">
-          <Map shop={currentShop} userLocation={userLocation} />
+          <MapDisplay shop={currentShop} userLocation={userLocation} />
         </div>
       </div>
       <div className="details-posts">
