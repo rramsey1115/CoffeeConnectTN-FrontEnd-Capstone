@@ -127,7 +127,7 @@ cursor: pointer;
     padding-left: 4px;
 }
 
-#favorite-icon {
+.favorite-icon {
     width: 30px;
     height: 30px;
     fill: goldenrod;

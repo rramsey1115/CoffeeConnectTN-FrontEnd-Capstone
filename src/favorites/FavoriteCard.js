@@ -29,7 +29,7 @@ export const FavoriteCard = ({ favObj, currentUser }) => {
             cuf.businessId === favObj.businessId ? (
               <BsFillBookmarkFill key={favObj.id} className="favorite-icon" />
             ) : (
-              <div className="favorite-icon-placeholder">{" "}</div>
+             null
             )
           )}
         </div>
