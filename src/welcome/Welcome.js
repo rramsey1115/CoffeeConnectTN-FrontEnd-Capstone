@@ -5,12 +5,12 @@ import welcomeVideo from "./welcomeVideo.mp4";
 import { useNavigate } from "react-router-dom";
 
 export const Welcome = ({ currentUser }) => {
-  const [searchCity, setSearchCity] = useState(1);
+  const [searchCity, setSearchCity] = useState("Nashville");
   // const [user, setUser] = useState({});
   const navigate = useNavigate();
 
-  const handleCitySelect = (id) => {
-    setSearchCity(id);
+  const handleCitySelect = (cityName) => {
+    setSearchCity(cityName).then(console.log("searchCity", searchCity));
   }
 
   return (
@@ -33,32 +33,33 @@ export const Welcome = ({ currentUser }) => {
       </div>
       <div className="welcome-footer">
         <button
-          onClick={(e) => navigate("/discover")}
+          onClick={(e) => handleCitySelect(e.target.value*1)}
+          value="1"
           id="discover-button"
           className="button"
         >
-          Discover Nashville
+          Nashville
         </button>
         <button
           onClick={(e) => navigate("/discover")}
           id="discover-button"
           className="button"
         >
-          Discover Knoxville
+          Knoxville
         </button>
         <button
           onClick={(e) => navigate("/discover")}
           id="discover-button"
           className="button"
         >
-          Discover Chattanooga
+          Chattanooga
         </button>
         <button
           onClick={(e) => navigate("/discover")}
           id="discover-button"
           className="button"
         >
-          Discover Memphis
+          Memphis
         </button>
       </div>
     </div>

@@ -21,24 +21,23 @@ export const UserProfile = ({ currentUser }) => {
     deleteUserByUserId(userId).then(navigate("/discover"));
   };
 
-  console.log('user',user);
   return (
     <div className="profile-container">
       <section className="profile-about">
         <div className="profile-left">
           <h1 id="profile-title">{user?.name}</h1>
           <img src={user?.picture} alt="user" id="profile-picture" />
-          
         </div>
         <div className="profile-right">
-        <h2>About</h2>
+          <h2>About</h2>
           <p id="about-paragraph">{user?.about}</p>
-          <div className="preferences"><br/>
+          <div className="preferences">
+            <br />
             <h2 id="preferences-title">Preferences</h2>
             <p>{user.coffeePreference?.name} Coffees</p>
             <p>{user.atmospherePreference?.name} Atmospheres</p>
           </div>
-          {currentUser?.admin ? (
+          {currentUser?.admin && userId > 1 ? (
             <>
               <button
                 className="button"
