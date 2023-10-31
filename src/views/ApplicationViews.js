@@ -7,6 +7,7 @@ import { ShopDetails } from "../shops/ShopDetails";
 import { FavoritesList } from "../favorites/FavoritesList";
 import { UserProfile } from "../profile/UserProfile";
 import { EditProfileForm } from "../profile/EditProfileForm";
+import { getAllShops } from "../services/shopServices";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -18,44 +19,84 @@ export const ApplicationViews = () => {
     setCurrentUser(coffeeUserObject);
   }, []);
 
-  useEffect(()=> {
+  useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setUserLocation(position.coords);
-    })
+    });
   }, [currentUser]);
 
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <NavBar currentUser={currentUser} />
-            <Outlet />
-          </>
-        }
-      >
-        <Route index element={<Welcome currentUser={currentUser} userLocation={userLocation}/>} />
+      <Route path="/" element={<Outlet />}>
+        <Route
+          index
+          element={
+            <Welcome currentUser={currentUser} userLocation={userLocation} />
+          }
+        />
         <Route path="discover">
-          <Route index element={<ShopsList currentUser={currentUser} userLocation={userLocation}/>} />
+          <Route
+            path=":cityName"
+            element={
+              <>
+                <NavBar currentUser={currentUser} />{" "}
+                <ShopsList
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+              </>
+            }
+          />
           <Route
             path=":shopId"
-            element={<ShopDetails currentUser={currentUser} userLocation={userLocation}/>}
+            element={
+              <>
+                <NavBar currentUser={currentUser} />
+                <ShopDetails
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+              </>
+            }
           />
         </Route>
         <Route
           path="favorites"
-          element={<FavoritesList currentUser={currentUser} userLocation={userLocation}/>}
+          element={
+            <>
+              <NavBar currentUser={currentUser} />
+              <FavoritesList
+                currentUser={currentUser}
+                userLocation={userLocation}
+              />
+            </>
+          }
         />
         <Route path="profile">
           <Route
             path=":userId"
-            element={<UserProfile currentUser={currentUser} userLocation={userLocation}/>}
+            element={
+              <>
+                <NavBar currentUser={currentUser} />
+                <UserProfile
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+              </>
+            }
           />
         </Route>
         <Route
           path="editProfile"
-          element={<EditProfileForm currentUser={currentUser} userLocation={userLocation}/>}
+          element={
+            <>
+              <NavBar currentUser={currentUser} />
+              <EditProfileForm
+                currentUser={currentUser}
+                userLocation={userLocation}
+              />
+            </>
+          }
         />
       </Route>
     </Routes>

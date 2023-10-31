@@ -6,7 +6,7 @@ import { useState } from "react";
 // import BlackTanLogo from "../graphics/BlackTan_Logo.png"
 import WhiteLogo from "../graphics/WhiteLogo.png"
 
-export const NavBar = ({ currentUser }) => {
+export const NavBar = ({ currentUser, cityName }) => {
   const navigate = useNavigate();
   const [menuClicked, setMenuClicked] = useState(false);
 
@@ -19,7 +19,7 @@ export const NavBar = ({ currentUser }) => {
           </Link>
         </li>
         <li className="navbar-item" onClick={(e) => setMenuClicked(false)}>
-          <Link className="navbar-link" to="/discover">
+          <Link className="navbar-link" to={`/discover/${cityName}`}>
             Discover
           </Link>
         </li>

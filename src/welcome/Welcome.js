@@ -1,17 +1,16 @@
-import { useEffect, useState } from "react";
-import { getUserById } from "../services/userServices";
+import { useState } from "react";
+// import { getUserById } from "../services/userServices";
 import "./Welcome.css";
 import welcomeVideo from "./welcomeVideo.mp4";
 import { useNavigate } from "react-router-dom";
 
 export const Welcome = ({ currentUser }) => {
-  const [searchCity, setSearchCity] = useState("Nashville");
-  // const [user, setUser] = useState({});
+  const [searchCity, setSearchCity] = useState("nashville");
   const navigate = useNavigate();
-
+  
   const handleCitySelect = (cityName) => {
-    setSearchCity(cityName).then(console.log("searchCity", searchCity));
-  }
+    setSearchCity(cityName);
+  };
 
   return (
     <div className="welcome">
@@ -33,33 +32,59 @@ export const Welcome = ({ currentUser }) => {
       </div>
       <div className="welcome-footer">
         <button
-          onClick={(e) => handleCitySelect(e.target.value*1)}
-          value="1"
+          onClick={(e) => {
+            handleCitySelect(e.target.value);
+            navigate(`/discover/${searchCity}`);
+          }}
+          value="nashville"
           id="discover-button"
           className="button"
         >
           Nashville
         </button>
         <button
-          onClick={(e) => navigate("/discover")}
+          onClick={(e) => {
+            handleCitySelect(e.target.value);
+            navigate(`/discover/${searchCity}`);
+          }}
+          value="knoxville"
           id="discover-button"
           className="button"
         >
           Knoxville
         </button>
         <button
-          onClick={(e) => navigate("/discover")}
+          onClick={(e) => {
+            handleCitySelect(e.target.value);
+            navigate(`/discover/${searchCity}`);
+          }}
+          value="chattanooga"
           id="discover-button"
           className="button"
         >
           Chattanooga
         </button>
         <button
-          onClick={(e) => navigate("/discover")}
+          onClick={(e) => {
+            handleCitySelect(e.target.value);
+            navigate(`/discover/${searchCity}`);
+          }}
+          value="memphis"
           id="discover-button"
           className="button"
         >
           Memphis
+        </button>
+        <button
+          onClick={(e) => {
+            handleCitySelect(e.target.value);
+            navigate(`/discover/${searchCity}`);
+          }}
+          value="cookeville"
+          id="discover-button"
+          className="button"
+        >
+          Cookeville
         </button>
       </div>
     </div>

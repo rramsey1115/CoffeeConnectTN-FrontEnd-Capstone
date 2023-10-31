@@ -10,6 +10,11 @@
   border-left: 12vw solid transparent;
   border-right: 12vw solid transparent;
   justify-content: space-between;
+  animation: fadeIn .4s;
+  -webkit-animation: fadeIn .4s;
+  -moz-animation: fadeIn .4s;
+  -o-animation: fadeIn .4s;
+  -ms-animation: fadeIn .4s;
 }
 
 .navbar-item {
