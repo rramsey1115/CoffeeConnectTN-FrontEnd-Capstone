@@ -10,7 +10,7 @@ import {
   deleteFromFavorites,
   getFavoritesByUserId,
 } from "../services/favServices";
-import { Map, MapDisplay } from "../map/Map";
+import { MapDisplay } from "../map/Map";
 
 export const ShopDetails = ({ currentUser, userLocation }) => {
   const id = useParams().shopId;

@@ -7,6 +7,7 @@ import {
   Marker,
   useJsApiLoader,
   DirectionsRenderer,
+  DirectionsService
 } from "@react-google-maps/api";
 
 export const MapDisplay = ({ shop, userLocation }) => {
