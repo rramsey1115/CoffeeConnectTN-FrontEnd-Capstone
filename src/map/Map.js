@@ -80,7 +80,7 @@ export const MapDisplay = ({ shop, userLocation }) => {
             onClick={(e) => {
               setShowDirections(!showDirections);
             }}
-          >{showDirections ? "Close" : "Get Directions"}
+          >{showDirections ? "Center" : "Get Directions"}
           </button>
           <div className="directions-details">
             {showDirections ? <><h3>Distance: {distance}</h3>
@@ -90,11 +90,10 @@ export const MapDisplay = ({ shop, userLocation }) => {
         </div>
         {showDirections ? (
           <GoogleMap
-            zoom={14}
+            zoom={10}
             googleMapsAPIKey={"AIzaSyBAZYUQCy2QTGBr10KsuiGd1AqOgmFicqc"}
             center={{ lat: shopLat, lng: shopLong }}
             mapContainerClassName="map-container"
-            
           >
             <Marker position={shopLocation} />
             <Marker position={userLocationLatLong} />
@@ -102,7 +101,7 @@ export const MapDisplay = ({ shop, userLocation }) => {
           </GoogleMap>
         ) : (
           <GoogleMap
-            zoom={14}
+            zoom={15}
             googleMapsAPIKey={"AIzaSyBAZYUQCy2QTGBr10KsuiGd1AqOgmFicqc"}
             center={{ lat: shopLat, lng: shopLong }}
             mapContainerClassName="map-container"
