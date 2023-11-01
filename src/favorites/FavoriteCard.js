@@ -22,7 +22,7 @@ export const FavoriteCard = ({ favObj, currentUser }) => {
     <section className="favorite-card">
       <div className="fav-card-banner">
         <div className="name-favorite">
-          <Link to={`/discover/${favObj.business?.id}`} className="name-link">
+          <Link to={`/details/${favObj.business?.id}`} className="name-link">
             <h2 id="fav-name">{favObj.business?.name}</h2>
           </Link>
           {currentUserFavorites.map((cuf) =>
@@ -36,7 +36,7 @@ export const FavoriteCard = ({ favObj, currentUser }) => {
         <StarRating shop={favObj.business} />
       </div>
       <div className="fav-card-body">
-        <Link to={`/discover/${favObj.business?.id}`} textDecoration="none">
+        <Link to={`/details/${favObj.business?.id}`} textDecoration="none">
           <img
             className="fav-card-img"
             src={favObj.business?.image_url}

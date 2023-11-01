@@ -35,7 +35,7 @@ export const ShopCard = ({ shop, currentUser, searchCity }) => {
           </Link>
         )}
 
-        <StarRating shop={shop} />
+        <StarRating shop={shop}/>
       </div>
       <div className="shop-card-body">
         <Link to={`/details/${shop.id}`} textDecoration="none">

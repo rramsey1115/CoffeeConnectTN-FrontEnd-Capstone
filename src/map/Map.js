@@ -7,15 +7,9 @@ import {
   Marker,
   useJsApiLoader,
   DirectionsRenderer,
-  DirectionsService
 } from "@react-google-maps/api";
 
 export const MapDisplay = ({ shop, userLocation }) => {
-  const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: "AIzaSyBAZYUQCy2QTGBr10KsuiGd1AqOgmFicqc",
-  });
-
   const [shopLat, setShopLat] = useState(null);
   const [shopLong, setShopLong] = useState(null);
   const [shopLocation, setShopLocation] = useState(null);
@@ -25,27 +19,24 @@ export const MapDisplay = ({ shop, userLocation }) => {
   const [distance, setDistance] = useState("");
   const [duration, setDuration] = useState("");
 
+  const { isLoaded } = useJsApiLoader({
+    id: "google-map-script",
+    googleMapsApiKey: "AIzaSyBAZYUQCy2QTGBr10KsuiGd1AqOgmFicqc",
+  });
+
   const calculateRoute = async () => {
     if (shopLat && shopLong && userLocationLatLong) {
-      // eslint-disable-next-line no-undef
-      const directionsService = new google.maps.DirectionsService();
+      const directionsService = new window.google.maps.DirectionsService();
       const results = await directionsService.route({
         origin: userLocationLatLong,
         destination: { lat: shopLat, lng: shopLong },
-        // eslint-disable-next-line no-undef
-        travelMode: google.maps.TravelMode.DRIVING,
+        travelMode: window.google.maps.TravelMode.DRIVING,
       });
       setDirectionsRes(results);
       setDistance(results.routes[0].legs[0].distance.text);
       setDuration(results.routes[0].legs[0].duration.text);
     }
   };
-
-  //   const clearRoute = () => {
-  //     setDirectionsRes(null);
-  //     setDistance("");
-  //     setDuration("");
-  //   };
 
   useEffect(() => {
     setShopLocation({ lat: shopLat, lng: shopLong });
@@ -80,12 +71,18 @@ export const MapDisplay = ({ shop, userLocation }) => {
             onClick={(e) => {
               setShowDirections(!showDirections);
             }}
-          >{showDirections ? "Center" : "Get Directions"}
+          >
+            {showDirections ? "Center" : "Get Directions"}
           </button>
           <div className="directions-details">
-            {showDirections ? <><h3>Distance: {distance}</h3>
-            <h3>Duration: {duration}</h3></> : ""}
-            
+            {showDirections ? (
+              <>
+                <h3>Distance: {distance}</h3>
+                <h3>Duration: {duration}</h3>
+              </>
+            ) : (
+              ""
+            )}
           </div>
         </div>
         {showDirections ? (
