@@ -13,11 +13,6 @@
     justify-content: space-evenly;
 }
 
-h1 {
-    font-size: 32px;
-    margin-top: 0;
-}
-
 .favorites-header {
     text-align: center;
     padding-top: 20px;
@@ -39,7 +34,8 @@ h1 {
 }
 
 #your-favorites-title {
-    width: 20vw;
+    font-size: 2.25rem;
+    width: 60vw;
     min-width: 300px;
     align-self: center;
     text-align: center;
@@ -50,7 +46,7 @@ h1 {
 }
 
 #fav-name:hover {
-    color: var(--tan)
+    color: var(--tan);
 }
 
 a {
@@ -61,6 +57,7 @@ a {
     width: 100%;
     display: flex;
     flex-direction: column;
+    background-color: black;
     align-items: center;
     border: 1px solid var(--tan);
     border-radius: 8px;
@@ -112,7 +109,7 @@ cursor: pointer;
 
 #ratings-amount {
     font-size: 16px;
-    color: lightgray;
+    color:whitesmoke;
     margin: 0;
     padding: 2px;
 }

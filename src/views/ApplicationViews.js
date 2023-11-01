@@ -7,6 +7,7 @@ import { ShopDetails } from "../shops/ShopDetails";
 import { FavoritesList } from "../favorites/FavoritesList";
 import { UserProfile } from "../profile/UserProfile";
 import { EditProfileForm } from "../profile/EditProfileForm";
+import { DarkMode } from "../theme/DarkMode";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -30,7 +31,10 @@ export const ApplicationViews = () => {
         <Route
           index
           element={
-            <Welcome currentUser={currentUser} userLocation={userLocation} />
+            <>
+              <Welcome currentUser={currentUser} userLocation={userLocation} />
+              <DarkMode />
+            </>
           }
         />
         <Route path="discover">
@@ -43,6 +47,7 @@ export const ApplicationViews = () => {
                   currentUser={currentUser}
                   userLocation={userLocation}
                 />
+                {ShopsList ? <DarkMode /> : null}
               </>
             }
           />
@@ -57,6 +62,7 @@ export const ApplicationViews = () => {
                   currentUser={currentUser}
                   userLocation={userLocation}
                 />
+                {ShopDetails ? <DarkMode /> : null}
               </>
             }
           />
@@ -70,6 +76,7 @@ export const ApplicationViews = () => {
                 currentUser={currentUser}
                 userLocation={userLocation}
               />
+              {FavoritesList ? <DarkMode /> : null}
             </>
           }
         />
@@ -83,6 +90,7 @@ export const ApplicationViews = () => {
                   currentUser={currentUser}
                   userLocation={userLocation}
                 />
+                {UserProfile ? <DarkMode /> : null}
               </>
             }
           />
@@ -96,6 +104,7 @@ export const ApplicationViews = () => {
                 currentUser={currentUser}
                 userLocation={userLocation}
               />
+              {EditProfileForm ? <DarkMode /> : null}
             </>
           }
         />

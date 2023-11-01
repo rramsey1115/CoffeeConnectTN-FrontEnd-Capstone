@@ -5,7 +5,7 @@
 .container-login > section > a {
   font-size: larger;
   text-decoration: underline;
-  color: whitesmoke;
+  color: var(--font-color);
   cursor: pointer;
 }
 

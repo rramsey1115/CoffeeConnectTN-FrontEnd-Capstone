@@ -2,20 +2,20 @@ import { Link } from "react-router-dom";
 import "./NavBar.css";
 import { useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useEffect, useState, useTransition } from "react";
+import { useEffect, useState } from "react";
 // import BlackTanLogo from "../graphics/BlackTan_Logo.png"
-import WhiteLogo from "../graphics/WhiteLogo.png"
+import WhiteLogo from "../graphics/WhiteLogo.png";
 
 export const NavBar = ({ currentUser }) => {
   const navigate = useNavigate();
   const [menuClicked, setMenuClicked] = useState(false);
   const [cityName, setCityName] = useState("");
 
-  useEffect(()=> {
-      const localCityObj = localStorage.getItem("coffee_searchCity");
-      const cityString = JSON.parse(localCityObj);
-      setCityName(cityString.cityName);
-  }, [])
+  useEffect(() => {
+    const localCityObj = localStorage.getItem("coffee_searchCity");
+    const cityString = JSON.parse(localCityObj);
+    setCityName(cityString.cityName);
+  }, []);
 
   return (
     <div id="navar" className={menuClicked ? "navbar active" : "navbar hidden"}>
@@ -58,7 +58,12 @@ export const NavBar = ({ currentUser }) => {
         )}
       </ul>
       <div id="mobile">
-        <img id="navbar-logo" className="navbar-logo" src={WhiteLogo} alt="coffee connect text logo"/>
+        <img
+          id="navbar-logo"
+          className="navbar-logo"
+          src={WhiteLogo}
+          alt="coffee connect text logo"
+        />
         {menuClicked ? (
           <FaTimes
             className="fa fa-bars"

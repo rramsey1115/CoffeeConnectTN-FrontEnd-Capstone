@@ -82,7 +82,7 @@
 .edit-form-control {
   width: 99%;
   font-family: inherit;
-  color: black;
+  color: var(--font-color);
   font-size: inherit;
 }
 
@@ -120,7 +120,7 @@ fieldset {
   margin: 0px;
   padding: 4px;
   border-radius: 8px;
-  color: black;
+  color: var(--font-color);
   font-family: inherit;
   font-size: inherit;
   transition: 0.5s ease;
@@ -155,12 +155,12 @@ fieldset {
   color: green;
 }
 
-.edit-prefs > fieldset > div > input:active {
+/* .edit-prefs > fieldset > div > input:active {
   fill: red;
   color: red;
   background-color: red;
   color: red;
-}
+} */
 
 .prefs-list {
   width: 45%;

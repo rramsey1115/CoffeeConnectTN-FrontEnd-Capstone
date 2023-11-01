@@ -14,7 +14,7 @@ export const FavoritesList = ({ currentUser }) => {
   const getAndSetUser = () => {
     userId
       ? getUserById(userId).then((data) => setUser(data[0]))
-      : getUserById(currentUser?.id).then((data1) => setUser(data1[0]));
+      : getUserById(currentUser.id).then((data1) => setUser(data1[0]));
   };
 
   const getAndSetFavorites = () => {

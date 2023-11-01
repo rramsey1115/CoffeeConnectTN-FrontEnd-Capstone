@@ -17,6 +17,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    color: whitesmoke;
     animation: fadeIn .5s;
     -webkit-animation: fadeIn .5s;
     -moz-animation: fadeIn .5s;
@@ -29,6 +30,7 @@
     padding: 5px;
     text-decoration: none;
     transition: .3s ease-in-out;
+    color: whitesmoke;
 }
 
 a {
@@ -43,6 +45,8 @@ a {
 .shop-card-banner {
     width: 100%;
     display: flex;
+    background-color: black;
+    color: whitesmoke;
     flex-direction: column;
     align-items: center;
     border: 1px solid var(--tan);
@@ -72,6 +76,7 @@ a {
 .yelp-rating {
 width: fit-content;
 margin-top: 2px;
+color: whitesmoke;
 margin-bottom: 2px;
 display: flex;
 flex-direction: column;
@@ -87,7 +92,7 @@ transition:.3s ease-in-out;
 
 #ratings-amount {
     font-size: 16px;
-    color: lightgray;
+    color: whitesmoke;
     margin: 0;
     padding: 2px;
 }
@@ -113,6 +118,7 @@ transition:.3s ease-in-out;
 
 #fav-name {
     margin: 0;
+    color: whitesmoke;
     padding: 2px;
     text-decoration: none;
     transition: .3s ease-in-out;

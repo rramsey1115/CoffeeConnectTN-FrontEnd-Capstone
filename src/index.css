@@ -1,17 +1,42 @@
 :root {
-  --dark: rgb(50, 49, 49);
-  --brown: #2b1d15;
+  --primary-color: black;
+  --secondary-color: whitesmoke;
+  --font-color: whitesmoke;
+  --bg-color: black;
   --tan: #ab9474;
   /* font-family: "Quicksand", sans-serif; */
   font-family: "Poppins", sans-serif;
 }
 
+[data-theme="light"] {
+  --font-color: black;
+  --bg-color: lightgray;
+  --tan: #ab9474;
+}
+
+.for_light_theme {
+  --primary-color: black;
+  --secondary-color: whitesmoke;
+  --font-color: black;
+  --bg-color: lightgray;
+  --tan: #ab9474;
+}
+
+.for_dark_theme {
+  --primary-color: black;
+  --secondary-color: whitesmoke;
+  --font-color: whitesmoke;
+  --bg-color: black;
+  --tan: #ab9474;
+}
+
 * {
-  color: white;
+  color: var(--font-color);
 }
 
 body {
-  background: black;
+  color: var(--font-color);
+  background: var(--bg-color);
   margin: 0;
   padding: 0;
   display: block;
@@ -54,26 +79,28 @@ h1 {
 
 a {
   text-decoration: none;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 }
 
 button {
-  transition: color .3s ease;
+  transition: color 0.3s ease;
+  background-color: var(--bg-color);
+  color: var(--font-color);
 }
 
 button:hover {
   color: var(--tan);
-  transition: .3s;
+  transition: 0.3s;
 }
 
 ::-webkit-scrollbar {
-background-color: transparent;
-width: 6px;
+  background-color: transparent;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
   width: 6px;
-  background-color: rgb(30, 30, 30);
+  background-color: var(--bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -81,53 +108,92 @@ width: 6px;
   border-radius: 4px;
 }
 
-
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @-moz-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-moz-keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @-webkit-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-webkit-keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @-o-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-o-keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 @-ms-keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @-ms-keyframes fadeOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

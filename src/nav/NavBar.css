@@ -1,7 +1,7 @@
 .navbar ul {
   display: flex;
   flex-wrap: nowrap;
-  background-color: black;
+  background-color: var(--bg-color);
   margin: 10px auto;
   width: 64vw;
   min-width: 310px;
@@ -21,10 +21,11 @@
   width: fit-content;
   list-style-type: none;
   text-align: center;
-  color: var(--offWhite);
+  color: var(--font-color);
 }
 
 .navbar-link {
+  color: var(--font-color);
   text-decoration: none;
   letter-spacing: 1px;
 }
@@ -39,7 +40,7 @@
   border: 1px solid var(--tan);
   border-left: 6vw solid transparent;
   border-right: 6vw solid transparent;
-  fill: white;
+  fill: var(--font-color);
   height: fit-content;
   display: none;
 }
@@ -49,7 +50,7 @@
   height: 24px;
   padding: 4px;
   margin: 10px 10px;
-  fill: white;
+  fill: var(--font-color);
   transition: 0.2s;
   cursor: pointer;
   
@@ -73,7 +74,7 @@
     right: 0px;
     width: 75vw;
     height: fit-content;
-    background-color: black;
+    background-color: var(--bg-color);
     padding: 0px 0px 0px 0px;
     border-top: none;
     transition: 1s ease-in-out;
@@ -90,7 +91,7 @@
     right: 0px;
     width: 75vw;
     height: fit-content;
-    background-color: black;
+    background-color: var(--bg-color);
     padding: 0px 0px 0px 0px;
     border-top: none;
     transition: 1s ease-in-out;

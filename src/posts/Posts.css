@@ -1,208 +1,207 @@
 .post-header {
-    width: 90%;
-    margin-bottom: 8px;
-    border-bottom: 1px solid var(--tan);
-    border-right: 10vw solid transparent;
-    border-left: 10vw solid transparent;
-    text-align: center;
+  width: 90%;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--tan);
+  border-right: 10vw solid transparent;
+  border-left: 10vw solid transparent;
+  text-align: center;
 }
 h1 {
-    margin-top: 8px;
-    margin-bottom: 0;
-    padding: 4px;
+  margin-top: 8px;
+  margin-bottom: 0;
+  padding: 4px;
 }
 .post-list {
-    width: 100%;
-    margin-top: 6px;
-    display: flex;
-    flex-direction: column-reverse;
+  width: 100%;
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .post-item {
-    width: 100%;
-    margin-top: 20px;
-    min-height: 100px;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+  min-height: 100px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .post-left {
-    width: 15%;
-    min-width: 60px;
-    text-align: center;
+  width: 15%;
+  min-width: 60px;
+  text-align: center;
 }
 
 .post-center {
-    width: 60%;
-    min-width: 200px;
-    text-align: center;
-    align-items: center;
+  width: 60%;
+  min-width: 200px;
+  text-align: center;
+  align-items: center;
 }
 
 .post-right {
-    width: 5%;
-    min-width: 48px;
+  width: 5%;
+  min-width: 48px;
 }
 
 #user-picture {
-    width: 80%;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: .3s;
+  width: 80%;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 #user-picture:hover {
-    filter: brightness(.3);
-    transition: .3s;
+  filter: brightness(0.3);
+  transition: 0.3s;
 }
 
 .post-text {
-    margin-top: 4px;
-    padding-left: 2px;
+  margin-top: 4px;
+  padding-left: 2px;
 }
 
 .delete-icon {
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
 }
 
 #delete-icon {
-    height: 28px;
-    width: 28px;
-    padding: 10px;
-    margin: 0px auto;
-    cursor: pointer;
+  height: 28px;
+  width: 28px;
+  padding: 10px;
+  margin: 0px auto;
+  cursor: pointer;
 }
 
 #delete-icon:hover {
-    fill: red;
-    transition: .2s;
+  fill: red;
+  transition: 0.2s;
 }
 
 .edit-icon {
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
 }
 
 #edit-icon {
-    height: 28px;
-    width: 28px;
-    padding: 10px;
-    margin: 0px auto;
-    cursor: pointer;
+  height: 28px;
+  width: 28px;
+  padding: 10px;
+  margin: 0px auto;
+  cursor: pointer;
 }
 
 #edit-icon:hover {
-    filter: brightness(.5);
-    transition: .2s;
+  filter: brightness(0.5);
+  transition: 0.2s;
 }
 
 #save-icon {
-    height: 32px;
-    width: 32px;
-    padding: 10px;
-    margin: 0px auto;
-    cursor: pointer;
+  height: 32px;
+  width: 32px;
+  padding: 10px;
+  margin: 0px auto;
+  cursor: pointer;
 }
 
 #save-icon:hover {
-    fill: green;
-    transition: .2s;
+  fill: green;
+  transition: 0.2s;
 }
 
 .edit-post-input {
-    color: black;
-    width: 100%;
-    height: 5em;
-    min-width: 200px;
-    border: 1px solid var(--tan);
-    border-radius: 5px;
-    font-family: inherit;
-    font-size: inherit;
-    color: black;
-    animation: fadeIn .5s;
-    -webkit-animation: fadeIn .5s;
-    -moz-animation: fadeIn .5s;
-    -o-animation: fadeIn .5s;
-    -ms-animation: fadeIn .5s;
+  color: black;
+  width: 100%;
+  height: 5em;
+  min-width: 200px;
+  border: 1px solid var(--tan);
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: inherit;
+  color: black;
+  animation: fadeIn 0.5s;
+  -webkit-animation: fadeIn 0.5s;
+  -moz-animation: fadeIn 0.5s;
+  -o-animation: fadeIn 0.5s;
+  -ms-animation: fadeIn 0.5s;
 }
 
 .edit-post-input:focus {
-    height: fit-content;
-    animation: fadeIn .5s;
-    -webkit-animation: fadeIn .5s;
-    -moz-animation: fadeIn .5s;
-    -o-animation: fadeIn .5s;
-    -ms-animation: fadeIn .5s;
+  height: fit-content;
+  animation: fadeIn 0.5s;
+  -webkit-animation: fadeIn 0.5s;
+  -moz-animation: fadeIn 0.5s;
+  -o-animation: fadeIn 0.5s;
+  -ms-animation: fadeIn 0.5s;
 }
 
 .new-post-input {
-    transition: all .5s;
-    color: black;
-    width: 100%;
-    height: 1.5em;
-    min-width: 200px;
-    border: 1px solid var(--tan);
-    font-family: inherit;
-    font-size: inherit;
-    color: black;
-    border-radius: 5px;
-    padding: 5px;
-    margin-bottom: 10px;
-    animation: fadeIn 1s;
-    -webkit-animation: fadeIn 1s;
-    -moz-animation: fadeIn 4s;
-    -o-animation: fadeIn 4s;
-    -ms-animation: fadeIn 4s;
+  transition: all 0.5s;
+  color: black;
+  width: 100%;
+  height: 1.5em;
+  min-width: 200px;
+  border: 1px solid var(--tan);
+  font-family: inherit;
+  font-size: inherit;
+  color: black;
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+  animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  -moz-animation: fadeIn 4s;
+  -o-animation: fadeIn 4s;
+  -ms-animation: fadeIn 4s;
 }
 
 .new-post-input:focus {
-    height: 4em;
+  height: 4em;
 }
 
 .button {
-    color: white;
-    font-size: 16px;
-    background-color: black;
-    border: 1px solid var(--tan);
-    border-radius: 10px;
-    margin: 2px 10px;
-    padding: 10px 30px;
-    cursor: pointer;
+  color: var(--font-color);
+  font-size: 16px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--tan);
+  border-radius: 10px;
+  margin: 2px 10px;
+  padding: 10px 30px;
+  cursor: pointer;
 }
 
 .button:hover {
- color: var(--tan);
+  color: var(--tan);
 }
 
 .new-post {
-    width: 100%;
-    margin: 5px auto;
-    text-align: center;
+  width: 100%;
+  margin: 5px auto;
+  text-align: center;
 }
 
 .new-post-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    border: none;
-    box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+  box-shadow: none;
 }
 
 .new-post-body {
-    width: 90%;
-    height: 3em;
-    resize: vertical;
-    padding: 2px;
-    margin: 16px auto;
-    border: 1px solid var(--tan);
-    border-radius: 10px;
-    color:black;
-    background-color: whitesmoke;
-    font-family: inherit;
-    font-size: inherit;
+  width: 90%;
+  height: 3em;
+  resize: vertical;
+  padding: 2px;
+  margin: 16px auto;
+  border: 1px solid var(--tan);
+  border-radius: 10px;
+  color: var(--font-color);
+  background-color: var(--bg-color);
+  font-family: inherit;
+  font-size: inherit;
 }
-
