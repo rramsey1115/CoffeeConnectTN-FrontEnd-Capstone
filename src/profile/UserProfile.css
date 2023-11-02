@@ -30,6 +30,7 @@
   width: 80%;
   min-width: 150px;
   border-radius: 50%;
+  box-shadow: 1px 1px 9px 0px gray;
 }
 
 #profile-title {
@@ -49,15 +50,6 @@
   margin-top: 10px;
   padding: 0;
 }
-
-/* .profile-favorites-header {
-  width: 65%;
-  min-width: 265px;
-  margin: 0px auto;
-  border-bottom: 1px solid var(--tan);
-  border-left: 10vw solid transparent;
-  border-right: 10vw solid transparent;
-} */
 
 #favorites-title {
   margin: 20px auto 5px auto;
@@ -82,7 +74,7 @@
 .edit-form-control {
   width: 99%;
   font-family: inherit;
-  color: var(--font-color);
+  color: black;
   font-size: inherit;
 }
 
@@ -120,7 +112,7 @@ fieldset {
   margin: 0px;
   padding: 4px;
   border-radius: 8px;
-  color: var(--font-color);
+  color: black;
   font-family: inherit;
   font-size: inherit;
   transition: 0.5s ease;
@@ -154,13 +146,6 @@ fieldset {
   fill: green;
   color: green;
 }
-
-/* .edit-prefs > fieldset > div > input:active {
-  fill: red;
-  color: red;
-  background-color: red;
-  color: red;
-} */
 
 .prefs-list {
   width: 45%;

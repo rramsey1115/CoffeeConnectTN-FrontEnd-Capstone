@@ -1,5 +1,5 @@
 export const getNonAdminUsers = () => {
-  return fetch("http://localhost:8088/users?admin=false").then((res) =>
+  return fetch("http://localhost:8088/users?admin=false&_expand=coffeePreference&_expand=atmospherePreference").then((res) =>
     res.json()
   );
 };
@@ -8,6 +8,10 @@ export const getAdminUsers = () => {
   return fetch("http://localhost:8088/users?admin=true").then((res) =>
     res.json()
   );
+};
+
+export const getAllUsers = () => {
+  return fetch("http://localhost:8088/users").then((res) => res.json());
 };
 
 export const getUserByEmail = (email) => {

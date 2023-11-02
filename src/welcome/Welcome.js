@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-// import { getUserById } from "../services/userServices";
 import "./Welcome.css";
 import welcomeVideo from "./welcomeVideo.mp4";
 import { useNavigate } from "react-router-dom";
@@ -39,7 +37,6 @@ export const Welcome = ({ currentUser }) => {
         <button
           onClick={(e) => {
             handleCitySelect(e.target.value);
-            
           }}
           value="Nashville"
           id="discover-button"
@@ -50,7 +47,6 @@ export const Welcome = ({ currentUser }) => {
         <button
           onClick={(e) => {
             handleCitySelect(e.target.value);
-            // navigate(`/discover/${e.target.value}`);
           }}
           value="Knoxville"
           id="discover-button"
@@ -61,7 +57,6 @@ export const Welcome = ({ currentUser }) => {
         <button
           onClick={(e) => {
             handleCitySelect(e.target.value);
-            // navigate(`/discover/${e.target.value}`);
           }}
           value="Chattanooga"
           id="discover-button"
@@ -72,7 +67,6 @@ export const Welcome = ({ currentUser }) => {
         <button
           onClick={(e) => {
             handleCitySelect(e.target.value);
-            // navigate(`/discover/${e.target.value}`);
           }}
           value="Memphis"
           id="discover-button"
@@ -83,7 +77,6 @@ export const Welcome = ({ currentUser }) => {
         <button
           onClick={(e) => {
             handleCitySelect(e.target.value);
-            // navigate(`/discover/${e.target.value}`);
           }}
           value="Cookeville"
           id="discover-button"

@@ -34,8 +34,8 @@ export const FavoritesList = ({ currentUser }) => {
 
   return (isLoaded ? (favorites.length > 0 ? (
     <section className="favorites-container">
-      <div className="favorites-header">
-        <h1 id="your-favorites-title">Favorites</h1>
+      <div className="favorites-header profile-details-header">
+        <h1 id="your-favorites-title" className="profile-details-title">Favorites</h1>
       </div>
       <div className="favorites-list">
         {favorites.map((favObj) => {

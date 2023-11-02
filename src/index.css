@@ -4,13 +4,13 @@
   --font-color: whitesmoke;
   --bg-color: black;
   --tan: #ab9474;
-  /* font-family: "Quicksand", sans-serif; */
   font-family: "Poppins", sans-serif;
+  padding-bottom: 30px;
 }
 
 [data-theme="light"] {
   --font-color: black;
-  --bg-color: lightgray;
+  --bg-color: whitesmoke;
   --tan: #ab9474;
 }
 

@@ -1,6 +1,9 @@
 .dark_mode {
-  margin-top: -20px;
-  margin-left: 10px;
+  margin-left: 50px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  right: 0;
   animation: fadeIn 3s;
   -webkit-animation: fadeIn 3s;
   -moz-animation: fadeIn 3s;

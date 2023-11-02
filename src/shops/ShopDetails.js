@@ -61,8 +61,6 @@ export const ShopDetails = ({ currentUser, userLocation }) => {
     getAndSetCurrentShop();
   }, [id]);
 
-  console.log(id);
-
   return (
     <section className="details">
       <div className="details-about">

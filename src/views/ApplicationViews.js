@@ -27,13 +27,13 @@ export const ApplicationViews = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Outlet />}>
+      <Route path="/" element={<Outlet/>}>
         <Route
           index
           element={
             <>
-              <Welcome currentUser={currentUser} userLocation={userLocation} />
-              <DarkMode />
+              <Welcome currentUser={currentUser} userLocation={userLocation}/>
+              <DarkMode/>
             </>
           }
         />
@@ -42,12 +42,12 @@ export const ApplicationViews = () => {
             path=":cityName"
             element={
               <>
-                <NavBar currentUser={currentUser} />
+                <NavBar currentUser={currentUser}/>
                 <ShopsList
                   currentUser={currentUser}
                   userLocation={userLocation}
                 />
-                {ShopsList ? <DarkMode /> : null}
+                {ShopDetails ? <DarkMode /> : ""}
               </>
             }
           />
@@ -62,7 +62,7 @@ export const ApplicationViews = () => {
                   currentUser={currentUser}
                   userLocation={userLocation}
                 />
-                {ShopDetails ? <DarkMode /> : null}
+                {ShopDetails ? <DarkMode /> : ""}
               </>
             }
           />

@@ -53,6 +53,7 @@ a {
     border-radius: 8px;
     padding: 2px;
     text-align: center;
+    box-shadow: 1px 1px 6px 0px gray;
 }
 
 .address-container {
@@ -64,8 +65,10 @@ a {
     width: 320px;
     height: 300px;
     object-fit: cover;
-    filter: drop-shadow(20px white);
     transition: .3s;
+    box-shadow: 1px 1px 6px 0px gray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .shop-card-img:hover {

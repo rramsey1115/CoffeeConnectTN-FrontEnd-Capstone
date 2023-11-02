@@ -3,7 +3,6 @@ import "./NavBar.css";
 import { useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { useEffect, useState } from "react";
-// import BlackTanLogo from "../graphics/BlackTan_Logo.png"
 import WhiteLogo from "../graphics/WhiteLogo.png";
 
 export const NavBar = ({ currentUser }) => {

@@ -6,6 +6,7 @@ import {
 import "./UserProfile.css";
 import { useNavigate, useParams } from "react-router-dom";
 import { FavoritesList } from "../favorites/FavoritesList";
+import { Recommendations } from "./Recommendations";
 
 export const UserProfile = ({ currentUser }) => {
   const userId = useParams().userId;
@@ -73,6 +74,11 @@ export const UserProfile = ({ currentUser }) => {
       <section className="profile-favorites">
         <div className="profile-favorites-list">
           <FavoritesList currentUser={currentUser} />
+        </div>
+      </section>
+      <section className="profile-recs">
+        <div className="profile-recs-list">
+          <Recommendations user={user} />
         </div>
       </section>
     </div>

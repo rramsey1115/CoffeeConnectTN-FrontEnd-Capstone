@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
 import { ShopCard } from "./ShopCard";
-// import { TbFilterStar } from "react-icons/tb";
-// import { TfiStar } from "react-icons/tfi";
 import { VscFilter } from "react-icons/vsc";
 import "./ShopFilter.css";
 import { getAllCoffeeShops } from "../services/shopServices";
-// import { useParams } from "react-router-dom";
 
 export const ShopsList = ({ currentUser }) => {
   const [allShops, setAllShops] = useState([]);
@@ -51,17 +48,14 @@ export const ShopsList = ({ currentUser }) => {
   }, []);
 
   useEffect(() => {
-    setCityShops(allShops.filter(shop => shop.location?.city == searchCity));
-    setTimeout(() => {
-      setIsLoaded(true);
-    }, 500);
+    setCityShops(allShops.filter(shop => shop.location?.city === searchCity));
   }, [allShops, searchCity]);
 
   useEffect(() => {
     setFilteredShops(cityShops.filter(s => s.location?.city === searchCity));
     setTimeout(() => {
       setIsLoaded(true);
-    }, 500);
+    }, 200);
   }, [allShops, cityShops, searchCity]);
 
   return isLoaded === false ? (

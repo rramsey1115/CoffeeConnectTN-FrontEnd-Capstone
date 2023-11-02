@@ -17,7 +17,7 @@ export const DarkMode = () => {
 
   if (selectedTheme === "light") {
     setLightMode();
-  }
+  };
 
   const toggleTheme = (e) => {
     e.target.checked ? setDarkMode() : setLightMode();
