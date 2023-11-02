@@ -38,7 +38,7 @@ export const UserProfile = ({ currentUser }) => {
             <p>{user.coffeePreference?.name} Coffees</p>
             <p>{user.atmospherePreference?.name} Atmospheres</p>
           </div>
-          {currentUser?.admin && userId > 1 ? (
+          {currentUser.admin && userId > 1 ? (
             <>
               <button
                 className="button"
@@ -58,7 +58,7 @@ export const UserProfile = ({ currentUser }) => {
                 Edit Profile
               </button>
             </>
-          ) : user?.id === currentUser.id ? (
+          ) : user.id === currentUser.id ? (
             <button
               className="button"
               id="edit-profile-button"
@@ -78,7 +78,7 @@ export const UserProfile = ({ currentUser }) => {
       </section>
       <section className="profile-recs">
         <div className="profile-recs-list">
-          <Recommendations user={user} />
+          {currentUser.id == userId ? <Recommendations user={user} /> : ""}
         </div>
       </section>
     </div>

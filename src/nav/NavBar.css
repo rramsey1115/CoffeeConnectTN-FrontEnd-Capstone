@@ -113,7 +113,8 @@
   #mobile-title {
     text-align: center;
     margin: auto 0 auto 10px;
-    font-size: 16px;
+    font-size: 24px;
+    font-weight: bold;
   }
 
   #navbar-logo {
