@@ -70,46 +70,14 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 
+onst dropoffDate = new Date(repair?.dropoffDate);
+        const formattedDate = dropoffDate.toLocaleDateString(undefined, { timeZone: 'UTC' });
+        const fiveDaysLater = new Date(formattedDate);
+        fiveDaysLater.setDate(fiveDaysLater.getDate() + 5);
 
-    <script>
-      ((g) => {
-        var h,
-          a,
-          k,
-          p = "The Google Maps JavaScript API",
-          c = "google",
-          l = "importLibrary",
-          q = "__ib__",
-          m = document,
-          b = window;
-        b = b[c] || (b[c] = {});
-        var d = b.maps || (b.maps = {}),
-          r = new Set(),
-          e = new URLSearchParams(),
-          u = () =>
-            h ||
-            (h = new Promise(async (f, n) => {
-              await (a = m.createElement("script"));
-              e.set("libraries", [...r] + "");
-              for (k in g)
-                e.set(
-                  k.replace(/[A-Z]/g, (t) => "_" + t[0].toLowerCase()),
-                  g[k]
-                );
-              e.set("callback", c + ".maps." + q);
-              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-              d[q] = f;
-              a.onerror = () => (h = n(Error(p + " could not load.")));
-              a.nonce = m.querySelector("script[nonce]")?.nonce || "";
-              m.head.append(a);
-            }));
-        d[l]
-          ? console.warn(p + " only loads once. Ignoring:", g)
-          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
-      })({
-        key: "AIzaSyBAZYUQCy2QTGBr10KsuiGd1AqOgmFicqc",
-        v: "weekly",
-        // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-        // Add other bootstrap parameters as needed, using camel case.
-      });
-    </script>
+
+getAllEvents().then(array => {
+    const sortedByDateArray = array.sort((a, b) => new Date(a.eventStartDate) - new Date(b.eventStartDate))
+    setAllEvents(sortedByDateArray)
+     setMyEvents(sortedByDateArray.filter(event => event.userId === currentUser.id))
+})

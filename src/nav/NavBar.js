@@ -29,7 +29,7 @@ export const NavBar = ({ currentUser }) => {
           </Link>
         </li>
         <li className="navbar-item" onClick={(e) => setMenuClicked(false)}>
-          <Link className="navbar-link" to={`/discover/${cityName}`}>
+          <Link className="navbar-link" to={`/events`}>
             Events
           </Link>
         </li>

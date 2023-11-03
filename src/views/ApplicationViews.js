@@ -8,6 +8,8 @@ import { FavoritesList } from "../favorites/FavoritesList";
 import { UserProfile } from "../profile/UserProfile";
 import { EditProfileForm } from "../profile/EditProfileForm";
 import { DarkMode } from "../theme/DarkMode";
+import { EventsList } from "../events/EventsList";
+import { CreateEvent } from "../events/CreateEvent";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -27,13 +29,13 @@ export const ApplicationViews = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Outlet/>}>
+      <Route path="/" element={<Outlet />}>
         <Route
           index
           element={
             <>
-              <Welcome currentUser={currentUser} userLocation={userLocation}/>
-              <DarkMode/>
+              <Welcome currentUser={currentUser} userLocation={userLocation} />
+              <DarkMode />
             </>
           }
         />
@@ -42,7 +44,7 @@ export const ApplicationViews = () => {
             path=":cityName"
             element={
               <>
-                <NavBar currentUser={currentUser}/>
+                <NavBar currentUser={currentUser} />
                 <ShopsList
                   currentUser={currentUser}
                   userLocation={userLocation}
@@ -67,11 +69,39 @@ export const ApplicationViews = () => {
             }
           />
         </Route>
+        <Route path="events">
+          <Route
+            path=""
+            element={
+              <>
+                <NavBar currentUser={currentUser} userLocation={userLocation} />
+                <EventsList
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+                {ShopDetails ? <DarkMode /> : ""}
+              </>
+            }
+          />
+          <Route
+            path="create"
+            element={
+              <>
+                <NavBar currentUser={currentUser} userLocation={userLocation} />
+                <CreateEvent
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+                {CreateEvent ? <DarkMode /> : null}
+              </>
+            }
+          />
+        </Route>
         <Route
           path="favorites"
           element={
             <>
-              <NavBar currentUser={currentUser} />
+              <NavBar currentUser={currentUser} userLocation={userLocation} />
               <FavoritesList
                 currentUser={currentUser}
                 userLocation={userLocation}
@@ -85,7 +115,7 @@ export const ApplicationViews = () => {
             path=":userId"
             element={
               <>
-                <NavBar currentUser={currentUser} />
+                <NavBar currentUser={currentUser} userLocation={userLocation} />
                 <UserProfile
                   currentUser={currentUser}
                   userLocation={userLocation}
