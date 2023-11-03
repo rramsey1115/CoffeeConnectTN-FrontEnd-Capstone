@@ -67,7 +67,7 @@ export const Register = (props) => {
   return (
     <main style={{ textAlign: "center" }}>
       <form className="form-login" onSubmit={handleRegister}>
-        <h1>Coffee Connect</h1>
+        <h1>Coffee Connect TN</h1>
         <h2>Please Register</h2>
         <fieldset>
           <div className="form-group">
