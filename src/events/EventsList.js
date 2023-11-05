@@ -4,14 +4,16 @@ import { EventCard } from "./EventCard";
 import { useEffect, useState } from "react";
 import { getAllEvents } from "../services/eventServices";
 import { BsFillCalendarPlusFill } from "react-icons/bs";
+import { MdElectricalServices } from "react-icons/md";
 
 export const EventsList = ({ currentUser, userLocation }) => {
   const [allEvents, setAllEvents] = useState([]);
+  const [currentDate, setCurrentDate] = useState("");
   const [upcomingEvents, setUpcomingEvents] = useState([]);
   const [pastEvents, setPastEvents] = useState([]);
-  const [currentDate, setCurrentDate] = useState("");
 
   const navigate = useNavigate();
+
   const getAndSetDate = () => {
     const today = new Date();
     const yyyy = today.getFullYear();
@@ -19,35 +21,41 @@ export const EventsList = ({ currentUser, userLocation }) => {
     let dd = today.getDate();
     if (dd < 10) dd = "0" + dd;
     if (mm < 10) mm = "0" + mm;
-    const formattedToday = mm + "/" + dd + "/" + yyyy;
+    const formattedToday = yyyy + "-" + mm + "-" + dd;
     setCurrentDate(formattedToday);
+    console.log("formattedToday", formattedToday);
   };
 
   const getAndSetAllEvents = () => {
-    getAllEvents().then((data) => setAllEvents(data));
+    getAllEvents().then((data) => {
+      const sortedByDateArray = data.sort(
+        (a, b) => new Date(a.date) - new Date(b.date)
+      );
+      setAllEvents(sortedByDateArray);
+    });
   };
+
+  const filterDates = () => {
+    const upcomingArray = [];
+    const pastArray = [];
+    allEvents?.map((ev) => {
+      ev.date > currentDate ? upcomingArray.push(ev) : pastArray.push(ev);
+    });
+    setUpcomingEvents(upcomingArray);
+    setPastEvents(pastArray);
+  };
+
+  useEffect(() => {
+    getAndSetDate();
+  }, []);
 
   useEffect(() => {
     getAndSetAllEvents();
   }, []);
 
   useEffect(() => {
-    getAndSetDate();
-  }, []);
-
-    const compareDates = (d1, d2) => {
-      let date1 = new Date(d1.date);
-      let date2 = new Date(d2);
-      if (date1 > date2) {
-        upcomingEvents.push(d1);
-      } else {
-        pastEvents.push(d1);
-      }
-    };
-
-    useEffect(() => {
-      allEvents?.map((event) => compareDates(event, currentDate));
-    }, [currentDate]);
+    filterDates();
+  }, [allEvents]);
 
   return (
     <section className="events">
@@ -61,7 +69,19 @@ export const EventsList = ({ currentUser, userLocation }) => {
         />
       </div>
       <div className="events-list">
-        {allEvents?.map((event) => {
+        {upcomingEvents?.map((event) => {
+          return (
+            <div key={event.id}>
+              <EventCard eventObj={event} />
+            </div>
+          );
+        })}
+      </div>
+      <div className="events-header">
+        <h1 className="events-title">Past Events</h1>
+      </div>
+      <div className="events-list">
+        {pastEvents?.map((event) => {
           return (
             <div key={event.id}>
               <EventCard eventObj={event} />

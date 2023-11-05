@@ -8,7 +8,7 @@ export const EventCard = ({ eventObj }) => {
     getShopById(eventObj.businessId).then((data) => setEventBusiness(data[0]));
   }, [eventObj]);
 
-  console.log("eventBusiness", eventBusiness);
+//   console.log("eventBusiness", eventBusiness);
 
   return (
     <div className="event-card">
