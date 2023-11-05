@@ -10,6 +10,7 @@ import { EditProfileForm } from "../profile/EditProfileForm";
 import { DarkMode } from "../theme/DarkMode";
 import { EventsList } from "../events/EventsList";
 import { CreateEvent } from "../events/CreateEvent";
+import { EventDetails } from "../events/EventDetails";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
@@ -93,6 +94,19 @@ export const ApplicationViews = () => {
                   userLocation={userLocation}
                 />
                 {CreateEvent ? <DarkMode /> : null}
+              </>
+            }
+          />
+          <Route
+            path=":eventId"
+            element={
+              <>
+                <NavBar currentUser={currentUser} userLocation={userLocation} />
+                <EventDetails
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+                {EventDetails ? <DarkMode /> : null}
               </>
             }
           />
