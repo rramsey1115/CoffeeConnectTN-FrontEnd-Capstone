@@ -35,19 +35,19 @@ export const EventsList = ({ currentUser, userLocation }) => {
     getAndSetDate();
   }, []);
 
-  //   const compareDates = (d1, d2) => {
-  //     let date1 = new Date(d1.date).getTime();
-  //     let date2 = new Date(d2).getTime();
-  //     if (date1 > date2) {
-  //       upcomingEvents.push(d1);
-  //     } else {
-  //       pastEvents.push(d1);
-  //     }
-  //   };
+    const compareDates = (d1, d2) => {
+      let date1 = new Date(d1.date);
+      let date2 = new Date(d2);
+      if (date1 > date2) {
+        upcomingEvents.push(d1);
+      } else {
+        pastEvents.push(d1);
+      }
+    };
 
-  //   useEffect(() => {
-  //     allEvents?.map((event) => compareDates(event, currentDate));
-  //   }, [currentDate]);
+    useEffect(() => {
+      allEvents?.map((event) => compareDates(event, currentDate));
+    }, [currentDate]);
 
   return (
     <section className="events">

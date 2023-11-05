@@ -28,11 +28,11 @@ export const NavBar = ({ currentUser }) => {
             Discover
           </Link>
         </li>
-        {/* <li className="navbar-item" onClick={(e) => setMenuClicked(false)}>
+        <li className="navbar-item" onClick={(e) => setMenuClicked(false)}>
           <Link className="navbar-link" to={`/events`}>
             Events
           </Link>
-        </li> */}
+        </li>
         <li className="navbar-item" onClick={(e) => setMenuClicked(false)}>
           <Link className="navbar-link" to="/favorites">
             Favorites
