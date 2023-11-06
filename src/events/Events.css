@@ -1,4 +1,11 @@
 /* ------------------------------ EVENT LIST ----------------------------- */
+.event-detais {
+  animation: fadeIn 0.8s;
+  -webkit-animation: fadeIn 0.8s;
+  -moz-animation: fadeIn 0.8s;
+  -o-animation: fadeIn 0.8s;
+  -ms-animation: fadeIn 0.8s;
+}
 
 .events {
   width: 80vw;
@@ -56,6 +63,13 @@
 .event-card-title {
   padding: 0;
   margin: 0;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.event-card-title:hover {
+  color: var(--tan);
+  transition: 0.4s ease-in-out;
 }
 
 .event-card-img:hover {
@@ -69,6 +83,11 @@
   width: 80vw;
   min-width: 360px;
   margin: 32px auto;
+  animation: fadeIn 0.8s;
+  -webkit-animation: fadeIn 0.8s;
+  -moz-animation: fadeIn 0.8s;
+  -o-animation: fadeIn 0.8s;
+  -ms-animation: fadeIn 0.8s;
 }
 
 .event-details-header {
@@ -109,4 +128,59 @@
   transition: 0.3s;
   box-shadow: 1px 1px 2px 0px gray;
   border-radius: 5%;
+}
+
+/* -------------------- ATTENDEES ------------------------------------- */
+
+.attendees {
+  text-align: center;
+  animation: fadeIn 0.8s;
+  -webkit-animation: fadeIn 0.8s;
+  -moz-animation: fadeIn 0.8s;
+  -o-animation: fadeIn 0.8s;
+  -ms-animation: fadeIn 0.8s;
+}
+
+.attendee-picture {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 6px 0px gray;
+  object-fit: cover;
+  padding: 0;
+  margin: 20px 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  animation: fadeIn 0.8s;
+  -webkit-animation: fadeIn 0.8s;
+  -moz-animation: fadeIn 0.8s;
+  -o-animation: fadeIn 0.8s;
+  -ms-animation: fadeIn 0.8s;
+}
+
+.attendees-title {
+  font-size: 1.5em;
+  width: 60vw;
+  min-width: 300px;
+  align-self: center;
+  text-align: center;
+  margin: 8px auto 12px auto;
+  border-bottom: 1px solid var(--tan);
+  border-left: 8vw solid transparent;
+  border-right: 8vw solid transparent;
+
+}
+
+.attendee-picture:hover {
+  filter: brightness(0.7);
+  transition: 0.3s ease-in-out;
+}
+
+.attendees-list {
+  width: 100%;
+  min-width: 350px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

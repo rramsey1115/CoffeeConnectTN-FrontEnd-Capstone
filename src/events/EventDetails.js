@@ -1,28 +1,25 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getEventById } from "../services/eventServices";
 import { getUserById } from "../services/userServices";
 import "./Events.css";
 
 export const EventDetails = ({ currentUser }) => {
   const eventId = useParams().eventId;
-  const [currentEventObj, setCurrentEvent] = useState({});
   const [eventAttendees, setEventAttendees] = useState([]);
-
-  useEffect(() => {
-    getEventById(eventId).then((data) => setCurrentEvent(data));
-  }, [eventId, currentUser]);
+  const [currentEventObj, setCurrentEvent] = useState({});
 
   useEffect(() => {
     const usersArray = [];
     currentEventObj.attendeesId?.map((id) =>
       getUserById(id).then((res) => usersArray.push(res[0]))
     );
-    setEventAttendees(usersArray);
-  }, [currentEventObj]);
+    setTimeout(() => setEventAttendees(usersArray), 1000);
+  }, [currentEventObj, eventId]);
 
-  console.log("event", currentEventObj);
-  console.log("eventAttendees", eventAttendees);
+  useEffect(() => {
+    getEventById(eventId).then((data) => setCurrentEvent(data));
+  }, [eventId, currentUser]);
 
   return (
     <section className="event-details">
@@ -39,6 +36,26 @@ export const EventDetails = ({ currentUser }) => {
           <h2>About</h2>
           <h4>{currentEventObj.date}</h4>
           <h4>{currentEventObj.time}</h4>
+        </div>
+      </div>
+      <div className="attendees">
+        <div className="attendees-title">
+          <h2>Event Attendees</h2>
+        </div>
+        <div className="attendees-list">
+          {eventAttendees
+            ? eventAttendees.map((ea) => {
+                return (
+                  <Link key={ea.id} to={`/profile/${ea.id}`}>
+                    <img
+                      className="attendee-picture"
+                      src={ea.picture}
+                      alt="user"
+                    />
+                  </Link>
+                );
+              })
+            : null}
         </div>
       </div>
     </section>
