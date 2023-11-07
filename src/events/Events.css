@@ -113,12 +113,20 @@
 .event-header-right {
   width: 40%;
   min-width: 320px;
-  margin: 10px 10px 30px 30px;
+  margin: 16px 10px 30px 30px;
+  padding: 0;
+  text-align: center;
 }
 
 .event-header-right > h2 {
-  font-size: 28px;
-  margin: 0 auto 10px auto;
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 auto 6px auto;
+}
+
+.event-header-right > h4 {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #event-details-image {
@@ -168,10 +176,27 @@
   border-bottom: 1px solid var(--tan);
   border-left: 8vw solid transparent;
   border-right: 8vw solid transparent;
-
 }
 
-.attendee-picture:hover {
+/* .attendee-picture:hover {
+  filter: brightness(0.7);
+  transition: 0.3s ease-in-out;
+} */
+
+.attendee-icon {
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.attendee-icon:hover > h3 {
+  color: var(--tan);
+  transition: .3s ease-in-out;
+}
+
+.attendee-icon:hover > img {
   filter: brightness(0.7);
   transition: 0.3s ease-in-out;
 }
