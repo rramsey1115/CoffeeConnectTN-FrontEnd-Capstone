@@ -46,7 +46,9 @@ export const EventDetails = ({ currentUser }) => {
           />
         </div>
         <div className="event-header-right">
-          <h2>About</h2>
+          <Link to={`/details/${currentEventObj.businessId}`}>
+            <h2>{currentEventObj.business?.name}</h2>
+          </Link>
           <h4>
             {getFormattedDate(currentEventObj.date)} - {currentEventObj.time}
           </h4>

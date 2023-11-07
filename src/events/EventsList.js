@@ -61,12 +61,16 @@ export const EventsList = ({ currentUser, userLocation }) => {
     <section className="events">
       <div className="events-header">
         <h1 className="events-title">Upcoming Events</h1>
-        <BsFillCalendarPlusFill
-          className="create-event"
-          onClick={(e) => {
-            navigate("create");
-          }}
-        />
+        {currentUser.admin ? (
+          <BsFillCalendarPlusFill
+            className="create-event"
+            onClick={(e) => {
+              navigate("create");
+            }}
+          />
+        ) : (
+          ""
+        )}
       </div>
       <div className="events-list">
         {upcomingEvents?.map((event) => {

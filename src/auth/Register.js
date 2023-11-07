@@ -67,8 +67,7 @@ export const Register = (props) => {
   return (
     <main style={{ textAlign: "center" }}>
       <form className="form-login" onSubmit={handleRegister}>
-        <h1>Coffee Connect TN</h1>
-        <h2>Please Register</h2>
+        <h1>Coffee Connect</h1>
         <fieldset>
           <div className="form-group">
             <input
@@ -123,7 +122,7 @@ export const Register = (props) => {
             <textarea
               onChange={updateCustomer}
               type="text"
-              id="create-about"
+              id="about"
               className="form-control"
               placeholder="Tell Us A Little About Yourself"
               required
@@ -290,7 +289,9 @@ export const Register = (props) => {
             customer.email &&
             customer.password &&
             customer.picture &&
-            customer.about ? (
+            customer.about &&
+            customer.coffeePreferenceId > 0 &&
+            customer.atmospherePreferenceId > 0 ? (
               <button
                 className="button login-btn btn-info"
                 id="register-button"
@@ -300,7 +301,7 @@ export const Register = (props) => {
               </button>
             ) : (
               <button
-                className="button login-btn btn-info"
+                className="button login-btn btn-info disabled-button"
                 id="register-button"
                 type="submit"
                 disabled

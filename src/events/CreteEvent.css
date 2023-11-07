@@ -1,0 +1,31 @@
+/* ---------------------- Create Event Form -------------- */
+.create-event-form {
+    width: 60%;
+    max-width: 600px;
+    min-width: 340px;
+    margin: 2.5rem auto;
+    padding: 0;
+    transition: 1s;
+}
+
+.create-event-title {
+  text-align: center;
+  border-bottom: 1px solid var(--tan);
+  border-left: 8vw solid transparent;
+  border-right: 8vw solid transparent;
+}
+
+#details {
+  resize: none;
+  transition: 0.5s ease-in-out;
+}
+
+#details:focus {
+  height: 75px;
+  transition: 0.5s ease-in-out;
+}
+
+#submit-button {
+    width: 200px;
+    align-self: center;
+}
