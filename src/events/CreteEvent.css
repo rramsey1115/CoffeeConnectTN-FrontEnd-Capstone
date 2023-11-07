@@ -1,15 +1,16 @@
 /* ---------------------- Create Event Form -------------- */
 .create-event-form {
-    width: 60%;
-    max-width: 600px;
-    min-width: 340px;
-    margin: 2.5rem auto;
-    padding: 0;
-    transition: 1s;
+  width: 60%;
+  max-width: 600px;
+  min-width: 340px;
+  margin: 2.5rem auto;
+  padding: 0;
+  transition: 1s;
 }
 
 .create-event-title {
   text-align: center;
+  margin: 20px auto 12px auto;
   border-bottom: 1px solid var(--tan);
   border-left: 8vw solid transparent;
   border-right: 8vw solid transparent;
@@ -17,6 +18,10 @@
 
 #details {
   resize: none;
+  color: black;
+  font-weight: normal;
+  font-family: inherit;
+  text-decoration: none;
   transition: 0.5s ease-in-out;
 }
 
@@ -26,6 +31,29 @@
 }
 
 #submit-button {
-    width: 200px;
-    align-self: center;
+  width: 200px;
+  align-self: center;
+}
+
+.react-datepicker-wrapper {
+  margin: 5px 10px 5px 5px;
+}
+
+.datepicker {
+  width: 100px;
+  font-family: inherit;
+  border-radius: 8px;
+  font-size: 14px;
+  color: black;
+}
+
+.date {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#time {
+  width: 125px;
 }

@@ -1,16 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./CreteEvent.css";
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export const CreateEvent = ({ currentUser, userLocation }) => {
-  const [business, setBusiness] = useState({});
+  const [startDate, setStartDate] = useState(new Date());
+  const [business, setBusiness] = useState(null);
   const [event, setEvent] = useState({
     name: "",
-    date: "",
+    date: startDate,
     time: "",
     details: "",
-    businessId: "",
+    businessId: business,
     attendeesId: [],
   });
+
+  const getFormattedDate = (dateString) => {
+    const date = new Date(dateString); // {object Date}
+    const yyyy = date.getFullYear();
+    let mm = date.getMonth() + 1;
+    let dd = date.getDate();
+    if (dd < 10) dd = "0" + dd;
+    if (mm < 10) mm = "0" + mm;
+    const formatted = yyyy + "-" + mm + "-" + dd;
+    return formatted;
+  };
 
   const updateEvent = (evt) => {
     const copy = { ...event };
@@ -23,9 +37,43 @@ export const CreateEvent = ({ currentUser, userLocation }) => {
     console.log("event created", event);
   };
 
+  useEffect(() => {
+    const copy = { ...event };
+    copy.date = getFormattedDate(startDate);
+    setEvent(copy);
+  }, [startDate]);
+
   return (
     <form className="create-event-form" onSubmit={handleEventCreate}>
       <h1 className="create-event-title">Create Event</h1>
+      <div className="date">
+        <ReactDatePicker
+          showIcon
+          className="datepicker"
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+        />
+        <input
+          onChange={updateEvent}
+          type="text"
+          id="time"
+          className="form-control"
+          placeholder="Event Time"
+          required
+        />
+      </div>
+      <fieldset>
+        <div className="form-group">
+          <input
+            onChange={updateEvent}
+            type="text"
+            id="businessId"
+            className="form-control"
+            placeholder="Event Location"
+            required
+          />
+        </div>
+      </fieldset>
       <fieldset>
         <div className="form-group">
           <input
@@ -36,42 +84,6 @@ export const CreateEvent = ({ currentUser, userLocation }) => {
             placeholder="Event Name"
             required
             autoFocus
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <input
-            onChange={updateEvent}
-            type="text"
-            id="date"
-            className="form-control"
-            placeholder="Event Date"
-            required
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <input
-            onChange={updateEvent}
-            type="text"
-            id="time"
-            className="form-control"
-            placeholder="Event Time"
-            required
-          />
-        </div>
-      </fieldset>
-      <fieldset>
-        <div className="form-group">
-          <input
-            onChange={updateEvent}
-            type="text"
-            id="businessId"
-            className="form-control"
-            placeholder="Event Location"
-            required
           />
         </div>
       </fieldset>
@@ -88,31 +100,31 @@ export const CreateEvent = ({ currentUser, userLocation }) => {
         </div>
       </fieldset>
       <fieldset>
-          <div className="form-group">
-            {event.name &&
-            event.date &&
-            event.time &&
-            event.businessId &&
-            event.details ? (
-              <button
-                className="button enabled-button"
-                id="submit-button"
-                type="submit"
-              >
-                Submit
-              </button>
-            ) : (
-              <button
-                className="button disabled-button"
-                id="submit-button"
-                type="submit"
-                disabled
-              >
-                Submit
-              </button>
-            )}
-          </div>
-        </fieldset>
+        <div className="form-group">
+          {event.name &&
+          event.date &&
+          event.time &&
+          event.businessId &&
+          event.details ? (
+            <button
+              className="button enabled-button"
+              id="submit-button"
+              type="submit"
+            >
+              Submit
+            </button>
+          ) : (
+            <button
+              className="button disabled-button"
+              id="submit-button"
+              type="submit"
+              disabled
+            >
+              Submit
+            </button>
+          )}
+        </div>
+      </fieldset>
     </form>
   );
 };
