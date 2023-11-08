@@ -111,10 +111,10 @@
 }
 
 .event-header-left > h1 {
-  font-size: 30px;
+  font-size: 1.6em;
   font-weight: bold;
   padding: 0;
-  margin: 0;
+  margin: 0 auto 8px auto;
 }
 
 .event-header-left {
@@ -130,19 +130,32 @@
   margin: 16px 10px 30px 30px;
   padding: 0;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.event-header-right > h2 {
-  font-size: 24px;
+#shop-title {
+  font-size: 1.25em;
   font-weight: bold;
-  margin: 0 auto 0px auto;
+  margin: 4px auto 0px auto;
+  transition: .3s ease-in-out;
+}
+
+#shop-title:hover {
+  color: var(--tan);
+  transition: .3s ease-in-out;
 }
 
 .event-header-right > h4 {
   font-size: 18px;
   padding: 0;
   margin: 0;
-  font-weight: bold;
+}
+
+.event-header-right > p {
+  font-size: 16px;
+  padding: 0;
+  margin: 10px auto 10px auto;
 }
 
 #event-details-image {
@@ -152,7 +165,31 @@
   transition: 0.3s;
   box-shadow: 1px 1px 2px 0px gray;
   border-radius: 5%;
+  cursor: pointer;
+  transition: .3s ease-in-out;
 }
+
+#event-details-image:hover {
+  filter: brightness(.5);
+  transition: .3s ease-in-out;
+}
+
+#rsvp-button {
+  width: 200px;
+  align-self: center;
+}
+
+#remove-rsvp-button {
+  width: 200px;
+  align-self: center;
+}
+
+#delete-event-button {
+  width: 200px;
+  align-self: center;
+}
+
+
 
 /* -------------------- ATTENDEES ------------------------------------- */
 
@@ -193,11 +230,6 @@
   border-left: 8vw solid transparent;
   border-right: 8vw solid transparent;
 }
-
-/* .attendee-picture:hover {
-  filter: brightness(0.7);
-  transition: 0.3s ease-in-out;
-} */
 
 .attendee-icon {
   font-size: 1.2rem;

@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import "./CreteEvent.css";
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import TimePicker from "react-time-picker";
+import "react-time-picker/dist/TimePicker.css";
+import "react-clock/dist/Clock.css";
 import { getAllCoffeeShops } from "../services/shopServices";
 import { createNewEvent } from "../services/eventServices";
 import { useNavigate } from "react-router-dom";
@@ -79,8 +82,11 @@ export const CreateEvent = ({ currentUser, userLocation }) => {
     setEvent(copy);
   }, [startDate]);
 
- document.addEventListener('click', (e)=> {
-  e.target.className !== "dropdown-row" ? setDropdown(false): setDropdown(true)})
+  document.addEventListener("click", (e) => {
+    e.target.className !== "dropdown-row"
+      ? setDropdown(false)
+      : setDropdown(true);
+  });
 
   return (
     <form className="create-event-form" onSubmit={handleEventCreate}>
