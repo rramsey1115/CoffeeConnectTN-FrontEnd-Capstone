@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { getEventById } from "../services/eventServices";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import {
+  deleteEvent,
+  getEventById,
+  updateEventObject,
+} from "../services/eventServices";
 import { getUserById } from "../services/userServices";
 import "./Events.css";
 
@@ -9,6 +13,7 @@ export const EventDetails = ({ currentUser }) => {
   const [eventAttendees, setEventAttendees] = useState([]);
   const [currentEventObj, setCurrentEvent] = useState({});
   const [userAttending, setUserAttending] = useState(false);
+  const navigate = useNavigate();
 
   const getFormattedDate = (dateString) => {
     const date = new Date(dateString); // {object Date}
@@ -21,35 +26,63 @@ export const EventDetails = ({ currentUser }) => {
     return formatted;
   };
 
-  const deleteRSVP = (userId) => {
-    console.log("RSVP deleted for userId " + userId);
+  const getAndSetEvent = () => {
+    getEventById(eventId).then((data) => setCurrentEvent(data));
   };
 
-  const createRSVP = (userId) => {
-    console.log("RSVP created for userId " + userId);
-  };
-
-  const deleteEvent = (eventId) => {
-    console.log("event deleted with eventId " + eventId);
-  };
-
-  useEffect(() => {
+  const getAndSetEventAttendees = () => {
     const usersArray = [];
     currentEventObj.attendeesId?.map((id) =>
       getUserById(id).then((res) => usersArray.push(res[0]))
     );
     setTimeout(() => setEventAttendees(usersArray), 1000);
+  };
+
+  const checkUserRSVP = () => {
+    eventAttendees.map((att) =>
+      currentUser.id === att.id
+        ? setUserAttending(true)
+        : setUserAttending(false)
+    );
+  };
+
+  const handleDeleteRSVP = async (userId) => {
+    const attendeeArray = [...currentEventObj.attendeesId];
+    const filteredArray = attendeeArray.filter(
+      (entry) => entry !== currentUser.id
+    );
+    setCurrentEvent((currentEventObj.attendeesId = [...filteredArray]));
+    await updateEventObject(currentEventObj, eventId);
+    getAndSetEvent();
+    checkUserRSVP();
+  };
+
+  const createRSVP = async (userId) => {
+    const copy = { ...currentEventObj };
+    const attendeeArray = [...copy.attendeesId];
+    attendeeArray.push(currentUser.id);
+    setCurrentEvent((currentEventObj.attendeesId = [...attendeeArray]));
+    await updateEventObject(currentEventObj, eventId);
+    getAndSetEvent();
+    checkUserRSVP();
+  };
+
+  const handleDeleteEvent = async (eventId) => {
+    await deleteEvent(eventId);
+    navigate("/events");
+  };
+
+  useEffect(() => {
+    getAndSetEventAttendees();
   }, [currentEventObj, eventId]);
 
   useEffect(() => {
-    getEventById(eventId).then((data) => setCurrentEvent(data));
+    getAndSetEvent();
   }, [eventId, currentUser]);
 
   useEffect(() => {
-    eventAttendees.map((att) =>
-      currentUser.id === att.id ? setUserAttending(true) : null
-    );
-  }, [eventAttendees, currentUser]);
+    checkUserRSVP();
+  }, [eventAttendees, currentUser, currentEventObj]);
 
   return (
     <section className="event-details">
@@ -76,7 +109,7 @@ export const EventDetails = ({ currentUser }) => {
             <button
               className="button"
               id="remove-rsvp-button"
-              onClick={(e) => deleteRSVP(currentUser.id)}
+              onClick={(e) => handleDeleteRSVP(currentUser.id)}
             >
               Remove RSVP
             </button>
@@ -93,7 +126,7 @@ export const EventDetails = ({ currentUser }) => {
             <button
               className="button"
               id="delete-event-button"
-              onClick={(e) => deleteEvent(currentEventObj.id)}
+              onClick={(e) => handleDeleteEvent(eventId)}
             >
               Delete Event
             </button>

@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { getShopById } from "../services/shopServices";
 import { Link } from "react-router-dom";
 import "./Events.css";
+import { FaRegWindowClose } from "react-icons/fa";
+import { deleteEvent } from "../services/eventServices";
 
-export const EventCard = ({ eventObj }) => {
+export const EventCard = ({ currentUser, eventObj, getAndSetAllEvents }) => {
   const [eventBusiness, setEventBusiness] = useState({});
 
   const getFormattedDate = (dateString) => {
@@ -17,11 +19,15 @@ export const EventCard = ({ eventObj }) => {
     return formatted;
   };
 
+  const handleDeleteEvent = async (eventId) => {
+    console.log("deteled event with eventId " + eventId);
+    await deleteEvent(eventId);
+    getAndSetAllEvents();
+  };
+
   useEffect(() => {
     getShopById(eventObj.businessId).then((data) => setEventBusiness(data[0]));
   }, [eventObj]);
-
-  //   console.log("eventBusiness", eventBusiness);
 
   return (
     <div className="event-card">
@@ -32,19 +38,35 @@ export const EventCard = ({ eventObj }) => {
           alt="event business"
         />
       </div>
-      <div className="event-card-right">
-        <Link to={`${eventObj.id}`}>
-          <h2 className="event-card-title">{eventObj.name}</h2>
-        </Link>
-        <p className="event-card-date">
-          {getFormattedDate(eventObj.date)} - {eventObj.time}
-        </p>
-        <p className="event-card-location">
-          {eventBusiness?.name} - {eventBusiness.location?.city}
-        </p>
-        <p className="event-attendees">
-          RSVP Count: {eventObj.attendeesId?.length}
-        </p>
+      <div className="event-card-center">
+        <div>
+          <Link to={`${eventObj.id}`}>
+            <h2 className="event-card-title">{eventObj.name}</h2>
+          </Link>
+          <p className="event-card-date">
+            {getFormattedDate(eventObj.date)} - {eventObj.time}
+          </p>
+          <p className="event-card-location">
+            {eventBusiness?.name} - {eventBusiness.location?.city}
+          </p>
+          <p className="event-attendees">
+            RSVP Count: {eventObj.attendeesId?.length}
+          </p>
+        </div>
+        <div>
+          {currentUser?.admin ? (
+            <div className="delete-icon">
+              <FaRegWindowClose
+                id="delete-icon"
+                onClick={(e) => {
+                  handleDeleteEvent(eventObj.id);
+                }}
+              />
+            </div>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );

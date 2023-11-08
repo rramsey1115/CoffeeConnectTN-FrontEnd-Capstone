@@ -74,7 +74,7 @@ export const EventsList = ({ currentUser, userLocation }) => {
         {upcomingEvents?.map((event) => {
           return (
             <div key={event.id}>
-              <EventCard eventObj={event} />
+              <EventCard eventObj={event} getAndSetAllEvents={getAndSetAllEvents} currentUser={currentUser}/>
             </div>
           );
         })}
@@ -86,7 +86,7 @@ export const EventsList = ({ currentUser, userLocation }) => {
         {pastEvents?.map((event) => {
           return (
             <div key={event.id}>
-              <EventCard eventObj={event} />
+              <EventCard eventObj={event} getAndSetAllEvents={getAndSetAllEvents} currentUser={currentUser}/>
             </div>
           );
         })}

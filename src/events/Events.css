@@ -1,10 +1,11 @@
 /* ------------------------------ EVENT LIST ----------------------------- */
-.event-detais {
+.event-details {
   animation: fadeIn 0.8s;
   -webkit-animation: fadeIn 0.8s;
   -moz-animation: fadeIn 0.8s;
   -o-animation: fadeIn 0.8s;
   -ms-animation: fadeIn 0.8s;
+  transition: .8s ease-in-out;
 }
 
 .events {
@@ -48,24 +49,34 @@
 /* ------------------------------EVENT CARD -------------------------------- */
 
 .event-card {
-  margin: 12px 0;
+  margin: 40px auto;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .event-card-left {
-  padding: 10px;
-  margin: 10px;
+  width: 225px;
+  padding: 0px 10px;
+  margin: 0px 10px;
 }
 
-.event-card-right {
-  padding: 10px;
-  margin: 10px;
+.event-card-center {
+  width: 450px;
+  min-width: 320px;
+  padding: 0px 40px;
+  margin: 0px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .event-card-img {
-  width: 125px;
-  height: 125px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   transition: 0.3s;
   box-shadow: 1px 1px 2px 0px gray;
