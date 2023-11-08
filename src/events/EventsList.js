@@ -4,7 +4,6 @@ import { EventCard } from "./EventCard";
 import { useEffect, useState } from "react";
 import { getAllEvents } from "../services/eventServices";
 import { BsFillCalendarPlusFill } from "react-icons/bs";
-import { MdElectricalServices } from "react-icons/md";
 
 export const EventsList = ({ currentUser, userLocation }) => {
   const [allEvents, setAllEvents] = useState([]);
@@ -23,7 +22,6 @@ export const EventsList = ({ currentUser, userLocation }) => {
     if (mm < 10) mm = "0" + mm;
     const formattedToday = yyyy + "-" + mm + "-" + dd;
     setCurrentDate(formattedToday);
-    console.log("formattedToday", formattedToday);
   };
 
   const getAndSetAllEvents = () => {

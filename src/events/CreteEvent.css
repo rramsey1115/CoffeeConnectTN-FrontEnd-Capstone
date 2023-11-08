@@ -6,6 +6,11 @@
   margin: 2.5rem auto;
   padding: 0;
   transition: 1s;
+  animation: fadeIn 0.8s;
+  -webkit-animation: fadeIn 0.8s;
+  -moz-animation: fadeIn 0.8s;
+  -o-animation: fadeIn 0.8s;
+  -ms-animation: fadeIn 0.8s;
 }
 
 .create-event-title {
@@ -21,6 +26,7 @@
   color: black;
   font-weight: normal;
   font-family: inherit;
+  font-size: inherit;
   text-decoration: none;
   transition: 0.5s ease-in-out;
 }
@@ -36,12 +42,13 @@
 }
 
 .react-datepicker-wrapper {
-  margin: 5px 10px 5px 5px;
+  margin: 5px 12px 5px 7px;
 }
 
 .datepicker {
-  width: 100px;
+  width: 125px;
   font-family: inherit;
+  border: 1px solid black;
   border-radius: 8px;
   font-size: 14px;
   color: black;
@@ -55,5 +62,33 @@
 }
 
 #time {
-  width: 125px;
+  width: 130px;
+}
+
+#disabled-submit-button {
+  width: 200px;
+  align-self: center;
+  color: lightgray;
+  cursor: auto;
+}
+
+/* ---------------------Dropdown -------------------------- */
+
+.search-results {
+  max-height: 200px;
+  min-height: fit-content;
+  background-color: var(--background-color);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+
+.dropdown-row {
+  width: inherit;
+  cursor: pointer;
+}
+
+.dropdown-row:hover {
+  background-color: gray;
 }

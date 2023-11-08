@@ -101,6 +101,19 @@ fieldset {
   transition: 0.5s ease-in-out;
 }
 
+#about {
+  resize: none;
+  font-family: inherit;
+  font-weight: inherit;
+  color: black;
+  transition: 0.5s ease-in-out;
+}
+
+#about:focus {
+  height: 75px;
+  transition: 0.5s ease-in-out;
+}
+
 #create-about:focus {
   height: 75px;
   transition: 0.5s ease-in-out;
@@ -113,10 +126,11 @@ fieldset {
 }
 
 .disabled-button {
-  filter: brightness(.2);
+  filter: brightness(.5);
+  cursor: auto;
 }
 
 .disabled-button:hover {
-  color: var(black);
+  color: maroon;
   transition: none;
 }
