@@ -58,8 +58,7 @@ export const EventDetails = ({ currentUser }) => {
   };
 
   const createRSVP = async (userId) => {
-    const copy = { ...currentEventObj };
-    const attendeeArray = [...copy.attendeesId];
+    const attendeeArray = [...currentEventObj.attendeesId];
     attendeeArray.push(currentUser.id);
     setCurrentEvent((currentEventObj.attendeesId = [...attendeeArray]));
     await updateEventObject(currentEventObj, eventId);

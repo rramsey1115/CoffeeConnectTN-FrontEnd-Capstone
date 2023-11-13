@@ -51,7 +51,7 @@ export const CreateEvent = ({ currentUser, userLocation }) => {
   const handleEventCreate = (e) => {
     e.preventDefault();
     createNewEvent(event);
-    setTimeout(() => navigate("/events"), 5000);
+    setTimeout(() => navigate("/events"), 1000);
   };
 
   useEffect(() => {

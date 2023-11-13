@@ -38,11 +38,21 @@ export const Welcome = ({ currentUser }) => {
           onClick={(e) => {
             handleCitySelect(e.target.value);
           }}
-          value="Nashville"
+          value="Chattanooga"
           id="discover-button"
           className="button"
         >
-          Nashville
+          Chattanooga
+        </button>
+        <button
+          onClick={(e) => {
+            handleCitySelect(e.target.value);
+          }}
+          value="Cookeville"
+          id="discover-button"
+          className="button"
+        >
+          Cookeville
         </button>
         <button
           onClick={(e) => {
@@ -58,16 +68,6 @@ export const Welcome = ({ currentUser }) => {
           onClick={(e) => {
             handleCitySelect(e.target.value);
           }}
-          value="Chattanooga"
-          id="discover-button"
-          className="button"
-        >
-          Chattanooga
-        </button>
-        <button
-          onClick={(e) => {
-            handleCitySelect(e.target.value);
-          }}
           value="Memphis"
           id="discover-button"
           className="button"
@@ -78,11 +78,21 @@ export const Welcome = ({ currentUser }) => {
           onClick={(e) => {
             handleCitySelect(e.target.value);
           }}
-          value="Cookeville"
+          value="Murfreesboro"
           id="discover-button"
           className="button"
         >
-          Cookeville
+          Murfreesboro
+        </button>
+        <button
+          onClick={(e) => {
+            handleCitySelect(e.target.value);
+          }}
+          value="Nashville"
+          id="discover-button"
+          className="button"
+        >
+          Nashville
         </button>
       </div>
     </div>

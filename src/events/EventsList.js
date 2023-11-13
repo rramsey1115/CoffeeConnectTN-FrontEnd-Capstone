@@ -59,22 +59,22 @@ export const EventsList = ({ currentUser, userLocation }) => {
     <section className="events">
       <div className="events-header">
         <h1 className="events-title">Upcoming Events</h1>
-        {currentUser.admin ? (
-          <BsFillCalendarPlusFill
-            className="create-event"
-            onClick={(e) => {
-              navigate("create");
-            }}
-          />
-        ) : (
-          ""
-        )}
+        <BsFillCalendarPlusFill
+          className="create-event"
+          onClick={(e) => {
+            navigate("create");
+          }}
+        />
       </div>
       <div className="events-list">
         {upcomingEvents?.map((event) => {
           return (
             <div key={event.id}>
-              <EventCard eventObj={event} getAndSetAllEvents={getAndSetAllEvents} currentUser={currentUser}/>
+              <EventCard
+                eventObj={event}
+                getAndSetAllEvents={getAndSetAllEvents}
+                currentUser={currentUser}
+              />
             </div>
           );
         })}
@@ -86,7 +86,11 @@ export const EventsList = ({ currentUser, userLocation }) => {
         {pastEvents?.map((event) => {
           return (
             <div key={event.id}>
-              <EventCard eventObj={event} getAndSetAllEvents={getAndSetAllEvents} currentUser={currentUser}/>
+              <EventCard
+                eventObj={event}
+                getAndSetAllEvents={getAndSetAllEvents}
+                currentUser={currentUser}
+              />
             </div>
           );
         })}
