@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ShopCard } from "./ShopCard";
-import { VscFilter } from "react-icons/vsc";
+import { VscFilter, VscStarFull } from "react-icons/vsc";
 import "./ShopFilter.css";
 import { getAllCoffeeShops } from "../services/shopServices";
 
@@ -19,15 +19,15 @@ export const ShopsList = ({ currentUser }) => {
   };
 
   const resetCityShops = () => {
-    setCityShops(allShops.filter(shop => shop.location?.city === searchCity));
-  }
+    setCityShops(allShops.filter((shop) => shop.location?.city === searchCity));
+  };
 
   const getAndSetAllCoffeeShops = () => {
     getAllCoffeeShops().then((coffeeArr) => {
       setAllShops(coffeeArr);
     });
   };
-  
+
   const handleFilterClick = () => {
     setFilterCondition(!filterCondition);
   };
@@ -48,11 +48,11 @@ export const ShopsList = ({ currentUser }) => {
   }, []);
 
   useEffect(() => {
-    setCityShops(allShops.filter(shop => shop.location?.city === searchCity));
+    setCityShops(allShops.filter((shop) => shop.location?.city === searchCity));
   }, [allShops, searchCity]);
 
   useEffect(() => {
-    setFilteredShops(cityShops.filter(s => s.location?.city === searchCity));
+    setFilteredShops(cityShops.filter((s) => s.location?.city === searchCity));
     setTimeout(() => {
       setIsLoaded(true);
     }, 200);
@@ -91,31 +91,31 @@ export const ShopsList = ({ currentUser }) => {
                 filterShops(e.target.innerText * 1);
               }}
             >
-              1
+              <div className="filter-num-star">1 <VscStarFull id="filter-star" /></div>
             </p>
             <p
               className="dropdown-item"
               onClick={(e) => filterShops(e.target.innerText * 1)}
             >
-              2
+              <div className="filter-num-star">2 <VscStarFull id="filter-star" /></div>
             </p>
             <p
               className="dropdown-item"
               onClick={(e) => filterShops(e.target.innerText * 1)}
             >
-              3
+              <div className="filter-num-star">3 <VscStarFull id="filter-star" /></div>
             </p>
             <p
               className="dropdown-item"
               onClick={(e) => filterShops(e.target.innerText * 1)}
             >
-              4
+              <div className="filter-num-star">4 <VscStarFull id="filter-star" /></div>
             </p>
             <p
               className="dropdown-item"
               onClick={(e) => filterShops(e.target.innerText * 1)}
             >
-              5
+              <div className="filter-num-star">5 <VscStarFull id="filter-star" /></div>
             </p>
           </div>
         </div>
@@ -128,7 +128,11 @@ export const ShopsList = ({ currentUser }) => {
           filteredShops?.map((shop) => {
             return (
               <div key={shop?.id} className="shop-item">
-                <ShopCard shop={shop} currentUser={currentUser} searchCity={searchCity}/>
+                <ShopCard
+                  shop={shop}
+                  currentUser={currentUser}
+                  searchCity={searchCity}
+                />
               </div>
             );
           })

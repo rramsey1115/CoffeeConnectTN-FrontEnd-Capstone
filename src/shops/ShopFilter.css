@@ -7,11 +7,11 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   align-items: center;
-  animation: fadeIn .3s;
-  -webkit-animation: fadeIn .3s;
-  -moz-animation: fadeIn .3s;
-  -o-animation: fadeIn .3s;
-  -ms-animation: fadeIn .3s;
+  animation: fadeIn 0.3s;
+  -webkit-animation: fadeIn 0.3s;
+  -moz-animation: fadeIn 0.3s;
+  -o-animation: fadeIn 0.3s;
+  -ms-animation: fadeIn 0.3s;
 }
 
 .title {
@@ -24,7 +24,7 @@
 #location-name {
   font-size: 36px;
   margin: 0;
-  padding: 0 30px 0 .2em;
+  padding: 0 30px 0 0.2em;
 }
 
 .dropdown-content.inactive {
@@ -60,19 +60,19 @@
   cursor: pointer;
   display: block;
   text-decoration: none;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 .dropdown-item:hover {
   color: var(--tan);
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 #filter-icon-container {
   width: 50px;
   min-width: 50px;
-  min-height:32px;
-  height:32px;
+  min-height: 32px;
+  height: 32px;
   margin-right: 15px;
   cursor: pointer;
 }
@@ -81,9 +81,38 @@
   width: 30px;
   height: 30px;
   cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
 
 #filter-icon:hover {
   filter: brightness(0.5);
-  transition: 0.2s;
+  transition: 0.3s ease-in-out;
+}
+
+.filter-num-star {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: 0.3s ease-in-out;
+}
+
+.filter-num-star:hover {
+  color: var(--tan);
+
+  transition: 0.3s ease-in-out;
+}
+
+.filter-num-star > svg {
+  padding: 0 0 0 0;
+  margin-top: 0;
+  transition: .3s ease-in-out;
+}
+
+.filter-num-star:hover > svg {
+  fill: var(--tan);
+  transition: 0.3s ease-in-out;
+}
+
+#filter-star {
+  padding: 0px 2px 2px 2px;
 }
