@@ -49,11 +49,11 @@
 /* ------------------------------EVENT CARD -------------------------------- */
 
 .event-card {
-  margin: 40px auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -74,18 +74,34 @@
   justify-content: space-between;
 }
 
+.event-attendees {
+  font-size: 1.2rem;
+  padding: 2px 4px;
+}
+
+.event-card-location {
+  font-size: 1.2rem;
+  padding: 2px 4px;
+}
+
+.event-card-date {
+  font-size: 1.2rem;
+  padding: 2px 4px;
+}
+
 .event-card-img {
-  width: 200px;
-  height: 200px;
+  width: 175px;
+  height: 175px;
   object-fit: cover;
-  transition: 0.3s;
+  transition: .3s ease-in-out;
   box-shadow: 1px 1px 2px 0px gray;
   border-radius: 5%;
 }
 
 .event-card-title {
-  font-size: 1.25rem;
-  padding: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0px 0px 6px 0px;
   margin: 0;
   cursor: pointer;
   transition: 0.4s ease-in-out;

@@ -32,11 +32,13 @@ export const EventCard = ({ currentUser, eventObj, getAndSetAllEvents }) => {
   return (
     <div className="event-card">
       <div className="event-card-left">
-        <img
-          className="event-card-img"
-          src={eventBusiness.image_url}
-          alt="event business"
-        />
+        <Link to={`${eventObj.id}`}>
+          <img
+            className="event-card-img"
+            src={eventBusiness.image_url}
+            alt="event business"
+          />
+        </Link>
       </div>
       <div className="event-card-center">
         <div>

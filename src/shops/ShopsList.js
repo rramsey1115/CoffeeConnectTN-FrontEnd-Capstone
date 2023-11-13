@@ -88,32 +88,32 @@ export const ShopsList = ({ currentUser }) => {
             <p
               className="dropdown-item"
               onClick={(e) => {
-                filterShops(e.target.innerText * 1);
+                filterShops(1);
               }}
             >
               <div className="filter-num-star">1 <VscStarFull id="filter-star" /></div>
             </p>
             <p
               className="dropdown-item"
-              onClick={(e) => filterShops(e.target.innerText * 1)}
+              onClick={(e) => filterShops(2)}
             >
               <div className="filter-num-star">2 <VscStarFull id="filter-star" /></div>
             </p>
             <p
               className="dropdown-item"
-              onClick={(e) => filterShops(e.target.innerText * 1)}
+              onClick={(e) => filterShops(3)}
             >
               <div className="filter-num-star">3 <VscStarFull id="filter-star" /></div>
             </p>
             <p
               className="dropdown-item"
-              onClick={(e) => filterShops(e.target.innerText * 1)}
+              onClick={(e) => filterShops(4)}
             >
               <div className="filter-num-star">4 <VscStarFull id="filter-star" /></div>
             </p>
             <p
               className="dropdown-item"
-              onClick={(e) => filterShops(e.target.innerText * 1)}
+              onClick={(e) => filterShops(5)}
             >
               <div className="filter-num-star">5 <VscStarFull id="filter-star" /></div>
             </p>
