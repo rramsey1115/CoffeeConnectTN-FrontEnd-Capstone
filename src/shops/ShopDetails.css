@@ -1,24 +1,43 @@
+.details {
+    animation: fadeIn .3s;
+    -webkit-animation: fadeIn .3s;
+    -moz-animation: fadeIn .3s;
+    -o-animation: fadeIn .3s;
+    -ms-animation: fadeIn .3s;
+}
+
 .details-about {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 80vw;
-  margin: 40px auto;
-  min-width:380px;
+  margin: 40px auto 16px auto;
+  min-width:360px;
 }
 
 .details-about-left {
   width: 40%;
-  min-width: 120px;
+  min-width: 330px;
+  padding: 0px 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.detail-about-right {
-    width: 70%;
+.details-about-right {
+    width: 45%;
+    min-width: 330px;
+    padding: 10px;
 }
 
 #shop-image {
   width: 90%;
+  height: 375px;
+  object-fit: cover;
   border: 1px solid var(--tan);
   border-radius: 1em;
+  margin: 10px auto;
+  align-self: center;
 }
 
 #shop-details-name {
@@ -45,7 +64,12 @@
 
 .shop-categories {
     margin: 0;
-    padding: 0;
+    padding: 2px 0px;
+}
+
+.map-address {
+    padding: 13px 0px;
+    margin: 0;
 }
 
 .details-posts {
@@ -57,3 +81,56 @@
     justify-content: center;
     align-items: center;
 }
+
+.details-name-favorite {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.details-about-favorite {
+    width: 10%;
+}
+
+#favorite-icon-false {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    margin: 0;
+    float: right;
+    cursor: pointer;
+}
+
+#favorite-icon-false:hover {
+    fill: var(--tan);
+    transition: .2s;
+}
+
+#favorite-icon-true {
+    width: 40px;
+    height: 40px;
+    padding: 2px;
+    margin: 0;
+    float: right;
+    cursor: pointer;
+    fill: goldenrod;
+    color: goldenrod;
+}
+/*---------------------------------------------- MAP STYLING--------------------------------------- */
+.details-about-map {
+    width: 80vw;
+    min-width: 360px;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 8px auto 20px auto;
+}
+
+.about-map {
+    width: inherit;
+    height: fit-content;
+}
+

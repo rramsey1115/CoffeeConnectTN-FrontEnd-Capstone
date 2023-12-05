@@ -17,7 +17,7 @@ export const StarRating = ({ shop }) => {
   const [ratingImg, setRatingImg] = useState("");
 
   const getAndSetRating = (shop) => {
-    setRating(shop.rating);
+    setRating(shop?.rating);
   };
 
   useEffect(() => {
@@ -49,13 +49,13 @@ export const StarRating = ({ shop }) => {
 
   return (
     <>
-      <a href={shop.url} rel="noreferrer" target="_blank">
+      <a href={shop?.url} rel="noreferrer" target="_blank">
         <div className="yelp-rating">
           <div>
             <img id="yelp-logo" src={yelpImg} alt="yelp logo" />
             <img id="stars" src={ratingImg} alt="star rating" />
           </div>
-          <p id="ratings-amount">Based on {shop.review_count} ratings</p>
+          <p id="ratings-amount">Based on {shop?.review_count} ratings</p>
         </div>
       </a>
     </>

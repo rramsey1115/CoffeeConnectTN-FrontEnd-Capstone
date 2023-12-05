@@ -7,11 +7,12 @@ export const NewPost = ({
   getAndSetPosts,
   toggleCreate,
 }) => {
-  const [newPostObj, setNewPostObj] = useState({
+
+const [newPostObj, setNewPostObj] = useState({
     userId: currentUser?.id,
-    coffeeShopId: shopObj?.id,
+    businessId: shopObj?.id,
     text: "",
-  });
+});
 
   const handleSubmit = () => {
     CreateNewPost(newPostObj).then(getAndSetPosts);
@@ -21,10 +22,9 @@ export const NewPost = ({
     <form className="new-post-form">
       <textarea
         type="text"
-        // rows={6}
         value={newPostObj?.text}
         placeholder={`Share Your Experience at ${shopObj?.name}`}
-        className="new-post-body"
+        className="new-post-input"
         onChange={(event) => {
           const copy = { ...newPostObj };
           copy.text = event.target.value;

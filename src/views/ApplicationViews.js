@@ -7,9 +7,14 @@ import { ShopDetails } from "../shops/ShopDetails";
 import { FavoritesList } from "../favorites/FavoritesList";
 import { UserProfile } from "../profile/UserProfile";
 import { EditProfileForm } from "../profile/EditProfileForm";
+import { DarkMode } from "../theme/DarkMode";
+import { EventsList } from "../events/EventsList";
+import { CreateEvent } from "../events/CreateEvent";
+import { EventDetails } from "../events/EventDetails";
 
 export const ApplicationViews = () => {
   const [currentUser, setCurrentUser] = useState({});
+  const [userLocation, setUserLocation] = useState({});
 
   useEffect(() => {
     const localCoffeeUser = localStorage.getItem("coffee_user");
@@ -17,38 +22,135 @@ export const ApplicationViews = () => {
     setCurrentUser(coffeeUserObject);
   }, []);
 
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      setUserLocation(position.coords);
+    });
+  }, [currentUser]);
+
   return (
     <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <NavBar currentUser={currentUser} />
-            <Outlet />
-          </>
-        }
-      >
-        <Route index element={<Welcome currentUser={currentUser} />} />
+      <Route path="/" element={<Outlet />}>
+        <Route
+          index
+          element={
+            <>
+              <Welcome currentUser={currentUser} userLocation={userLocation} />
+              <DarkMode />
+            </>
+          }
+        />
         <Route path="discover">
-          <Route index element={<ShopsList currentUser={currentUser} />} />
+          <Route
+            path=":cityName"
+            element={
+              <>
+                <NavBar currentUser={currentUser} />
+                <ShopsList
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+                {ShopDetails ? <DarkMode /> : ""}
+              </>
+            }
+          />
+        </Route>
+        <Route path="details">
           <Route
             path=":shopId"
-            element={<ShopDetails currentUser={currentUser} />}
+            element={
+              <>
+                <NavBar currentUser={currentUser} />
+                <ShopDetails
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+                {ShopDetails ? <DarkMode /> : ""}
+              </>
+            }
+          />
+        </Route>
+        <Route path="events">
+          <Route
+            path=""
+            element={
+              <>
+                <NavBar currentUser={currentUser} userLocation={userLocation} />
+                <EventsList
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+                {ShopDetails ? <DarkMode /> : ""}
+              </>
+            }
+          />
+          <Route
+            path="create"
+            element={
+              <>
+                <NavBar currentUser={currentUser} userLocation={userLocation} />
+                <CreateEvent
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+                {CreateEvent ? <DarkMode /> : null}
+              </>
+            }
+          />
+          <Route
+            path=":eventId"
+            element={
+              <>
+                <NavBar currentUser={currentUser} userLocation={userLocation} />
+                <EventDetails
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+                {EventDetails ? <DarkMode /> : null}
+              </>
+            }
           />
         </Route>
         <Route
           path="favorites"
-          element={<FavoritesList currentUser={currentUser} />}
+          element={
+            <>
+              <NavBar currentUser={currentUser} userLocation={userLocation} />
+              <FavoritesList
+                currentUser={currentUser}
+                userLocation={userLocation}
+              />
+              {FavoritesList ? <DarkMode /> : null}
+            </>
+          }
         />
         <Route path="profile">
           <Route
             path=":userId"
-            element={<UserProfile currentUser={currentUser} />}
+            element={
+              <>
+                <NavBar currentUser={currentUser} userLocation={userLocation} />
+                <UserProfile
+                  currentUser={currentUser}
+                  userLocation={userLocation}
+                />
+                {UserProfile ? <DarkMode /> : null}
+              </>
+            }
           />
         </Route>
         <Route
           path="editProfile"
-          element={<EditProfileForm currentUser={currentUser} />}
+          element={
+            <>
+              <NavBar currentUser={currentUser} />
+              <EditProfileForm
+                currentUser={currentUser}
+                userLocation={userLocation}
+              />
+              {EditProfileForm ? <DarkMode /> : null}
+            </>
+          }
         />
       </Route>
     </Routes>

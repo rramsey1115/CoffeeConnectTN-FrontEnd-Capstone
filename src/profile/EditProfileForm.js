@@ -1,26 +1,48 @@
 import { useEffect, useState } from "react";
 import { UpdateProfile, getUserById } from "../services/userServices";
 import { useNavigate } from "react-router-dom";
+import { getAtPrefs, getCoffeePrefs } from "../services/PrefServices";
 
 export const EditProfileForm = ({ currentUser }) => {
   const [user, setUser] = useState({});
+  const [coffeePrefs, setCoffeePrefs] = useState([]);
+  const [atPrefs, setAtPrefs] = useState([]);
   const [userChoices, updateChoices] = useState({
     email: user?.email,
     password: user?.password,
     name: user?.name,
     picture: user?.picture,
     about: user?.about,
+    coffeePreferenceId: user?.coffeePreferenceId,
+    atmospherePreferenceId: user?.atmospherePreferenceId,
   });
 
   const navigate = useNavigate();
-  useEffect(() => {
-    getUserById(currentUser?.id).then((data) => setUser(data[0]));
-  }, [currentUser]);
 
   const handleEditProfile = async () => {
     await UpdateProfile(user.id, userChoices);
-      navigate(`/profile/${currentUser.id}`);
+    navigate(`/profile/${currentUser.id}`);
   };
+
+  const getAndSetCoffeePrefs = () => {
+    getCoffeePrefs().then((data) => setCoffeePrefs(data));
+  };
+
+  const getAndSetAtPrefs = () => {
+    getAtPrefs().then((data) => setAtPrefs(data));
+  };
+
+  useEffect(() => {
+    getAndSetCoffeePrefs();
+  }, []);
+
+  useEffect(() => {
+    getAndSetAtPrefs();
+  }, []);
+
+  useEffect(() => {
+    getUserById(currentUser?.id).then((data) => setUser(data[0]));
+  }, [currentUser]);
 
   useEffect(() => {
     updateChoices(user);
@@ -41,7 +63,7 @@ export const EditProfileForm = ({ currentUser }) => {
               }}
               type="text"
               id="name"
-              className="form-control"
+              className="edit-form-control"
               value={userChoices?.name}
               required
               autoFocus
@@ -59,7 +81,7 @@ export const EditProfileForm = ({ currentUser }) => {
               }}
               type="email"
               id="email"
-              className="form-control"
+              className="edit-form-control"
               value={userChoices?.email}
               required
             />
@@ -76,7 +98,7 @@ export const EditProfileForm = ({ currentUser }) => {
               }}
               type="text"
               id="password"
-              className="form-control"
+              className="edit-form-control"
               value={userChoices?.password}
               required
             />
@@ -93,7 +115,7 @@ export const EditProfileForm = ({ currentUser }) => {
               }}
               type="text"
               id="picture"
-              className="form-control"
+              className="edit-form-control"
               value={userChoices?.picture}
               required
             />
@@ -110,29 +132,59 @@ export const EditProfileForm = ({ currentUser }) => {
               }}
               rows={6}
               type="text"
-              id="about"
-              className="about-textarea"
+              id="edit-about"
+              className="edit-about-textarea"
               value={userChoices?.about}
               required
             />
           </div>
         </fieldset>
-        {/* <fieldset>
-      <div className="form-group">
-        <label>
-          <input
-            onChange={(evt) => {
-              const copy = { ...customer }
-              copy.isStaff = evt.target.checked
-              setCustomer(copy)
-            }}
-            type="checkbox"
-            id="isStaff"
-          />
-          I am an employee{" "}
-        </label>
-      </div>
-    </fieldset> */}
+        <div className="edit-prefs">
+          <fieldset className="prefs-list">
+            <h3>Coffee Order</h3>
+            {coffeePrefs.map((coffeePref) => {
+              return (
+                <div key={coffeePref.id}>
+                  <label htmlFor={coffeePref.id}>{coffeePref.name}</label>
+                  <input
+                    required
+                    type="radio"
+                    id={coffeePref.id}
+                    value={coffeePref.id}
+                    checked={userChoices.coffeePreferenceId === coffeePref.id}
+                    onChange={(event) => {
+                      const copy = { ...userChoices };
+                      copy.coffeePreferenceId = event.target.value * 1;
+                      updateChoices(copy);
+                    }}
+                  />
+                </div>
+              );
+            })}
+          </fieldset>
+          <fieldset className="prefs-list">
+            <h3>Cafe Atmosphere</h3>
+            {atPrefs.map((atPref) => {
+              return (
+                <div key={atPref.id + 50}>
+                  <label htmlFor={atPref.id + 100}>{atPref.name}</label>
+                  <input
+                    required
+                    type="radio"
+                    id={atPref.id + 100}
+                    value={atPref.id}
+                    checked={userChoices.atmospherePreferenceId === atPref.id}
+                    onChange={(event) => {
+                      const copy = { ...userChoices };
+                      copy.atmospherePreferenceId = event.target.value * 1;
+                      updateChoices(copy);
+                    }}
+                  />
+                </div>
+              );
+            })}
+          </fieldset>
+        </div>
         <fieldset>
           <div className="form-group">
             {userChoices.name &&

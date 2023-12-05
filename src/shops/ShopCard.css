@@ -3,6 +3,11 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    animation: fadeIn .5s;
+    -webkit-animation: fadeIn .5s;
+    -moz-animation: fadeIn .5s;
+    -o-animation: fadeIn .5s;
+    -ms-animation: fadeIn .5s;
 }
 
 .shop-card {
@@ -12,12 +17,20 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    color: whitesmoke;
+    animation: fadeIn .5s;
+    -webkit-animation: fadeIn .5s;
+    -moz-animation: fadeIn .5s;
+    -o-animation: fadeIn .5s;
+    -ms-animation: fadeIn .5s;
 }
 
 #shop-name {
     margin: 0 auto;
     padding: 5px;
     text-decoration: none;
+    transition: .3s ease-in-out;
+    color: whitesmoke;
 }
 
 a {
@@ -25,18 +38,22 @@ a {
 }
 
 #shop-name:hover {
-    color: var(--tan)
+    color: var(--tan);
+    transition: .3s ease-in-out;
 }
 
 .shop-card-banner {
     width: 100%;
     display: flex;
+    background-color: black;
+    color: whitesmoke;
     flex-direction: column;
     align-items: center;
     border: 1px solid var(--tan);
     border-radius: 8px;
     padding: 2px;
     text-align: center;
+    box-shadow: 1px 1px 6px 0px gray;
 }
 
 .address-container {
@@ -46,32 +63,39 @@ a {
 
 .shop-card-img {
     width: 320px;
-    filter: drop-shadow(20px white);
+    height: 300px;
+    object-fit: cover;
+    transition: .3s;
+    box-shadow: 1px 1px 6px 0px gray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .shop-card-img:hover {
     filter: brightness(.75);
-    transition: .2s;
+    transition: .3s ease-in-out;
 }
 
 .yelp-rating {
 width: fit-content;
 margin-top: 2px;
+color: whitesmoke;
 margin-bottom: 2px;
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
 cursor: pointer;
+transition:.3s ease-in-out;
 }
 
 .yelp-rating:hover {
-    filter: brightness(.70);
-    transition: .2s;
+    filter: brightness();
+    transition: .3s ease-in-out;
 }
 
 #ratings-amount {
     font-size: 16px;
-    color: lightgray;
+    color: whitesmoke;
     margin: 0;
     padding: 2px;
 }
@@ -93,4 +117,49 @@ cursor: pointer;
 
 .address-container {
     padding: 10px;
+}
+
+#fav-name {
+    margin: 0;
+    color: whitesmoke;
+    padding: 2px;
+    text-decoration: none;
+    transition: .3s ease-in-out;
+}
+
+#fav-name:hover {
+    color: var(--tan);
+    transition: .3s ease-in-out;
+}
+
+a {
+    text-decoration: none;
+}
+
+.name-link {
+    width: 90%;
+}
+
+.name-favorite {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+    padding-left: 35px;
+}
+
+#icon {
+    width: 30px;
+    height: 30px;
+    fill: goldenrod;
+    padding-top: 4px;
+    float: right;
+}
+
+.fav-card-img {
+    width: 320px;
+    height: 300px;
+    object-fit: cover;
+    filter: drop-shadow(20px white);
+    transition: .3s;
 }

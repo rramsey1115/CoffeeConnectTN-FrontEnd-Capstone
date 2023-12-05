@@ -1,0 +1,66 @@
+.recs-header {
+  font-size: 1.75rem;
+  width: 60vw;
+  min-width: 300px;
+  align-self: center;
+  text-align: center;
+  margin: 8px auto 12px auto;
+  border-bottom: 1px solid var(--tan);
+  border-left: 8vw solid transparent;
+  border-right: 8vw solid transparent;
+}
+
+.recs-list {
+  width: 70vw;
+  min-width: 370px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.matching-pref-card {
+  width: 132px;
+  height: 200px;
+  padding: 10px;
+  margin: 12px;
+}
+
+/*----------------- Recommended Users Cards ------------ */
+
+.matching-card-user {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.matching-card-user:hover > h2 {
+  transition: 0.3s ease-in-out;
+  color: var(--tan);
+}
+
+.matching-card-user:hover > img {
+  filter: brightness(0.7);
+  transition: 0.3s ease-in-out;
+}
+
+.matching-profile-picture {
+  box-shadow: 1px 1px 6px 0px gray;
+  width: 120px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.matching-profile-name {
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  padding: 0 0 4px 0;
+}

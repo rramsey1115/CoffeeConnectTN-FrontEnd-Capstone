@@ -1,0 +1,286 @@
+/* ------------------------------ EVENT LIST ----------------------------- */
+.event-details {
+  animation: fadeIn 0.8s;
+  -webkit-animation: fadeIn 0.8s;
+  -moz-animation: fadeIn 0.8s;
+  -o-animation: fadeIn 0.8s;
+  -ms-animation: fadeIn 0.8s;
+  transition: .8s ease-in-out;
+}
+
+.events {
+  width: 80vw;
+  min-width: 385px;
+  margin: 32px auto;
+  animation: fadeIn 0.8s;
+  -webkit-animation: fadeIn 0.8s;
+  -moz-animation: fadeIn 0.8s;
+  -o-animation: fadeIn 0.8s;
+  -ms-animation: fadeIn 0.8s;
+}
+
+.events-title {
+  font-size: 30px;
+}
+
+.events-header {
+  margin: 12px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--tan);
+  border-left: 2em solid transparent;
+  border-right: 2em solid transparent;
+}
+
+.create-event {
+  width: 30px;
+  height: 40px;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.create-event:hover {
+  fill: var(--tan);
+  transition: .3s ease-in-out;
+}
+
+/* ------------------------------EVENT CARD -------------------------------- */
+
+.event-card {
+  margin: 50px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.event-card-left {
+  width: 225px;
+  padding: 0px 10px;
+  margin: 0px 10px;
+}
+
+.event-card-center {
+  width: 450px;
+  min-width: 320px;
+  padding: 0px 40px;
+  margin: 0px 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.event-attendees {
+  font-size: 1.2rem;
+  padding: 2px 4px;
+}
+
+.event-card-location {
+  font-size: 1.2rem;
+  padding: 2px 4px;
+}
+
+.event-card-date {
+  font-size: 1.2rem;
+  padding: 2px 4px;
+}
+
+.event-card-img {
+  width: 175px;
+  height: 175px;
+  object-fit: cover;
+  transition: .3s ease-in-out;
+  box-shadow: 1px 1px 2px 0px gray;
+  border-radius: 5%;
+}
+
+.event-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 0px 0px 6px 0px;
+  margin: 0;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.event-card-title:hover {
+  color: var(--tan);
+  transition: 0.4s ease-in-out;
+}
+
+.event-card-img:hover {
+  filter: brightness(0.75);
+  transition: 0.3s ease-in-out;
+}
+
+/* ------------------------------- EVENT DETAILS ---------------------------------------- */
+
+.event-details {
+  width: 80vw;
+  min-width: 360px;
+  margin: 32px auto;
+  animation: fadeIn 0.8s;
+  -webkit-animation: fadeIn 0.8s;
+  -moz-animation: fadeIn 0.8s;
+  -o-animation: fadeIn 0.8s;
+  -ms-animation: fadeIn 0.8s;
+}
+
+.event-details-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.event-header-left > h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+  padding: 0;
+  margin: 0 auto 8px auto;
+}
+
+.event-header-left {
+  width: 40%;
+  min-width: 320px;
+  text-align: center;
+  margin: 10px;
+}
+
+.event-header-right {
+  width: 40%;
+  min-width: 320px;
+  margin: 16px 10px 30px 30px;
+  padding: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#shop-title {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 4px auto 0px auto;
+  transition: .3s ease-in-out;
+}
+
+#shop-title:hover {
+  color: var(--tan);
+  transition: .3s ease-in-out;
+}
+
+.event-header-right > h4 {
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.event-header-right > p {
+  font-size: 16px;
+  padding: 0;
+  margin: 10px auto 10px auto;
+}
+
+#event-details-image {
+  width: 200px;
+  height: 225px;
+  object-fit: cover;
+  transition: 0.3s;
+  box-shadow: 1px 1px 2px 0px gray;
+  border-radius: 5%;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+#event-details-image:hover {
+  filter: brightness(.5);
+  transition: .3s ease-in-out;
+}
+
+#rsvp-button {
+  width: 200px;
+  align-self: center;
+}
+
+#remove-rsvp-button {
+  width: 200px;
+  align-self: center;
+}
+
+#delete-event-button {
+  width: 200px;
+  align-self: center;
+}
+
+
+
+/* -------------------- ATTENDEES ------------------------------------- */
+
+.attendees {
+  text-align: center;
+  animation: fadeIn 0.8s;
+  -webkit-animation: fadeIn 0.8s;
+  -moz-animation: fadeIn 0.8s;
+  -o-animation: fadeIn 0.8s;
+  -ms-animation: fadeIn 0.8s;
+}
+
+.attendee-picture {
+  width: 125px;
+  height: 125px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 6px 0px gray;
+  object-fit: cover;
+  padding: 0;
+  margin: 20px 20px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  animation: fadeIn 0.8s;
+  -webkit-animation: fadeIn 0.8s;
+  -moz-animation: fadeIn 0.8s;
+  -o-animation: fadeIn 0.8s;
+  -ms-animation: fadeIn 0.8s;
+}
+
+.attendees-title {
+  font-size: 1.5em;
+  width: 60vw;
+  min-width: 300px;
+  align-self: center;
+  text-align: center;
+  margin: 8px auto 12px auto;
+  border-bottom: 1px solid var(--tan);
+  border-left: 8vw solid transparent;
+  border-right: 8vw solid transparent;
+}
+
+.attendee-icon {
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: .3s ease-in-out;
+}
+
+.attendee-icon:hover > h3 {
+  color: var(--tan);
+  transition: .3s ease-in-out;
+}
+
+.attendee-icon:hover > img {
+  filter: brightness(0.7);
+  transition: 0.3s ease-in-out;
+}
+
+.attendees-list {
+  width: 100%;
+  min-width: 350px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

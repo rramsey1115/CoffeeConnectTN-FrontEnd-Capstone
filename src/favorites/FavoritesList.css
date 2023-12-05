@@ -1,0 +1,145 @@
+.favorites-container {
+    animation: fadeIn .3s;
+    -webkit-animation: fadeIn .3s;
+    -moz-animation: fadeIn .3s;
+    -o-animation: fadeIn .3s;
+    -ms-animation: fadeIn .3s;
+}
+
+.favorites-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.favorites-header {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.favorite-card {
+    width: 330px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#fav-name {
+    margin: 0;
+    padding: 2px;
+    text-decoration: none;
+}
+
+#your-favorites-title {
+    font-size: 1.75rem;
+    width: 60vw;
+    min-width: 300px;
+    align-self: center;
+    text-align: center;
+    margin: 6px auto;
+    border-bottom: 1px solid var(--tan);
+    border-left: 8vw solid transparent;
+    border-right: 8vw solid transparent;
+}
+
+#fav-name:hover {
+    color: var(--tan);
+}
+
+a {
+    text-decoration: none;
+}
+
+.fav-card-banner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    align-items: center;
+    border: 1px solid var(--tan);
+    border-radius: 8px;
+    padding: 2px;
+    text-align: center;
+    box-shadow: 1px 1px 6px 0px gray;
+}
+
+.address-container {
+    padding: 2px;
+    margin-top: 4px;
+}
+
+.name-link {
+    width: 90%;
+}
+
+.name-favorite {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+    padding-left: 35px;
+}
+
+.fav-card-img {
+    width: 320px;
+    box-shadow: 1px 1px 6px 0px gray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.fav-card-img:hover {
+    filter: brightness(.75);
+    transition: .3s ease-in-out;
+}
+
+.yelp-rating {
+width: fit-content;
+margin-top: 2px;
+margin-bottom: 2px;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+cursor: pointer;
+}
+
+.yelp-rating:hover {
+    filter: brightness(.70);
+    transition: .3s ease-in-out;
+}
+
+#ratings-amount {
+    font-size: 16px;
+    color:whitesmoke;
+    margin: 0;
+    padding: 2px;
+}
+
+#yelp-logo {
+    height: 18px;
+    padding-right: 4px;
+}
+
+#stars {
+    height: 16px;
+    padding-left: 4px;
+}
+
+.favorite-icon {
+    width: 30px;
+    height: 30px;
+    fill: goldenrod;
+    padding-top: 4px;
+    float: right;
+}
+
+.address {
+    padding: 0;
+    margin: 0;
+}
+
+.address-container {
+    padding: 10px;
+}

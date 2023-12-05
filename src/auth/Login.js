@@ -33,7 +33,7 @@ export const Login = () => {
     <main className="container-login">
       <section>
         <form className="form-login" onSubmit={handleLogin}>
-          <h1>Coffee Connect</h1>
+          <h1>Coffee Connect TN</h1>
           <h2>Please sign in</h2>
           <fieldset>
             <div className="form-group">
@@ -49,8 +49,8 @@ export const Login = () => {
             </div>
           </fieldset>
           <fieldset>
-            <div className="form-group">
-              <button className="login-btn btn-info" type="submit">
+            <div className="button-form-group">
+              <button className="button login-btn btn-info" type="submit">
                 Sign in
               </button>
             </div>

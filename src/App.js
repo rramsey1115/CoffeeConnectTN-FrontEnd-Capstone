@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import { ShopsList } from "./shops/ShopsList";
 import { Login } from "./auth/Login";
 import { Register } from "./auth/Register";
 import { Authorized } from "./views/Authorized";
@@ -24,3 +23,6 @@ function App() {
 }
 
 export default App;
+
+
+// const googleKey = "AIzaSyBAZYUQCy2QTGBr10KsuiGd1AqOgmFicqc";

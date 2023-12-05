@@ -1,0 +1,118 @@
+.shop-list-header {
+  width: 77%;
+  min-width: 330px;
+  margin: 20px auto 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  animation: fadeIn 0.3s;
+  -webkit-animation: fadeIn 0.3s;
+  -moz-animation: fadeIn 0.3s;
+  -o-animation: fadeIn 0.3s;
+  -ms-animation: fadeIn 0.3s;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: none;
+  align-items: center;
+}
+
+#location-name {
+  font-size: 36px;
+  margin: 0;
+  padding: 0 30px 0 0.2em;
+}
+
+.dropdown-content.inactive {
+  visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  opacity: 0;
+  min-width: 100px;
+  background-color: var(--bg-color);
+  z-index: 1;
+  transition: 0.8s ease;
+}
+
+.show-all {
+  width: fit-content;
+}
+
+.dropdown-content.active {
+  visibility: visible;
+  display: flex;
+  flex-direction: row;
+  opacity: 1;
+  transition: 0.8s ease;
+  border-top: 1px solid var(--tan);
+  border-bottom: 1px solid var(--tan);
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  z-index: 1;
+}
+
+.dropdown-item {
+  padding: 4px 18px;
+  cursor: pointer;
+  display: block;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.dropdown-item:hover {
+  color: var(--tan);
+  transition: 0.3s ease-in-out;
+}
+
+#filter-icon-container {
+  width: 50px;
+  min-width: 50px;
+  min-height: 32px;
+  height: 32px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+#filter-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+#filter-icon:hover {
+  filter: brightness(0.5);
+  transition: 0.3s ease-in-out;
+}
+
+.filter-num-star {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  transition: 0.3s ease-in-out;
+}
+
+.filter-num-star:hover {
+  color: var(--tan);
+
+  transition: 0.3s ease-in-out;
+}
+
+.filter-num-star > svg {
+  padding: 0 0 0 0;
+  margin-top: 0;
+  transition: .3s ease-in-out;
+}
+
+.filter-num-star:hover > svg {
+  fill: var(--tan);
+  transition: 0.3s ease-in-out;
+}
+
+#filter-star {
+  padding: 0px 2px 2px 2px;
+}

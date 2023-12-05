@@ -5,6 +5,8 @@ import {
 } from "../services/userServices";
 import "./UserProfile.css";
 import { useNavigate, useParams } from "react-router-dom";
+import { FavoritesList } from "../favorites/FavoritesList";
+import { Recommendations } from "./Recommendations";
 
 export const UserProfile = ({ currentUser }) => {
   const userId = useParams().userId;
@@ -21,22 +23,22 @@ export const UserProfile = ({ currentUser }) => {
   };
 
   return (
-    <>
+    <div className="profile-container">
       <section className="profile-about">
         <div className="profile-left">
+          <h1 id="profile-title">{user?.name}</h1>
           <img src={user?.picture} alt="user" id="profile-picture" />
         </div>
         <div className="profile-right">
-          <h1 id="profile-title">{user?.name}</h1>
-          {user?.id === currentUser.id ? <p id="email">{user?.email}</p> : ""}
-          <p id="about">{user?.about}</p>
-          {/* <div className="preferences">
-            <h4 id="preferences-title">Preferences</h4>
-            <p>preference - Stretch Goal</p>
-            <p>preference - Stretch Goal</p>
-            <p>preference - Stretch Goal</p>
-          </div> */}
-          {currentUser?.admin ? (
+          <h2>About</h2>
+          <p id="about-paragraph">{user?.about}</p>
+          <div className="preferences">
+            <br />
+            <h2 id="preferences-title">Preferences</h2>
+            <p>{user.coffeePreference?.name} Coffees</p>
+            <p>{user.atmospherePreference?.name} Atmospheres</p>
+          </div>
+          {currentUser.admin && userId > 1 ? (
             <>
               <button
                 className="button"
@@ -46,7 +48,8 @@ export const UserProfile = ({ currentUser }) => {
                 }}
               >
                 Delete Profile
-              </button><br/>
+              </button>
+              <br />
               <button
                 className="button"
                 id="edit-profile-button"
@@ -55,7 +58,7 @@ export const UserProfile = ({ currentUser }) => {
                 Edit Profile
               </button>
             </>
-          ) : user?.id === currentUser.id ? (
+          ) : user.id === currentUser.id ? (
             <button
               className="button"
               id="edit-profile-button"
@@ -69,13 +72,15 @@ export const UserProfile = ({ currentUser }) => {
         </div>
       </section>
       <section className="profile-favorites">
-        <div className="profile-favorites-header">
-          <h1 id="favorites-title">Favorite Coffee Shops</h1>
-        </div>
         <div className="profile-favorites-list">
-          <p>Stretch Goal - list favorited shop cards here</p>
+          <FavoritesList currentUser={currentUser} />
         </div>
       </section>
-    </>
+      <section className="profile-recs">
+        <div className="profile-recs-list">
+          {currentUser.id == userId ? <Recommendations user={user} /> : ""}
+        </div>
+      </section>
+    </div>
   );
 };
