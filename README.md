@@ -1,11 +1,4 @@
 
-
-getAllEvents().then(array => {
-    const sortedByDateArray = array.sort((a, b) => new Date(a.eventStartDate) - new Date(b.eventStartDate))
-    setAllEvents(sortedByDateArray)
-     setMyEvents(sortedByDateArray.filter(event => event.userId === currentUser.id))
-})
-
 Coffee Connect TN - Front-End Capstone for Nashville Software School
 
 Coffee Connect TN, powered by Yelp and Google Maps APIs, redefines Tennessee's coffee culture. 
