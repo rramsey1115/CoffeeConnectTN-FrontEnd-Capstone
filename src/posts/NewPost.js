@@ -7,11 +7,12 @@ export const NewPost = ({
   getAndSetPosts,
   toggleCreate,
 }) => {
-  const [newPostObj, setNewPostObj] = useState({
+
+const [newPostObj, setNewPostObj] = useState({
     userId: currentUser?.id,
     businessId: shopObj?.id,
     text: "",
-  });
+});
 
   const handleSubmit = () => {
     CreateNewPost(newPostObj).then(getAndSetPosts);
