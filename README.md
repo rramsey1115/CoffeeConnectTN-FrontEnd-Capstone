@@ -74,55 +74,57 @@ YouTube Link: https://youtu.be/mXYXaN-KSPw?si=2M-W3sQHpal8tES4
 
 Discover View
 ----------
-![CCTN -discover view](https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/75be427f-e778-4eed-a442-80a1790e7793)
-
+<img src="https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/75be427f-e778-4eed-a442-80a1790e7793" width="1000" />
 
 Shop Details View
 ----------
 
 Dark Mode Example
 
-![CCTN - details dark](https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/37e0dc66-9679-41bf-a9b8-dd496c5282e3)
+<img src="https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/37e0dc66-9679-41bf-a9b8-dd496c5282e3" width="1000" />
 
 Details view cont...
 
-![CCTN - posts](https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/20e6f43f-1b9d-4e75-bd81-ebb5f7ee7e41)
+<img src="https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/20e6f43f-1b9d-4e75-bd81-ebb5f7ee7e41" width="1000" />
 
 Light Mode Example
-![CCTN - details light mode](https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/f2761194-6e09-4cc2-8ecd-8d923746b4f8)
+
+<img src="https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/f2761194-6e09-4cc2-8ecd-8d923746b4f8" width="1000" />
 
 
 Events View
 ---------
-![CCTN - events](https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/5a0ec80a-8fe5-47d5-94dd-8648c1ab357f)
+
+<img src="https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/5a0ec80a-8fe5-47d5-94dd-8648c1ab357f" width="1000" />
 
 
 Profile View 
 ----------
-![CCTN - profile view](https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/83928f6d-995b-421b-9d79-5a254a383e61)
+
+<img src="https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/83928f6d-995b-421b-9d79-5a254a383e61" width="1000" />
 
 
 Mobile View Examples
 ------------
 Shop Details
 
-![CCTN - mobile shop details](https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/c43a102d-300c-489f-b1a8-eca8790688db)
+<img src="https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/c43a102d-300c-489f-b1a8-eca8790688db" width="300" />
 
 Recommendations Light Mode
 
-![CCTN - mobile rec light](https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/8f818f0a-0a51-43e3-8155-28d6f10880e7)
+<img src="https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/8f818f0a-0a51-43e3-8155-28d6f10880e7" width="300" />
 
 Mobile Navigation Light Mode
 
-![CCTN - mobile light nav](https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/40c082fc-4432-4aa1-9b2a-a44bcc92df55)
+<img src="https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/40c082fc-4432-4aa1-9b2a-a44bcc92df55" width="300" />
 
 
 Form Examples
 -----------
-![CCTN - light mode create event](https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/83461a47-e45e-4c7f-9405-f4adc9141155)
 
-![CCTN - edit profile form](https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/c7238019-1d88-4e88-9a0c-91668a9bb9e3)
+<img src="https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/83461a47-e45e-4c7f-9405-f4adc9141155" width="1000" />
 
+<img src="https://github.com/rramsey1115/CoffeeConnectTN-FrontEnd-Capstone/assets/139381892/c7238019-1d88-4e88-9a0c-91668a9bb9e3" width="1000" />
 
 Project ERD: https://dbdiagram.io/d/Coffee-ERD-RR-652ed5f1ffbf5169f0e2d803
 
