@@ -1,6 +1,6 @@
 Coffee Connect TN - Front-End Capstone for Nashville Software School
 ==========
-Link to API containing database.json files: https://github.com/rramsey1115/API-CoffeeConnectTN-FrontEnd-Capstone/blob/main/README.md
+Link to API containing database.json files: https://github.com/rramsey1115/API-CoffeeConnectTN-FrontEnd-Capstone
 
 I am proud to present the culmination of 3 months at Nashville Software School.
 
